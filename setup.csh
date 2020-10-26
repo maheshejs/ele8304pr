@@ -48,6 +48,7 @@ setenv SYN_DIR      ${IMP_DIR}/syn
 setenv SYN_NET_DIR  ${SYN_DIR}/netlist
 setenv SYN_REP_DIR  ${SYN_DIR}/reports
 setenv SYN_LOG_DIR  ${SYN_DIR}/logs
+setenv ATPG_DIR     ${IMP_DIR}/atpg
 setenv PNR_DIR      ${IMP_DIR}/pnr
 setenv PNR_NET_DIR  ${PNR_DIR}/netlist
 setenv PNR_REP_DIR  ${PNR_DIR}/reports
@@ -59,7 +60,7 @@ setenv KIT_HOME   ${CMC_HOME}/kits/GPDK45
 setenv KIT_SCLIB  ${KIT_HOME}/gsclib045
 setenv KIT_IOLIB  ${KIT_HOME}/giolib045
 setenv KIT_GPDK   ${KIT_HOME}/gpdk045
-setenv KIT_SIMLIB ${KIT_HOME}/simlib
+setenv KIT_SIMLIB ${CMC_HOME}/simlib/gpdk45
 
 # Front-End
 setenv FE_DIR      ${KIT_SCLIB}/gsclib045
@@ -111,6 +112,15 @@ setenv DRCTEMPDIR /export/tmp/$user
 source ${CMC_HOME}/scripts/cadence.genus18.10.000.csh
 alias genus "genus -overwrite"
 alias genus_help "${CMC_CDS_GENUS_HOME}/bin/cdnshelp"
+
+# MODUS
+source ${CMC_HOME}/scripts/cadence.modus19.12.000.csh
+alias modus "modus -overwrite"
+alias modus_help "${CMC_CDS_MODUS_HOME}/bin/cdnshelp"
+
+# XCELIUM
+source ${CMC_HOME}/scripts/cadence.xceliummain19.03.011.csh
+alias xcelium_help "${CMC_CDS_XCELIUM_HOME}/bin/cdnshelp"
 
 # INNOVUS
 source ${CMC_HOME}/scripts/cadence.innovus18.10.000.csh
