@@ -41,8 +41,8 @@ arith:
     and   a1, t1, t3                  // x11 = 0x00000002
     or    a2, t0, t3                  // x12 = 0xFFFFF002
 
-    add   s2, t1, t0                  // x18 = 0xFFFF7FFF
-    sub   s3, t1, t0                  // x19 = 0x00017FFF
+    add   s2, t1, t0                  // x18 = 0xFFFFF7FF
+    sub   s3, t1, t0                  // x19 = 0x000017FF
 
     sltu  s4, t1, t0                  // x20 = 0x00000001
     slt   s5, t0, t1                  // x21 = 0x00000001
