@@ -95,10 +95,10 @@ next:
  * Dépendances de données
  ******************************************************************************/
 fwd:
-    addi sp, sp, -8                 // x2  = 0x00000FF4
-    sw   sp, 0(sp)                  // DMEM[1FD] = 0x00000FF4
-    lw   a0, 0(sp)                  // x10 = 0x00000FF4
-    lw   a1, 0(a0)                  // x11 = 0x00000FF4
+    addi sp, sp, -8                 // x2  = 0x000007F4
+    sw   sp, 0(sp)                  // DMEM[1FD] = 0x000007F4
+    lw   a0, 0(sp)                  // x10 = 0x000007F4
+    lw   a1, 0(a0)                  // x11 = 0x000007F4
 
     nop
     nop
