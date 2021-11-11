@@ -92,4 +92,13 @@ package riscv_pkg is
       o_insts  : out std_logic_vector(XLEN-1 downto 0));
   end component riscv_perf;
 
+  component riscv_half_adder is
+    port (
+      i_a     : in  std_logic;
+      i_b     : in  std_logic;
+      o_carry : out std_logic;
+      o_sum   : out std_logic
+    );
+  end component riscv_half_adder;
+
 end package riscv_pkg;
