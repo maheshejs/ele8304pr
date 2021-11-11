@@ -28,7 +28,7 @@ end entity riscv_pc;
 
 architecture arch of riscv_pc is
   signal s_pc  : std_logic_vector(XLEN-1 downto 0);
-  signal s_sum : std_logic_vector(XLEN-1 downto 0);
+  signal s_sum : std_logic_vector(XLEN downto 0);
 
 begin
 
@@ -39,7 +39,7 @@ begin
         if (i_transfert = '1') then
           s_pc <= i_target;
         else
-          s_pc <= s_sum;
+          s_pc <= s_sum(XLEN-1 downto 0);
         end if;
       end if;
     end if;
