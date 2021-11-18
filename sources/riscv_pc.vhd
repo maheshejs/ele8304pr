@@ -17,12 +17,12 @@ use work.riscv_pkg.all;
 entity riscv_pc is
   generic (RESET_VECTOR : natural := 16#00000000#);
   port (
-    i_clk : in std_logic;
-    i_rstn : in std_logic;
-    i_stall : in std_logic;
+    i_clk       : in std_logic;
+    i_rstn      : in std_logic;
+    i_stall     : in std_logic;
     i_transfert : in std_logic;
-    i_target : in std_logic_vector(XLEN-1 downto 0);
-    o_pc : out std_logic_vector(XLEN-1 downto 0)
+    i_target    : in std_logic_vector(XLEN-1 downto 0);
+    o_pc        : out std_logic_vector(XLEN-1 downto 0)
   );
 end entity riscv_pc;
 
