@@ -62,7 +62,6 @@ begin
     
     -- Asynchronous reset
     if (i_rstn = '0') then
-      --s_file    <= (others =­> (others =­> '0'));
       s_file    <= (others => (others => '0'));
       s_data_r  <= (others => (others => '0'));
     end if;

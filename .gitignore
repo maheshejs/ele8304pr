@@ -2,3 +2,4 @@
 transcript
 *.o
 *.pdf
+build/
