@@ -257,7 +257,7 @@ begin
     wait for clock_period;
     assert s_res(N-1 downto 0) = X"FFFFFFFF" report "ERROR EXPECTED SUBTRACTING ONE SIGNED NEGATIVE WITH ONE SIGNED POSITIVE WITH NEGATIVE OVERFLOW TO BE NEGATIVE" severity error;
 
-    -- Unsigned subtraction
+    -- Set less than (unsigned substraction)
     sign <= '0';
 
     wait for clock_period * 2;
@@ -272,6 +272,50 @@ begin
     wait for clock_period;
     assert s_res(N-1 downto 0) = X"FFFFFFFF" report "ERROR EXPECTED SUBSTRACTING TWO UNSIGNED WITH NEGATIVE OVERFLOW TO BE NEGATIVE" severity error;
 
+		-- Shift left
+		opcode <= ALUOP_SL;
+
+		src1 <= X"2063ABED";
+		shamt <= X"01101";
+    wait for clock_period;
+    assert s_res(N-1 downto 0) = X"757DA000" report "ERROR SHIFTING LEFT BY 13 BITS" severity error;
+
+		-- Shift right
+		opcode <= ALUOP_SR;
+
+		src1 <= X"028BBBA0";
+		shamt <= X"01000";
+    wait for clock_period;
+    assert s_res(N-1 downto 0) = X"00028BBB" report "ERROR SHIFTING RIGHT POSITIVE BY 8 BITS" severity error;
+
+		src1 <= X"F28BBBA0";
+		shamt <= X"00101";
+    wait for clock_period;
+    assert s_res(N-1 downto 0) = X"FF945DDD" report "ERROR SHIFTING RIGHT NEGATIVE BY 5 BITS" severity error;
+
+		-- XOR
+		opcode <= ALUOP_XOR;
+		
+		src1 <= X"83B188A0";
+		src2 <= X"37BEEF11";
+    wait for clock_period;
+    assert s_res(N-1 downto 0) = X"B40F67B1" report "ERROR APPLYING XOR OPERATION" severity error;
+
+		-- OR
+		opcode <= ALUOP_OR;
+		
+		src1 <= X"83B188A0";
+		src2 <= X"37BEEF11";
+    wait for clock_period;
+    assert s_res(N-1 downto 0) = X"B7BFEFB1" report "ERROR APPLYING OR OPERATION" severity error;
+
+		-- AND
+		opcode <= ALUOP_AND;
+		
+		src1 <= X"83B188A0";
+		src2 <= X"37BEEF11";
+    wait for clock_period;
+    assert s_res(N-1 downto 0) = X"3B08800" report "ERROR APPLYING AND OPERATION" severity error;
 
     stop_the_clock <= true;
 
