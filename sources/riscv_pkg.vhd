@@ -20,7 +20,34 @@ package riscv_pkg is
   ------------------------------------------------------------------------------
     constant XLEN      : positive := 32;
     constant REG_WIDTH : positive := 5;
+    constant DPM_DEPTH : positive := 10;
+    constant DPM_WIDTH : positive := 32;
 
+  ------------------------------------------------------------------------------
+  -- DEFINITIONS
+  ------------------------------------------------------------------------------
+  type E_REG_IF_ID is record
+    imem_read : std_logic_vector(DPM_WIDTH-1 downto 0);
+  end record;
+
+  type E_REG_ID_EX is record
+    flush     : std_logic;
+    imem_read : std_logic;
+    stall     : std_logic;
+  end record;
+
+  type E_REG_EX_ME is record
+    alu_result: std_logic_vector(XLEN-1 downto 0);
+    store_data: std_logic;
+  end record;
+
+  type E_REG_ME_WB is record
+    alu_result: std_logic_vector(XLEN-1 downto 0);
+    rd_addr   : std_logic_vector(REG_WIDTH-1 downto 0);
+  end record;
+
+  type T_RADDR_ARRAY is array(0 to 1) of std_logic_vector(REG_WIDTH-1 downto 0);
+  type T_RDATA_ARRAY is array(0 to 1) of std_logic_vector(XLEN-1 downto 0);
   ------------------------------------------------------------------------------
   --  INSTRUCTION FORMATS
   ------------------------------------------------------------------------------
@@ -33,12 +60,12 @@ package riscv_pkg is
   ------------------------------------------------------------------------------
     constant ALUOP_WIDTH : natural := 3;
     constant ALUOP_ADD   : std_logic_vector(ALUOP_WIDTH-1 downto 0) := std_logic_vector(to_unsigned(0, ALUOP_WIDTH));
-    constant ALUOP_SLT   : std_logic_vector(ALUOP_WIDTH-1 downto 0) := std_logic_vector(to_unsigned(1, ALUOP_WIDTH));
-    constant ALUOP_SL    : std_logic_vector(ALUOP_WIDTH-1 downto 0) := std_logic_vector(to_unsigned(2, ALUOP_WIDTH));
-    constant ALUOP_SR    : std_logic_vector(ALUOP_WIDTH-1 downto 0) := std_logic_vector(to_unsigned(3, ALUOP_WIDTH));
+    constant ALUOP_SL    : std_logic_vector(ALUOP_WIDTH-1 downto 0) := std_logic_vector(to_unsigned(1, ALUOP_WIDTH));
+    constant ALUOP_SLT   : std_logic_vector(ALUOP_WIDTH-1 downto 0) := std_logic_vector(to_unsigned(2, ALUOP_WIDTH));
     constant ALUOP_XOR   : std_logic_vector(ALUOP_WIDTH-1 downto 0) := std_logic_vector(to_unsigned(4, ALUOP_WIDTH));
-    constant ALUOP_OR    : std_logic_vector(ALUOP_WIDTH-1 downto 0) := std_logic_vector(to_unsigned(5, ALUOP_WIDTH));
-    constant ALUOP_AND   : std_logic_vector(ALUOP_WIDTH-1 downto 0) := std_logic_vector(to_unsigned(6, ALUOP_WIDTH));
+    constant ALUOP_SR    : std_logic_vector(ALUOP_WIDTH-1 downto 0) := std_logic_vector(to_unsigned(5, ALUOP_WIDTH));
+    constant ALUOP_OR    : std_logic_vector(ALUOP_WIDTH-1 downto 0) := std_logic_vector(to_unsigned(6, ALUOP_WIDTH));
+    constant ALUOP_AND   : std_logic_vector(ALUOP_WIDTH-1 downto 0) := std_logic_vector(to_unsigned(7, ALUOP_WIDTH));
 
   ------------------------------------------------------------------------------
   -- COMPONENTS
