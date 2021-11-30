@@ -31,6 +31,7 @@ architecture arch of riscv_adder is
   signal s_b     : T_ARRAY;
   signal s_carry : T_ARRAY;
   signal s_sum   : T_ARRAY;
+  signal s_sig   : std_logic;
 
 begin
 
@@ -53,7 +54,9 @@ begin
     end generate GEN_HALF_ADDER;
   end generate GEN_FULL_ADDER;  
 
+  s_sig <= s_carry(1)(N-1) xor s_carry(1)(N-2) when i_sign = '1' else s_carry(0)(N-1) or s_carry(1)(N-1);
+
   -- Outputs
-  o_sum <= (s_carry(0)(N-1) or s_carry(1)(N-1)) & s_sum(1);
+  o_sum <= s_sig & s_sum(1);
 
 end architecture arch;

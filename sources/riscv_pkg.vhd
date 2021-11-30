@@ -32,13 +32,13 @@ package riscv_pkg is
   -- ALU
   ------------------------------------------------------------------------------
     constant ALUOP_WIDTH : natural := 3;
-    constant ALUOP_ADD   : natural := 0;
-    constant ALUOP_SLT   : natural := 1;
-    constant ALUOP_SL    : natural := 2;
-    constant ALUOP_SR    : natural := 3;
-    constant ALUOP_XOR   : natural := 4;
-    constant ALUOP_OR    : natural := 5;
-    constant ALUOP_AND   : natural := 6;
+    constant ALUOP_ADD   : std_logic_vector(ALUOP_WIDTH-1 downto 0) := std_logic_vector(to_unsigned(0, ALUOP_WIDTH));
+    constant ALUOP_SLT   : std_logic_vector(ALUOP_WIDTH-1 downto 0) := std_logic_vector(to_unsigned(1, ALUOP_WIDTH));
+    constant ALUOP_SL    : std_logic_vector(ALUOP_WIDTH-1 downto 0) := std_logic_vector(to_unsigned(2, ALUOP_WIDTH));
+    constant ALUOP_SR    : std_logic_vector(ALUOP_WIDTH-1 downto 0) := std_logic_vector(to_unsigned(3, ALUOP_WIDTH));
+    constant ALUOP_XOR   : std_logic_vector(ALUOP_WIDTH-1 downto 0) := std_logic_vector(to_unsigned(4, ALUOP_WIDTH));
+    constant ALUOP_OR    : std_logic_vector(ALUOP_WIDTH-1 downto 0) := std_logic_vector(to_unsigned(5, ALUOP_WIDTH));
+    constant ALUOP_AND   : std_logic_vector(ALUOP_WIDTH-1 downto 0) := std_logic_vector(to_unsigned(6, ALUOP_WIDTH));
 
   ------------------------------------------------------------------------------
   -- COMPONENTS
@@ -108,23 +108,13 @@ package riscv_pkg is
              );
     end component riscv_half_adder;
 
-    component riscv_shifter is
-        port (
-                 i_src      : in  std_logic_vector(XLEN-1 downto 0);
-                 i_shamt    : in  std_logic_vector(SHAMT-1 downto 0);
-                 i_opcode   : in  std_logic_vector(ALUOP-1, downto 0);
-                 i_arith    : in  std_logic;   
-                 o_result   : out std_logic_vector(XLEN-1 downto 0);
-             );
-    end component riscv_shifter
-
     component riscv_logic is
         port (
                 i_a     : in  std_logic_vector(XLEN-1 downto 0);
                 i_b     : in  std_logic_vector(XLEN-1 downto 0);
                 o_and   : out std_logic_vector(XLEN-1 downto 0);
                 o_xor   : out std_logic_vector(XLEN-1 downto 0);
-                o_or    : out std_logic_vector(XLEN-1 downto 0);
+                o_or    : out std_logic_vector(XLEN-1 downto 0)
              );
     end component riscv_logic;
 end package riscv_pkg;

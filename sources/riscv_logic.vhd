@@ -21,8 +21,8 @@ entity riscv_logic is
              i_b     : in  std_logic_vector(XLEN-1 downto 0);
              o_and   : out std_logic_vector(XLEN-1 downto 0);
              o_xor   : out std_logic_vector(XLEN-1 downto 0);
-             o_or    : out std_logic_vector(XLEN-1 downto 0);
-);
+             o_or    : out std_logic_vector(XLEN-1 downto 0)
+	 );
 end entity riscv_logic;
 
 architecture arch of riscv_logic is

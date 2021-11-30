@@ -40,10 +40,9 @@ begin
 
     case opcode is  
         when ALUOP_SL =>
-            result <= src(shamt downto 0) & '0';
+            result <= shift_left(unsigned(src), to_integer(unsigned(shamt)));
         when ALUOP_SR =>
-            result(XLEN downto XLEN-shamt) <= arith;
-            result(XLEN-shamt-1 downto 0) <= src(shamt downto 0);
+            result <= shift_right(ujsigned(src), to_integer(unsigned(shamt)));
         when others =>
             result <= '0';
     end case;

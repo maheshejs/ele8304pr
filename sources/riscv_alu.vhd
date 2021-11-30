@@ -13,6 +13,8 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 use ieee.math_real.all;
+library work;
+use work.riscv_pkg.all;
 
 entity riscv_alu is
     port (
@@ -22,7 +24,8 @@ entity riscv_alu is
              i_shamt  : in  std_logic_vector(SHAMT_WIDTH-1 downto 0);
              i_src1   : in  std_logic_vector(XLEN-1 downto 0);
              i_src2   : in  std_logic_vector(XLEN-1 downto 0);
-             o_res    : out std_logic_vector(XLEN-1 downto 0));
+             o_res    : out std_logic_vector(XLEN-1 downto 0)
+	);
 end entity riscv_alu;
 
 architecture arch of riscv_alu is
@@ -33,12 +36,11 @@ architecture arch of riscv_alu is
     signal src1   : std_logic_vector(XLEN-1 downto 0);
     signal src2   : std_logic_vector(XLEN-1 downto 0);
 
-    signal o_shifter : std_logic_vector(XLEN-1 downto 0); 
-    signal o_less    : std_logic_vector(XLEN-1 downto 0); 
-    signal o_adder   : std_logic_vector(XLEN-1 downto 0); 
-    signal o_and     : std_logic_vector(XLEN-1 downto 0); 
-    signal o_xor     : std_logic_vector(XLEN-1 downto 0); 
-    signal o_or      : std_logic_vector(XLEN-1 downto 0); 
+    signal s_less    : std_logic; 
+    signal s_adder   : std_logic_vector(XLEN downto 0); 
+    signal s_and     : std_logic_vector(XLEN-1 downto 0); 
+    signal s_xor     : std_logic_vector(XLEN-1 downto 0); 
+    signal s_or      : std_logic_vector(XLEN-1 downto 0); 
 begin
     arith  <= i_arith;
     sign   <= i_sign;
@@ -47,47 +49,34 @@ begin
     src1   <= i_src1;
     src2   <= i_src2;
 
-    adder : riscv_adder PORT MAP (
+    adder : riscv_adder GENERIC MAP(N => XLEN)
+			PORT MAP (
                                      i_a    => src1,
                                      i_b    => src2,
                                      i_sign => sign,
                                      i_sub  => arith,
-                                     o_sum  => adder_out
+                                     o_sum  => s_adder
                                  );
-
-    shifter : riscv_shifter PORT MAP (
-                                         i_src    => src1,
-                                         i_shamt  => shamt,
-                                         i_opcode => opcode,
-                                         i_arith  => arith,
-                                         o_result => o_shifter 
-                                     );
 
     logic : riscv_logic PORT MAP (
                                      i_a   => src1,
                                      i_b   => src2,
-                                     o_and => o_and,
-                                     o_xor => o_xor,
-                                     o_or  => o_or,
+                                     o_and => s_and,
+                                     o_xor => s_xor,
+                                     o_or  => s_or
                                  );
 
-    o_less <= o_adder(XLEN-1);
+    s_less <= s_adder(XLEN-1) xor s_adder(XLEN) when sign = '1' else 
+	       not s_adder(XLEN) when arith = '1' else
+	       '0';
 
-    case opcode is
-        when ALUOP_ADD =>
-            o_res <= o_adder;
-        when ALUOP_SLT =>
-            o_res <= o_less;
-        when ALUOP_SL  =>
-            o_res <= o_shifter;
-        when ALUOP_SR  =>
-            o_res <= o_shifter;
-        when ALUOP_XOR =>
-            o_res <= o_xor;
-        when ALUOP_OR  =>
-            o_res <= o_or;
-        when others =>
-            o_res <= o_and;
-    end case;
+    with i_opcode select o_res <=
+        s_adder(XLEN-1 downto 0) when ALUOP_ADD,
+        (others => s_less) when ALUOP_SLT,
+        std_logic_vector(shift_left(unsigned(src1), to_integer(unsigned(shamt)))) when ALUOP_SL,
+        std_logic_vector(shift_right(signed(src1), to_integer(unsigned(shamt)))) when ALUOP_SR,
+        s_xor when ALUOP_XOR,
+        s_or when ALUOP_OR,
+        s_and when others;
 
 end architecture arch;
