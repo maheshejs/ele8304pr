@@ -26,15 +26,15 @@ entity riscv_ex is
       o_reg_ex_me : out E_REG_EX_ME
     );
 end entity riscv_ex;
-
+
 architecture arch of riscv_ex is
 
-  function or_reduce(arg: std_logic_vector) return std_logic is
+  function nor_reduce(arg: std_logic_vector) return std_logic is
     variable result: std_logic;
   begin
       result := '0';
       for i in arg'range loop
-        result := result or arg(i);
+        result := result nor arg(i);
       end loop;
       return result;
   end;
@@ -90,7 +90,7 @@ begin
     end if;
   end process;
 
-  s_ex.transfert <= i_reg_id_ex.jump or (i_reg_id_ex.branch and or_reduce(s_alu_result));
+  s_ex.transfert <= i_reg_id_ex.jump or (i_reg_id_ex.branch and nor_reduce(s_alu_result));
 
   -- Outputs
   o_ex        <= s_ex;
