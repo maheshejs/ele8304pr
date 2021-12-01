@@ -20,7 +20,7 @@ package riscv_pkg is
   ------------------------------------------------------------------------------
     constant XLEN      : positive := 32;
     constant REG_WIDTH : positive := 5;
-    constant DPM_DEPTH : positive := 10;
+    constant DPM_DEPTH : positive := 9;
     constant DPM_WIDTH : positive := 32;
 
   ------------------------------------------------------------------------------
@@ -172,4 +172,59 @@ package riscv_pkg is
                 o_or    : out std_logic_vector(XLEN-1 downto 0)
              );
     end component riscv_logic;
+
+    component riscv_if is
+        port (
+          i_clk       : in std_logic;
+          i_rstn      : in std_logic;
+          i_ex        : in E_EX;
+          i_imem_read : in std_logic_vector(DPM_WIDTH-1 downto 0);
+          o_imem_addr : out std_logic_vector(DPM_DEPTH-1 downto 0);
+          o_reg_if_id : out E_REG_IF_ID
+        );
+    end component riscv_if;
+
+    component riscv_id is
+        port (
+          i_clk       : in std_logic;
+          i_rstn      : in std_logic;
+          i_reg_if_id : in E_REG_IF_ID;
+          i_wb        : in E_WB;
+          i_flush     : in std_logic;
+          o_rs_data   : out T_RDATA_ARRAY;
+          o_reg_id_ex : out E_REG_ID_EX
+        );
+    end component riscv_id;
+
+    component riscv_ex is
+        port (
+          i_clk       : in std_logic;
+          i_rstn      : in std_logic;
+          i_rs_data   : in T_RDATA_ARRAY;
+          i_reg_id_ex : in E_REG_ID_EX;
+          o_ex        : out E_EX;
+          o_reg_ex_me : out E_REG_EX_ME
+        );
+    end component riscv_ex;
+
+    component riscv_me is
+        port (
+          i_clk       : in std_logic;
+          i_rstn      : in std_logic;
+          i_reg_ex_me : in E_REG_EX_ME;
+          o_dmem_addr : out std_logic_vector(DPM_DEPTH-1 downto 0);
+          o_dmem_en   : out std_logic;
+          o_dmem_we   : out std_logic;
+          o_dmem_write: out std_logic_vector(DPM_WIDTH-1 downto 0);
+          o_reg_me_wb : out E_REG_ME_WB
+        );
+    end component riscv_me;
+
+    component riscv_wb is
+        port (
+          i_dmem_read : in std_logic_vector(DPM_WIDTH-1 downto 0);
+          i_reg_me_wb : in E_REG_ME_WB;
+          o_wb        : out E_WB
+        );
+    end component riscv_wb;
 end package riscv_pkg;
