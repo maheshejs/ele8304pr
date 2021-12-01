@@ -157,15 +157,15 @@ begin
         if s_inst.funct3 = "011" then
           s_nreg_id_ex.alu_arith  <= '1';
           s_nreg_id_ex.alu_sign   <= '0';
-          s_nreg_id_ex.alu_op     <= "010";
+          s_nreg_id_ex.alu_op     <= ALUOP_SLT;
         elsif s_inst.funct3 = "010" then
           s_nreg_id_ex.alu_arith  <= '1';
         end if;
       when "01101" =>                   -- LUI
-        s_nreg_id_ex.alu_op   <= "110"; -- Translate LUI with ALU_OR
+        s_nreg_id_ex.alu_op   <= ALUOP_OR;
       when "11000" =>                   -- BEQ
         s_nreg_id_ex.branch   <= '1';
-        s_nreg_id_ex.alu_op   <= "100"; -- Translate BEQ with ALU_XOR
+        s_nreg_id_ex.alu_op   <= ALUOP_XOR;
         s_nreg_id_ex.alu_type <= '0';
         s_nreg_id_ex.rd_we    <= '0';
       when "11001" | "11011" =>         -- JAL*
