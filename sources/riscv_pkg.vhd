@@ -24,33 +24,6 @@ package riscv_pkg is
     constant DPM_WIDTH : positive := 32;
 
   ------------------------------------------------------------------------------
-  -- DEFINITIONS
-  ------------------------------------------------------------------------------
-  type E_REG_IF_ID is record
-    imem_read : std_logic_vector(DPM_WIDTH-1 downto 0);
-  end record;
-
-  type E_REG_ID_EX is record
-    flush     : std_logic;
-    imem_read : std_logic;
-    stall     : std_logic;
-  end record;
-
-  type E_REG_EX_ME is record
-    alu_result: std_logic_vector(XLEN-1 downto 0);
-    store_data: std_logic;
-  end record;
-
-  type E_REG_ME_WB is record
-    alu_result: std_logic_vector(XLEN-1 downto 0);
-    rd_addr   : std_logic_vector(REG_WIDTH-1 downto 0);
-  end record;
-
-  type T_RADDR_ARRAY is array(0 to 1) of std_logic_vector(REG_WIDTH-1 downto 0);
-  type T_RDATA_ARRAY is array(0 to 1) of std_logic_vector(XLEN-1 downto 0);
-  ------------------------------------------------------------------------------
-  --  INSTRUCTION FORMATS
-  ------------------------------------------------------------------------------
     constant SHAMT_H     : natural := 24;
     constant SHAMT_L     : natural := 20;
     constant SHAMT_WIDTH : natural := SHAMT_H-SHAMT_L+1;
@@ -67,6 +40,54 @@ package riscv_pkg is
     constant ALUOP_OR    : std_logic_vector(ALUOP_WIDTH-1 downto 0) := std_logic_vector(to_unsigned(6, ALUOP_WIDTH));
     constant ALUOP_AND   : std_logic_vector(ALUOP_WIDTH-1 downto 0) := std_logic_vector(to_unsigned(7, ALUOP_WIDTH));
 
+  ------------------------------------------------------------------------------
+  -- DEFINITIONS
+  ------------------------------------------------------------------------------
+  type E_REG_IF_ID is record
+    imem_read : std_logic_vector(DPM_WIDTH-1 downto 0);
+  end record;
+
+  type E_REG_ID_EX is record
+    alu_arith : std_logic;
+    alu_sign  : std_logic;
+    alu_type  : std_logic;
+    alu_op    : std_logic_vector(ALUOP_WIDTH-1 downto 0);
+    branch    : std_logic;
+    jump      : std_logic;
+    dmem_re   : std_logic;
+    dmem_we   : std_logic;
+    rd_addr   : std_logic_vector(REG_WIDTH-1 downto 0);
+    rd_we     : std_logic;
+    immed     : std_logic_vector(XLEN-1 downto 0);
+  end record;
+
+  type E_REG_EX_ME is record
+    alu_result: std_logic_vector(XLEN-1 downto 0);
+    dmem_data : std_logic_vector(DPM_WIDTH-1 downto 0);
+    dmem_re   : std_logic;
+    dmem_we   : std_logic;
+    rd_addr   : std_logic_vector(REG_WIDTH-1 downto 0);
+    rd_we     : std_logic;
+  end record;
+
+  type E_REG_ME_WB is record
+    alu_result: std_logic_vector(XLEN-1 downto 0);
+    dmem_re   : std_logic;
+    rd_addr   : std_logic_vector(REG_WIDTH-1 downto 0);
+    rd_we     : std_logic;
+  end record;
+
+  type E_WB is record
+    rd_addr   : std_logic_vector(REG_WIDTH-1 downto 0);
+    rd_data   : std_logic_vector(XLEN-1 downto 0);
+    rd_we     : std_logic;
+  end record;
+
+  type T_RADDR_ARRAY is array(0 to 1) of std_logic_vector(REG_WIDTH-1 downto 0);
+  type T_RDATA_ARRAY is array(0 to 1) of std_logic_vector(XLEN-1 downto 0);
+
+  ------------------------------------------------------------------------------
+  --  INSTRUCTION FORMATS
   ------------------------------------------------------------------------------
   -- COMPONENTS
   ------------------------------------------------------------------------------

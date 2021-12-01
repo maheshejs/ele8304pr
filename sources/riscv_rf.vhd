@@ -29,10 +29,8 @@ entity riscv_rf is
 end entity riscv_rf;
 
 architecture arch of riscv_rf is
-  type T_RADDR_ARRAY is array(0 to 1) of std_logic_vector(REG_WIDTH-1 downto 0);
-  type T_RDATA_ARRAY is array(0 to 1) of std_logic_vector(XLEN-1 downto 0);
   type T_FILE is array(0 to 2**REG_WIDTH-1) of std_logic_vector(XLEN-1 downto 0);
-  constant s_addr_zero  : std_logic_vector(REG_WIDTH-1 downto  0) := (others => '0');
+  constant K_ADDR_ZERO  : std_logic_vector(REG_WIDTH-1 downto  0) := (others => '0');
   signal s_file         : T_FILE := (others => (others => '0'));
   signal s_addr_r       : T_RADDR_ARRAY;  
   signal s_data_r       : T_RDATA_ARRAY;  
@@ -46,7 +44,7 @@ begin
   begin
     if (rising_edge(i_clk)) then
       -- write
-      if (i_we = '1' and i_addr_w /= s_addr_zero) then
+      if (i_we = '1' and i_addr_w /= K_ADDR_ZERO) then
         s_file(to_integer(unsigned(i_addr_w))) <= i_data_w;
       end if;
       
