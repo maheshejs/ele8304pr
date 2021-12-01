@@ -26,7 +26,7 @@ entity riscv_ex is
       o_reg_ex_me : out E_REG_EX_ME
     );
 end entity riscv_ex;
-
+
 architecture arch of riscv_ex is
 
   function nor_reduce(arg: std_logic_vector) return std_logic is
