@@ -32,13 +32,13 @@ package riscv_pkg is
   -- ALU
   ------------------------------------------------------------------------------
     constant ALUOP_WIDTH : natural := 3;
-    constant ALUOP_ADD   : std_logic_vector(ALUOP_WIDTH-1 downto 0) := std_logic_vector(to_unsigned(0, ALUOP_WIDTH));
-    constant ALUOP_SL    : std_logic_vector(ALUOP_WIDTH-1 downto 0) := std_logic_vector(to_unsigned(1, ALUOP_WIDTH));
-    constant ALUOP_SLT   : std_logic_vector(ALUOP_WIDTH-1 downto 0) := std_logic_vector(to_unsigned(2, ALUOP_WIDTH));
-    constant ALUOP_XOR   : std_logic_vector(ALUOP_WIDTH-1 downto 0) := std_logic_vector(to_unsigned(4, ALUOP_WIDTH));
-    constant ALUOP_SR    : std_logic_vector(ALUOP_WIDTH-1 downto 0) := std_logic_vector(to_unsigned(5, ALUOP_WIDTH));
-    constant ALUOP_OR    : std_logic_vector(ALUOP_WIDTH-1 downto 0) := std_logic_vector(to_unsigned(6, ALUOP_WIDTH));
-    constant ALUOP_AND   : std_logic_vector(ALUOP_WIDTH-1 downto 0) := std_logic_vector(to_unsigned(7, ALUOP_WIDTH));
+    constant ALUOP_ADD   : std_logic_vector(ALUOP_WIDTH-1 downto 0) := "000";
+    constant ALUOP_SL    : std_logic_vector(ALUOP_WIDTH-1 downto 0) := "001";
+    constant ALUOP_SLT   : std_logic_vector(ALUOP_WIDTH-1 downto 0) := "010";
+    constant ALUOP_XOR   : std_logic_vector(ALUOP_WIDTH-1 downto 0) := "100";
+    constant ALUOP_SR    : std_logic_vector(ALUOP_WIDTH-1 downto 0) := "101";
+    constant ALUOP_OR    : std_logic_vector(ALUOP_WIDTH-1 downto 0) := "110";
+    constant ALUOP_AND   : std_logic_vector(ALUOP_WIDTH-1 downto 0) := "111";
 
   ------------------------------------------------------------------------------
   -- DEFINITIONS
