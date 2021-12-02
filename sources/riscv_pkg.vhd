@@ -227,4 +227,45 @@ package riscv_pkg is
           o_wb        : out E_WB
         );
     end component riscv_wb;
+
+    component riscv_core
+        port (
+          i_rstn        : in std_logic;
+          i_clk         : in std_logic;
+          o_imem_en     : out std_logic;
+          o_imem_addr   : out std_logic_vector(8 downto 0);
+          i_imem_read   : in std_logic_vector(31 downto 0);
+          o_dmem_en     : out std_logic;
+          o_dmem_we     : out std_logic;
+          o_dmem_addr   : out std_logic_vector(8 downto 0);
+          i_dmem_read   : in std_logic_vector(31 downto 0);
+          o_dmem_write  : out std_logic_vector(31 downto 0)
+        );
+    end component riscv_core;
+
+    component dpm
+        generic (
+          WIDTH : integer := 32;
+          DEPTH : integer := 10;
+          RESET : integer := 16#00000000#;
+          INIT  : string  := "memory.mem"
+        );
+        port (
+          i_a_clk   : in  std_logic;
+          i_a_rstn  : in  std_logic;
+          i_a_en    : in  std_logic;
+          i_a_we    : in  std_logic;
+          i_a_addr  : in  std_logic_vector(DEPTH-1 downto 0);
+          i_a_write : in  std_logic_vector(WIDTH-1 downto 0);
+          o_a_read  : out std_logic_vector(WIDTH-1 downto 0);
+          i_b_clk   : in  std_logic;
+          i_b_rstn  : in  std_logic;
+          i_b_en    : in  std_logic;
+          i_b_we    : in  std_logic;
+          
+          i_b_addr  : in  std_logic_vector(DEPTH-1 downto 0);
+          i_b_write : in  std_logic_vector(WIDTH-1 downto 0);
+          o_b_read  : out std_logic_vector(WIDTH-1 downto 0)
+        );
+    end component dpm;
 end package riscv_pkg;

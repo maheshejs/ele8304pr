@@ -95,4 +95,7 @@ begin
     o_wb        => s_wb
   );
 
+  -- Outputs
+  o_imem_en <= '1';
+
 end architecture arch;

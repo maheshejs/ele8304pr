@@ -90,7 +90,10 @@ begin
     end if;
   end process;
 
-  s_ex.transfert <= i_reg_id_ex.jump or (i_reg_id_ex.branch and not or_reduce(s_alu_result));
+  s_ex.flush      <= '0';
+  s_ex.stall      <= '0';
+  s_ex.target     <= (others => '0');
+  s_ex.transfert  <= i_reg_id_ex.jump or (i_reg_id_ex.branch and not or_reduce(s_alu_result));
 
   -- Outputs
   o_ex        <= s_ex;
