@@ -2,9 +2,6 @@ library IEEE;
 use IEEE.Std_logic_1164.all;
 use IEEE.Numeric_Std.all;
 
-entity riscv_adder_tb is
-end;
-
 architecture bench of riscv_adder_tb is
 
   component riscv_adder
