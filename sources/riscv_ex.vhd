@@ -45,6 +45,8 @@ architecture arch of riscv_ex is
   signal s_src1       : std_logic_vector(XLEN-1 downto 0);
   signal s_src2       : std_logic_vector(XLEN-1 downto 0);
   signal s_alu_result : std_logic_vector(XLEN-1 downto 0);
+  signal s_pc         : std_logic_vector(XLEN-1 downto 0);
+  signal s_sum        : std_logic_vector(XLEN downto 0);
 
 begin
 
@@ -59,11 +61,27 @@ begin
     o_res    => s_alu_result
   );
 
-  s_src1  <=  i_rs_data(0);
-  s_src2  <=  i_reg_id_ex.immed when i_reg_id_ex.alu_type = '1' else
-              i_rs_data(1);
+  s_src1  <=  i_reg_id_ex.pc when i_reg_id_ex.jump = '1' else
+              i_rs_data(0);
+  s_src2  <=  i_rs_data(1) when i_reg_id_ex.alu_type = '0' else
+              std_logic_vector(to_signed(4, s_src2'length)) when i_reg_id_ex.jump = '1' else
+              i_reg_id_ex.immed;
 
-  
+  X_ADDER : riscv_adder 
+  generic map(
+    N       => XLEN
+  )
+  port map (
+    i_a     => s_pc,
+    i_b     => i_reg_id_ex.immed,
+    i_sign  => '0',
+    i_sub   => '0',
+    o_sum   => s_sum
+  );
+
+  s_pc  <=  i_rs_data(0) when i_reg_id_ex.jump_type = '1' else
+            i_reg_id_ex.pc;
+
   P_REG_ID_EX : process(i_clk, i_rstn)
   begin
     if (rising_edge(i_clk)) then
@@ -92,7 +110,7 @@ begin
 
   s_ex.flush      <= '0';
   s_ex.stall      <= '0';
-  s_ex.target     <= (others => '0');
+  s_ex.target     <= s_sum(XLEN-1 downto 0);
   s_ex.transfert  <= i_reg_id_ex.jump or (i_reg_id_ex.branch and not or_reduce(s_alu_result));
 
   -- Outputs

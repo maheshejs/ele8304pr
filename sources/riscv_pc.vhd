@@ -50,7 +50,7 @@ begin
     end if;
   end process;
 
-  X_RISCV_ADDER : riscv_adder 
+  X_ADDER : riscv_adder 
   generic map(
       N       => XLEN
   )

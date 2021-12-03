@@ -54,6 +54,8 @@ package riscv_pkg is
     alu_op    : std_logic_vector(ALUOP_WIDTH-1 downto 0);
     branch    : std_logic;
     jump      : std_logic;
+    jump_type : std_logic;
+    pc        : std_logic_vector(XLEN-1 downto 0);
     dmem_re   : std_logic;
     dmem_we   : std_logic;
     rd_addr   : std_logic_vector(REG_WIDTH-1 downto 0);
@@ -180,6 +182,7 @@ package riscv_pkg is
           i_ex        : in E_EX;
           i_imem_read : in std_logic_vector(DPM_WIDTH-1 downto 0);
           o_imem_addr : out std_logic_vector(DPM_DEPTH-1 downto 0);
+          o_pc        : out std_logic_vector(XLEN-1 downto 0);
           o_reg_if_id : out E_REG_IF_ID
         );
     end component riscv_if;
@@ -188,6 +191,7 @@ package riscv_pkg is
         port (
           i_clk       : in std_logic;
           i_rstn      : in std_logic;
+          i_pc        : in std_logic_vector(XLEN-1 downto 0);
           i_reg_if_id : in E_REG_IF_ID;
           i_wb        : in E_WB;
           i_flush     : in std_logic;

@@ -19,6 +19,7 @@ entity riscv_id is
       i_clk       : in std_logic;
       i_rstn      : in std_logic;
       --
+      i_pc        : in std_logic_vector(XLEN-1 downto 0);
       i_reg_if_id : in E_REG_IF_ID;
       --
       i_wb        : in E_WB;
@@ -43,7 +44,7 @@ architecture arch of riscv_id is
   constant K_REG_ID_EX_ZERO : E_REG_ID_EX := 
                               (
                                 alu_arith => '0', alu_sign  => '0', alu_type  => '0', alu_op  => (others => '0'),
-                                branch    => '0', jump      => '0',
+                                branch    => '0', jump      => '0', jump_type => '0', pc  => (others => '0'),
                                 dmem_re   => '0', dmem_we   => '0',
                                 rd_we     => '0', rd_addr   => (others => '0'),
                                 immed     => (others => '0')
@@ -133,17 +134,19 @@ begin
   begin
 
     -- default values
-    s_nreg_id_ex.alu_arith <= '0';
-    s_nreg_id_ex.alu_sign  <= '1';
-    s_nreg_id_ex.alu_type  <= '1';
-    s_nreg_id_ex.alu_op    <= s_inst.funct3;
-    s_nreg_id_ex.branch    <= '0';
-    s_nreg_id_ex.jump      <= '0';
-    s_nreg_id_ex.dmem_re   <= '0';
-    s_nreg_id_ex.dmem_we   <= '0';
-    s_nreg_id_ex.rd_addr   <= s_inst.rd_addr;
-    s_nreg_id_ex.rd_we     <= '1';
-    s_nreg_id_ex.immed     <= s_inst.immed;
+    s_nreg_id_ex.alu_arith  <= '0';
+    s_nreg_id_ex.alu_sign   <= '1';
+    s_nreg_id_ex.alu_type   <= '1';
+    s_nreg_id_ex.alu_op     <= s_inst.funct3;
+    s_nreg_id_ex.branch     <= '0';
+    s_nreg_id_ex.jump       <= '0';
+    s_nreg_id_ex.jump_type  <= '0';
+    s_nreg_id_ex.pc         <= i_pc;
+    s_nreg_id_ex.dmem_re    <= '0';
+    s_nreg_id_ex.dmem_we    <= '0';
+    s_nreg_id_ex.rd_addr    <= s_inst.rd_addr;
+    s_nreg_id_ex.rd_we      <= '1';
+    s_nreg_id_ex.immed      <= s_inst.immed;
 
     case s_inst.opcode is
       when "0110011" | "0010011" =>       -- ARITH & LOGIC
@@ -170,14 +173,17 @@ begin
         s_nreg_id_ex.rd_we    <= '0';
       when "1100111" | "1101111" =>       -- JAL*
         s_nreg_id_ex.jump     <= '1';
+        if s_inst.opcode = "1100111" then -- JALR
+          s_nreg_id_ex.jump_type  <= '1';
+        end if;
       when "0000011" =>                   -- LW
         s_nreg_id_ex.dmem_re  <= '1';
       when "0100011" =>                   -- SW
         s_nreg_id_ex.dmem_we  <= '1';
         s_nreg_id_ex.rd_we    <= '0';
       when others =>                      -- NOOP
-        s_nreg_id_ex.alu_op    <= ALUOP_OR; 
-        s_nreg_id_ex.rd_we     <= '0';
+        s_nreg_id_ex.alu_op   <= ALUOP_OR; 
+        s_nreg_id_ex.rd_we    <= '0';
     end case;
 
   end process;

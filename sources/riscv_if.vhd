@@ -24,11 +24,16 @@ entity riscv_if is
       i_imem_read : in std_logic_vector(DPM_WIDTH-1 downto 0);
       --
       o_imem_addr : out std_logic_vector(DPM_DEPTH-1 downto 0);
+      o_pc        : out std_logic_vector(XLEN-1 downto 0);
       o_reg_if_id : out E_REG_IF_ID
     );
 end entity riscv_if;
 
 architecture arch of riscv_if is
+  constant K_REG_IF_ID_ZERO : E_REG_IF_ID := 
+                              (
+                                imem_read => (others => '0')
+                              );
   signal s_pc         : std_logic_vector(XLEN-1 downto 0);
   signal s_reg_if_id  : E_REG_IF_ID;
 
@@ -51,22 +56,25 @@ begin
   begin
     if (rising_edge(i_clk)) then
       if (i_ex.stall = '0') then
-        s_reg_if_id.imem_read <= i_imem_read; 
+        s_reg_if_id <=  (
+                          imem_read   => i_imem_read
+                        );
       end if;
 
       if (i_ex.flush = '1') then
-        s_reg_if_id.imem_read <= (others => '0'); 
+        s_reg_if_id <= K_REG_IF_ID_ZERO; 
       end if;
     end if;
     
     -- Asynchronous reset
     if (i_rstn = '0') then
-      s_reg_if_id.imem_read <= (others => '0'); 
+      s_reg_if_id <= K_REG_IF_ID_ZERO; 
     end if;
   end process;
 
   -- Outputs
-  o_imem_addr <= s_pc(DPM_DEPTH+1 downto 2); -- TODO : Overflow
+  o_imem_addr <= s_pc(DPM_DEPTH+1 downto 2); 
+  o_pc        <= s_pc;
   o_reg_if_id <= s_reg_if_id;
 
 end architecture arch;
