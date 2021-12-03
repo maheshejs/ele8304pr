@@ -19,7 +19,6 @@ entity riscv_id is
       i_clk       : in std_logic;
       i_rstn      : in std_logic;
       --
-      i_pc        : in std_logic_vector(XLEN-1 downto 0);
       i_reg_if_id : in E_REG_IF_ID;
       --
       i_wb        : in E_WB;
@@ -141,7 +140,7 @@ begin
     s_nreg_id_ex.branch     <= '0';
     s_nreg_id_ex.jump       <= '0';
     s_nreg_id_ex.jump_type  <= '0';
-    s_nreg_id_ex.pc         <= i_pc;
+    s_nreg_id_ex.pc         <= i_reg_if_id.pc;
     s_nreg_id_ex.dmem_re    <= '0';
     s_nreg_id_ex.dmem_we    <= '0';
     s_nreg_id_ex.rd_addr    <= s_inst.rd_addr;

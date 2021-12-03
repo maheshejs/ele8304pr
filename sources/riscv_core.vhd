@@ -36,7 +36,6 @@ end entity riscv_core;
 
 architecture arch of riscv_core is
   signal s_ex         : E_EX;
-  signal s_pc         : std_logic_vector(XLEN-1 downto 0);
   signal s_reg_if_id  : E_REG_IF_ID;
   signal s_reg_id_ex  : E_REG_ID_EX;
   signal s_reg_ex_me  : E_REG_EX_ME;
@@ -53,7 +52,6 @@ begin
     i_ex        => s_ex,
     i_imem_read => i_imem_read,
     o_imem_addr => o_imem_addr,
-    o_pc        => s_pc,
     o_reg_if_id => s_reg_if_id
   );
 
@@ -61,7 +59,6 @@ begin
   port map(
     i_clk       => i_clk,
     i_rstn      => i_rstn,
-    i_pc        => s_pc,
     i_reg_if_id => s_reg_if_id,
     i_wb        => s_wb,
     i_flush     => s_ex.flush,

@@ -45,6 +45,7 @@ package riscv_pkg is
   ------------------------------------------------------------------------------
   type E_REG_IF_ID is record
     imem_read : std_logic_vector(DPM_WIDTH-1 downto 0);
+    pc        : std_logic_vector(XLEN-1 downto 0);
   end record;
 
   type E_REG_ID_EX is record
@@ -182,7 +183,6 @@ package riscv_pkg is
           i_ex        : in E_EX;
           i_imem_read : in std_logic_vector(DPM_WIDTH-1 downto 0);
           o_imem_addr : out std_logic_vector(DPM_DEPTH-1 downto 0);
-          o_pc        : out std_logic_vector(XLEN-1 downto 0);
           o_reg_if_id : out E_REG_IF_ID
         );
     end component riscv_if;
@@ -191,7 +191,6 @@ package riscv_pkg is
         port (
           i_clk       : in std_logic;
           i_rstn      : in std_logic;
-          i_pc        : in std_logic_vector(XLEN-1 downto 0);
           i_reg_if_id : in E_REG_IF_ID;
           i_wb        : in E_WB;
           i_flush     : in std_logic;

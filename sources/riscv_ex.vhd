@@ -108,7 +108,7 @@ begin
     end if;
   end process;
 
-  s_ex.flush      <= '0';
+  s_ex.flush      <= i_reg_id_ex.jump or (i_reg_id_ex.branch and not or_reduce(s_alu_result));
   s_ex.stall      <= '0';
   s_ex.target     <= s_sum(XLEN-1 downto 0);
   s_ex.transfert  <= i_reg_id_ex.jump or (i_reg_id_ex.branch and not or_reduce(s_alu_result));
