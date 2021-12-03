@@ -25,6 +25,7 @@ entity riscv_id is
       --
       i_flush     : in std_logic;
       --
+      o_rs_addr   : out T_RADDR_ARRAY;
       o_rs_data   : out T_RDATA_ARRAY;
       o_reg_id_ex : out E_REG_ID_EX
     );
@@ -52,6 +53,7 @@ architecture arch of riscv_id is
   signal s_inst       : E_INST;
   signal s_reg_id_ex  : E_REG_ID_EX;
   signal s_nreg_id_ex : E_REG_ID_EX;
+  signal s_rs_addr    : T_RADDR_ARRAY;
   signal s_rs_data    : T_RDATA_ARRAY;
 
 begin
@@ -77,6 +79,8 @@ begin
       if (i_flush = '1') then
         s_reg_id_ex <= K_REG_ID_EX_ZERO;
       end if;
+      -- rs_addr clocked for EX
+      s_rs_addr   <= s_inst.rs_addr;
     end if;
     
     -- Asynchronous reset
@@ -189,6 +193,7 @@ begin
 
   -- Outputs
   o_reg_id_ex <= s_reg_id_ex;
+  o_rs_addr   <= s_rs_addr;
   o_rs_data   <= s_rs_data;
 
 end architecture arch;

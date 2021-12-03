@@ -194,6 +194,7 @@ package riscv_pkg is
           i_reg_if_id : in E_REG_IF_ID;
           i_wb        : in E_WB;
           i_flush     : in std_logic;
+          o_rs_addr   : out T_RADDR_ARRAY;
           o_rs_data   : out T_RDATA_ARRAY;
           o_reg_id_ex : out E_REG_ID_EX
         );
@@ -203,8 +204,11 @@ package riscv_pkg is
         port (
           i_clk       : in std_logic;
           i_rstn      : in std_logic;
+          i_rs_addr   : in T_RADDR_ARRAY;
           i_rs_data   : in T_RDATA_ARRAY;
           i_reg_id_ex : in E_REG_ID_EX;
+          i_reg_ex_me : in E_REG_EX_ME;
+          i_wb        : in E_WB;
           o_ex        : out E_EX;
           o_reg_ex_me : out E_REG_EX_ME
         );

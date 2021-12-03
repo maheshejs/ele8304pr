@@ -19,8 +19,12 @@ entity riscv_ex is
       i_clk       : in std_logic;
       i_rstn      : in std_logic;
       --
+      i_rs_addr   : in T_RADDR_ARRAY;
       i_rs_data   : in T_RDATA_ARRAY;
       i_reg_id_ex : in E_REG_ID_EX;
+      --
+      i_reg_ex_me : in E_REG_EX_ME;
+      i_wb        : in E_WB;
       --
       o_ex        : out E_EX;
       o_reg_ex_me : out E_REG_EX_ME
@@ -41,10 +45,11 @@ architecture arch of riscv_ex is
 
   signal s_ex         : E_EX;
   signal s_reg_ex_me  : E_REG_EX_ME;
+  signal s_rs_data    : T_RDATA_ARRAY;
+  signal s_alu_result : std_logic_vector(XLEN-1 downto 0);
   signal s_shamt      : std_logic_vector(SHAMT_WIDTH-1 downto 0);
   signal s_src1       : std_logic_vector(XLEN-1 downto 0);
   signal s_src2       : std_logic_vector(XLEN-1 downto 0);
-  signal s_alu_result : std_logic_vector(XLEN-1 downto 0);
   signal s_pc         : std_logic_vector(XLEN-1 downto 0);
   signal s_sum        : std_logic_vector(XLEN downto 0);
 
@@ -62,8 +67,8 @@ begin
   );
 
   s_src1  <=  i_reg_id_ex.pc when i_reg_id_ex.jump = '1' else
-              i_rs_data(0);
-  s_src2  <=  i_rs_data(1) when i_reg_id_ex.alu_type = '0' else
+              s_rs_data(0);
+  s_src2  <=  s_rs_data(1) when i_reg_id_ex.alu_type = '0' else
               std_logic_vector(to_signed(4, s_src2'length)) when i_reg_id_ex.jump = '1' else
               i_reg_id_ex.immed;
 
@@ -79,7 +84,7 @@ begin
     o_sum   => s_sum
   );
 
-  s_pc  <=  i_rs_data(0) when i_reg_id_ex.jump_type = '1' else
+  s_pc  <=  s_rs_data(0) when i_reg_id_ex.jump_type = '1' else
             i_reg_id_ex.pc;
 
   P_REG_ID_EX : process(i_clk, i_rstn)
@@ -87,7 +92,7 @@ begin
     if (rising_edge(i_clk)) then
       s_reg_ex_me <=  (
                         alu_result  => s_alu_result,
-                        dmem_write  => i_rs_data(1),
+                        dmem_write  => s_rs_data(1),
                         dmem_re     => i_reg_id_ex.dmem_re,
                         dmem_we     => i_reg_id_ex.dmem_we,
                         rd_addr     => i_reg_id_ex.rd_addr,
@@ -108,8 +113,24 @@ begin
     end if;
   end process;
 
+  P_FORWARDING : process(i_reg_ex_me, i_wb, i_rs_data)
+  begin
+    -- default values
+    s_rs_data <= i_rs_data;
+
+    for I in 0 to 1 loop
+      if (i_wb.rd_we = '1' and i_wb.rd_addr = i_rs_addr(I)) then
+        s_rs_data(I) <= i_wb.rd_data;
+      end if;
+      --
+      if (i_reg_ex_me.rd_we = '1' and i_reg_ex_me.rd_addr = i_rs_addr(I)) then
+        s_rs_data(I) <= i_reg_ex_me.alu_result;
+      end if;
+    end loop;
+  end process;
+
   s_ex.flush      <= i_reg_id_ex.jump or (i_reg_id_ex.branch and not or_reduce(s_alu_result));
-  s_ex.stall      <= '0';
+  s_ex.stall      <= i_reg_id_ex.dmem_re;
   s_ex.target     <= s_sum(XLEN-1 downto 0);
   s_ex.transfert  <= i_reg_id_ex.jump or (i_reg_id_ex.branch and not or_reduce(s_alu_result));
 
