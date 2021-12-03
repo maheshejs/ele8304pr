@@ -29,12 +29,12 @@ entity riscv_alu is
 end entity riscv_alu;
 
 architecture arch of riscv_alu is
-    signal s_less   		: std_logic; 
-    signal s_adder  		: std_logic_vector(XLEN downto 0); 
-    signal s_and    		: std_logic_vector(XLEN-1 downto 0); 
-    signal s_xor    		: std_logic_vector(XLEN-1 downto 0); 
-    signal s_or     		: std_logic_vector(XLEN-1 downto 0); 
-		signal s_sr_result	: std_logic_vector(XLEN-1 downto 0); 
+    signal s_less       : std_logic; 
+    signal s_adder      : std_logic_vector(XLEN downto 0); 
+    signal s_and        : std_logic_vector(XLEN-1 downto 0); 
+    signal s_xor        : std_logic_vector(XLEN-1 downto 0); 
+    signal s_or         : std_logic_vector(XLEN-1 downto 0); 
+    signal s_sr_result  : std_logic_vector(XLEN-1 downto 0); 
 begin
 
     X_ADDER : riscv_adder 
@@ -62,8 +62,8 @@ begin
               not s_adder(XLEN) when i_arith = '1' else
               '0';
 
-		s_sr_result <= 	std_logic_vector(shift_right(signed(i_src1), to_integer(unsigned(i_shamt)))) when i_arith = '1' else 
-										std_logic_vector(shift_right(unsigned(i_src1), to_integer(unsigned(i_shamt))));
+    s_sr_result <=  std_logic_vector(shift_right(signed(i_src1), to_integer(unsigned(i_shamt)))) when i_arith = '1' else 
+                    std_logic_vector(shift_right(unsigned(i_src1), to_integer(unsigned(i_shamt))));
 
     -- Outputs
     with i_opcode select o_res <=
@@ -75,7 +75,7 @@ begin
           when ALUOP_SLT,
         s_xor 
           when ALUOP_XOR,
-				s_sr_result
+        s_sr_result
           when ALUOP_SR,
         s_or 
           when ALUOP_OR,

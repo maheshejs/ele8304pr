@@ -88,7 +88,6 @@ begin
 
   P_PREDECODE : process(i_reg_if_id)
     variable imem_read  : std_logic_vector(DPM_WIDTH-1 downto 0);
-    variable op : std_logic_vector(6 downto 0);
   begin
     imem_read := i_reg_if_id.imem_read;
 
@@ -103,9 +102,7 @@ begin
     s_inst.immed(10 downto 0)       <= imem_read(30 downto 20);
     s_inst.immed(XLEN-1 downto 11)  <= (others => imem_read(DPM_WIDTH-1));
 
-    -- TODO : Assert 2 least significant bits of s_inst.opcode = "11" 
-    op := imem_read(6 downto 0);
-    case op is
+    case imem_read(6 downto 0) is
       when "0110011" => -- R-TYPE
         null; -- don't care
       when "0010011" | "1100111" | "0000011" => -- I-TYPE 
@@ -125,9 +122,9 @@ begin
         s_inst.immed(XLEN-1 downto 12)  <= imem_read(DPM_WIDTH-1 downto 12);
         -- For LUI, translate rs1 with 0
         s_inst.rs_addr(0)               <= (others => '0');
-      when others =>  -- NOOP
-        s_inst.immed										<= (others => '0');
-				s_inst.rs_addr(0)								<= (others => '0');
+      when others =>    -- NOP
+        s_inst.immed                    <= (others => '0');
+        s_inst.rs_addr(0)               <= (others => '0');
     end case;
   end process;
 
@@ -148,17 +145,16 @@ begin
     s_nreg_id_ex.rd_we     <= '1';
     s_nreg_id_ex.immed     <= s_inst.immed;
 
-    op := s_inst.opcode(6 downto 0);
-    case op is
-      when "0110011" | "0010011" =>         -- ARITH & LOGIC
+    case s_inst.opcode is
+      when "0110011" | "0010011" =>       -- ARITH & LOGIC
         if op = "0110011" then
           s_nreg_id_ex.alu_type  <= '0';
-					s_nreg_id_ex.alu_arith <= s_inst.funct7(5);
-				elsif s_inst.funct3 = "101" then
-					s_nreg_id_ex.alu_arith <= '1';
+          s_nreg_id_ex.alu_arith <= s_inst.funct7(5);
+        elsif s_inst.funct3 = "101" then
+          s_nreg_id_ex.alu_arith <= '1';
         end if;
         --
-        if s_inst.funct3 = "011" then	-- SLT
+        if s_inst.funct3 = "011" then     -- SLT
           s_nreg_id_ex.alu_arith  <= '1';
           s_nreg_id_ex.alu_sign   <= '0';
           s_nreg_id_ex.alu_op     <= ALUOP_SLT;
@@ -172,16 +168,16 @@ begin
         s_nreg_id_ex.alu_op   <= ALUOP_XOR;
         s_nreg_id_ex.alu_type <= '0';
         s_nreg_id_ex.rd_we    <= '0';
-      when "1100111" | "1101111" =>         -- JAL*
+      when "1100111" | "1101111" =>       -- JAL*
         s_nreg_id_ex.jump     <= '1';
       when "0000011" =>                   -- LW
         s_nreg_id_ex.dmem_re  <= '1';
       when "0100011" =>                   -- SW
         s_nreg_id_ex.dmem_we  <= '1';
         s_nreg_id_ex.rd_we    <= '0';
-      when others =>			-- NOOP
-        s_nreg_id_ex.alu_op		<= ALUOP_OR; 
-				s_nreg_id_ex.rd_we 		<= '0';
+      when others =>                      -- NOP
+        s_nreg_id_ex.alu_op   <= ALUOP_OR; 
+        s_nreg_id_ex.rd_we    <= '0';
     end case;
 
   end process;
