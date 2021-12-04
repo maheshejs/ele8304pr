@@ -76,7 +76,8 @@ begin
     i_rs_data   => s_rs_data,
     i_reg_id_ex => s_reg_id_ex,
     i_reg_ex_me => s_reg_ex_me,
-    i_wb        => s_wb,
+    i_reg_me_wb => s_reg_me_wb,
+    i_dmem_read => i_dmem_read,
     o_ex        => s_ex,
     o_reg_ex_me => s_reg_ex_me
   );

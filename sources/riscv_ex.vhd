@@ -24,7 +24,8 @@ entity riscv_ex is
       i_reg_id_ex : in E_REG_ID_EX;
       --
       i_reg_ex_me : in E_REG_EX_ME;
-      i_wb        : in E_WB;
+      i_reg_me_wb : in E_REG_ME_WB;
+      i_dmem_read : in std_logic_vector(DPM_WIDTH-1 downto 0);
       --
       o_ex        : out E_EX;
       o_reg_ex_me : out E_REG_EX_ME
@@ -43,6 +44,9 @@ architecture arch of riscv_ex is
       return result;
   end;
 
+  signal s_flush      : std_logic := '0';
+  signal s_reg_flush  : std_logic := '0';
+  signal s_reg_dmem_re: std_logic := '0';
   signal s_ex         : E_EX;
   signal s_reg_ex_me  : E_REG_EX_ME;
   signal s_rs_data    : T_RDATA_ARRAY;
@@ -113,24 +117,47 @@ begin
     end if;
   end process;
 
-  P_FORWARDING : process(i_reg_ex_me, i_wb, i_rs_data)
+  P_FORWARDING : process(i_reg_ex_me, i_reg_me_wb, i_rs_data)
   begin
     -- default values
     s_rs_data <= i_rs_data;
 
     for I in 0 to 1 loop
-      if (i_wb.rd_we = '1' and i_wb.rd_addr = i_rs_addr(I)) then
-        s_rs_data(I) <= i_wb.rd_data;
+      if (i_reg_me_wb.rd_addr = i_rs_addr(I)) then
+        if (i_reg_me_wb.rd_we = '1' or i_reg_me_wb.dmem_we = '1') then
+          if (i_reg_me_wb.dmem_re = '1') then
+            s_rs_data(I) <= i_dmem_read;
+          else
+            s_rs_data(I) <= i_reg_me_wb.alu_result;
+          end if;
+        end if;
       end if;
       --
-      if (i_reg_ex_me.rd_we = '1' and i_reg_ex_me.rd_addr = i_rs_addr(I)) then
-        s_rs_data(I) <= i_reg_ex_me.alu_result;
+      if (i_reg_ex_me.rd_addr = i_rs_addr(I)) then
+        if (i_reg_ex_me.rd_we = '1' or i_reg_ex_me.dmem_we = '1') then
+          s_rs_data(I) <= i_reg_ex_me.alu_result;
+        end if;
       end if;
     end loop;
   end process;
 
-  s_ex.flush      <= i_reg_id_ex.jump or (i_reg_id_ex.branch and not or_reduce(s_alu_result));
-  s_ex.stall      <= i_reg_id_ex.dmem_re;
+  P_STALLING : process(i_clk)
+  begin
+    if (rising_edge(i_clk)) then
+      s_reg_dmem_re <= i_reg_id_ex.dmem_re;
+    end if;
+  end process;
+
+  P_FLUSHING : process(i_clk)
+  begin
+    if (rising_edge(i_clk)) then
+      s_reg_flush <= s_flush;
+    end if;
+  end process;
+  s_flush         <= i_reg_id_ex.jump or (i_reg_id_ex.branch and not or_reduce(s_alu_result));
+
+  s_ex.flush      <= s_flush or s_reg_flush;
+  s_ex.stall      <= not s_reg_dmem_re and i_reg_id_ex.dmem_re;
   s_ex.target     <= s_sum(XLEN-1 downto 0);
   s_ex.transfert  <= i_reg_id_ex.jump or (i_reg_id_ex.branch and not or_reduce(s_alu_result));
 

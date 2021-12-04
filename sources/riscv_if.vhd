@@ -56,18 +56,14 @@ begin
   P_REG_IF_ID : process(i_clk, i_rstn)
   begin
     if (rising_edge(i_clk)) then
-      if (i_ex.stall = '0') then
-        s_reg_if_id <=  (
-                          imem_read   => i_imem_read,
-                          pc          => s_dly_pc
-                        );
-      end if;
-
-      if (i_ex.flush = '1') then
-        s_reg_if_id <= K_REG_IF_ID_ZERO; 
-      end if;
       -- s_pc delayed for ID
-      s_dly_pc <= s_pc;
+      s_dly_pc        <= s_pc;
+      s_reg_if_id.pc  <= s_dly_pc; 
+      --
+      s_reg_if_id.imem_read <= i_imem_read; 
+      if (i_ex.flush = '1') then
+        s_reg_if_id.imem_read <= (others => '0'); 
+      end if;
     end if;
     
     -- Asynchronous reset

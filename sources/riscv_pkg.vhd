@@ -76,6 +76,7 @@ package riscv_pkg is
   type E_REG_ME_WB is record
     alu_result: std_logic_vector(XLEN-1 downto 0);
     dmem_re   : std_logic;
+    dmem_we   : std_logic;
     rd_addr   : std_logic_vector(REG_WIDTH-1 downto 0);
     rd_we     : std_logic;
   end record;
@@ -208,7 +209,8 @@ package riscv_pkg is
           i_rs_data   : in T_RDATA_ARRAY;
           i_reg_id_ex : in E_REG_ID_EX;
           i_reg_ex_me : in E_REG_EX_ME;
-          i_wb        : in E_WB;
+          i_reg_me_wb : in E_REG_ME_WB;
+          i_dmem_read : in std_logic_vector(DPM_WIDTH-1 downto 0);
           o_ex        : out E_EX;
           o_reg_ex_me : out E_REG_EX_ME
         );

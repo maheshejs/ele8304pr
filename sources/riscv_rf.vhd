@@ -50,7 +50,7 @@ begin
       
       -- read
       for I in 0 to 1 loop
-        if (s_addr_r(I) = i_addr_w) then
+        if (i_we = '1' and i_addr_w /= K_ADDR_ZERO and s_addr_r(I) = i_addr_w) then
           s_data_r(I) <= i_data_w;
         else
           s_data_r(I) <= s_file(to_integer(unsigned(s_addr_r(I))));

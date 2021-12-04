@@ -39,6 +39,7 @@ begin
       s_reg_me_wb <=  (
                         alu_result  => i_reg_ex_me.alu_result,
                         dmem_re     => i_reg_ex_me.dmem_re,
+                        dmem_we     => i_reg_ex_me.dmem_we,
                         rd_addr     => i_reg_ex_me.rd_addr,
                         rd_we       => i_reg_ex_me.rd_we
                       );
@@ -49,6 +50,7 @@ begin
       s_reg_me_wb <=  (
                         alu_result  => (others => '0'),
                         dmem_re     => '0',
+                        dmem_we     => '0',
                         rd_addr     => (others => '0'),
                         rd_we       => '0'
                       );
@@ -56,7 +58,7 @@ begin
   end process;
 
   -- Outputs
-  o_dmem_addr   <= i_reg_ex_me.alu_result(DPM_DEPTH-1 downto 0);
+  o_dmem_addr   <= i_reg_ex_me.alu_result(DPM_DEPTH+1 downto 2);
   o_dmem_en     <= i_reg_ex_me.dmem_re or i_reg_ex_me.dmem_we;
   o_dmem_we     <= i_reg_ex_me.dmem_we;
   o_dmem_write  <= i_reg_ex_me.dmem_write;

@@ -181,9 +181,11 @@ begin
         end if;
       when "0000011" =>                   -- LW
         s_nreg_id_ex.dmem_re  <= '1';
+        s_nreg_id_ex.alu_op   <= ALUOP_ADD;
       when "0100011" =>                   -- SW
         s_nreg_id_ex.dmem_we  <= '1';
         s_nreg_id_ex.rd_we    <= '0';
+        s_nreg_id_ex.alu_op   <= ALUOP_ADD;
       when others =>                      -- NOOP
         s_nreg_id_ex.alu_op   <= ALUOP_OR; 
         s_nreg_id_ex.rd_we    <= '0';
