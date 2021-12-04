@@ -184,6 +184,7 @@ package riscv_pkg is
           i_ex        : in E_EX;
           i_imem_read : in std_logic_vector(DPM_WIDTH-1 downto 0);
           o_imem_addr : out std_logic_vector(DPM_DEPTH-1 downto 0);
+          o_imem_re   : out std_logic;
           o_reg_if_id : out E_REG_IF_ID
         );
     end component riscv_if;

@@ -24,6 +24,7 @@ entity riscv_if is
       i_imem_read : in std_logic_vector(DPM_WIDTH-1 downto 0);
       --
       o_imem_addr : out std_logic_vector(DPM_DEPTH-1 downto 0);
+      o_imem_re   : out std_logic;
       o_reg_if_id : out E_REG_IF_ID
     );
 end entity riscv_if;
@@ -76,6 +77,7 @@ begin
   end process;
 
   -- Outputs
+  o_imem_re   <= not i_ex.stall;
   o_imem_addr <= s_pc(DPM_DEPTH+1 downto 2); 
   o_reg_if_id <= s_reg_if_id;
 

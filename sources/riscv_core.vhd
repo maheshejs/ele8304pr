@@ -53,6 +53,7 @@ begin
     i_ex        => s_ex,
     i_imem_read => i_imem_read,
     o_imem_addr => o_imem_addr,
+    o_imem_re   => o_imem_en,
     o_reg_if_id => s_reg_if_id
   );
 
@@ -102,8 +103,5 @@ begin
     i_reg_me_wb => s_reg_me_wb,
     o_wb        => s_wb
   );
-
-  -- Outputs
-  o_imem_en <= '1';
 
 end architecture arch;
