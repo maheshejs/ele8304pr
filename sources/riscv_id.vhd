@@ -56,7 +56,8 @@ architecture arch of riscv_id is
   signal s_nreg_id_ex : E_REG_ID_EX;
   signal s_rs_addr    : T_RADDR_ARRAY;
   signal s_rs_data    : T_RDATA_ARRAY;
-  signal s_re         : std_logic;
+  signal s_reg_rs_data: T_RDATA_ARRAY;
+  signal s_reg_stall  : std_logic;
 
 begin
 
@@ -72,15 +73,18 @@ begin
     i_addr_rb => s_inst.rs_addr(1),
     o_data_rb => s_rs_data(1)
   );
-  s_re <= not i_stall;
 
   P_REG_ID_EX : process(i_clk, i_rstn)
   begin
     if (rising_edge(i_clk)) then
+      s_reg_stall <= i_stall;
+
       if (i_stall = '0') then
-        s_reg_id_ex <= s_nreg_id_ex;
+        s_reg_id_ex   <= s_nreg_id_ex;
         -- rs_addr clocked for EX
-        s_rs_addr   <= s_inst.rs_addr;
+        s_rs_addr     <= s_inst.rs_addr;
+        --
+        s_reg_rs_data <= s_rs_data;
       end if;
 
       if (i_flush = '1') then
@@ -138,7 +142,7 @@ begin
     end case;
   end process;
 
-  P_DECODE : process(s_inst)
+  P_DECODE : process(s_inst, i_reg_if_id.pc)
   begin
 
     -- default values
@@ -199,8 +203,9 @@ begin
   end process;
 
   -- Outputs
-  o_reg_id_ex <= s_reg_id_ex;
-  o_rs_addr   <= s_rs_addr;
-  o_rs_data   <= s_rs_data;
+  o_reg_id_ex <=  s_reg_id_ex;
+  o_rs_addr   <=  s_rs_addr;
+  o_rs_data   <=  s_reg_rs_data when s_reg_stall = '1' else 
+                  s_rs_data;
 
 end architecture arch;
