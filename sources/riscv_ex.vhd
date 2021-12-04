@@ -151,8 +151,6 @@ begin
   begin
     if (rising_edge(i_clk)) then
       s_reg_dmem_re <= i_reg_id_ex.dmem_re;
-      s_reg_stall   <= s_stall;
-      s_reg2_stall  <= s_reg_stall;
     end if;
   end process;
   s_stall         <=  not s_reg_dmem_re and i_reg_id_ex.dmem_re;
@@ -171,7 +169,7 @@ begin
   s_ex.transfert  <=  i_reg_id_ex.jump or (i_reg_id_ex.branch and not or_reduce(s_alu_result));
 
   -- Outputs
-  o_ex        <= s_ex;
-  o_reg_ex_me <= s_reg_ex_me;
+  o_ex            <= s_ex;
+  o_reg_ex_me     <= s_reg_ex_me;
 
 end architecture arch;
