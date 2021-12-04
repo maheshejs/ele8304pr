@@ -44,20 +44,22 @@ architecture arch of riscv_ex is
       return result;
   end;
 
-  signal s_stall      : std_logic := '0';
-  signal s_stall_state: std_logic := '0';
-  signal s_flush      : std_logic := '0';
-  signal s_reg_flush  : std_logic := '0';
-  signal s_reg_dmem_re: std_logic := '0';
-  signal s_ex         : E_EX;
-  signal s_reg_ex_me  : E_REG_EX_ME;
-  signal s_rs_data    : T_RDATA_ARRAY;
-  signal s_alu_result : std_logic_vector(XLEN-1 downto 0);
-  signal s_shamt      : std_logic_vector(SHAMT_WIDTH-1 downto 0);
-  signal s_src1       : std_logic_vector(XLEN-1 downto 0);
-  signal s_src2       : std_logic_vector(XLEN-1 downto 0);
-  signal s_pc         : std_logic_vector(XLEN-1 downto 0);
-  signal s_sum        : std_logic_vector(XLEN downto 0);
+  signal s_stall          : std_logic := '0';
+  signal s_stall_conflict : std_logic := '0';
+  signal s_nstall_state   : std_logic := '0';
+  signal s_stall_state    : std_logic := '0';
+  signal s_flush          : std_logic := '0';
+  signal s_reg_flush      : std_logic := '0';
+  signal s_reg_dmem_re    : std_logic := '0';
+  signal s_ex             : E_EX;
+  signal s_reg_ex_me      : E_REG_EX_ME;
+  signal s_rs_data        : T_RDATA_ARRAY;
+  signal s_alu_result     : std_logic_vector(XLEN-1 downto 0);
+  signal s_shamt          : std_logic_vector(SHAMT_WIDTH-1 downto 0);
+  signal s_src1           : std_logic_vector(XLEN-1 downto 0);
+  signal s_src2           : std_logic_vector(XLEN-1 downto 0);
+  signal s_pc             : std_logic_vector(XLEN-1 downto 0);
+  signal s_sum            : std_logic_vector(XLEN downto 0);
 
 begin
 
@@ -122,9 +124,11 @@ begin
   P_FORWARDING : process(i_reg_ex_me, i_reg_me_wb, i_rs_data, i_dmem_read)
   begin
     -- default values
-    s_rs_data <= i_rs_data;
+    s_rs_data         <= i_rs_data;
+    s_stall_conflict  <= '0';
 
     for I in 0 to 1 loop
+      -- Source registers are updated in Memory/Write-Back
       if (i_reg_me_wb.rd_addr = i_rs_addr(I)) then
         if (i_reg_me_wb.rd_we = '1') then
           if (i_reg_me_wb.dmem_re = '1') then
@@ -134,10 +138,11 @@ begin
           end if;
         end if;
       end if;
-      --
+      -- Source registers are updated in Execute/Memory
       if (i_reg_ex_me.rd_addr = i_rs_addr(I)) then
         if (i_reg_ex_me.rd_we = '1') then
           if (i_reg_ex_me.dmem_re = '1') then
+            s_stall_conflict <= '1';
             s_rs_data(I) <= i_dmem_read;
           else
             s_rs_data(I) <= i_reg_ex_me.alu_result;
@@ -147,13 +152,33 @@ begin
     end loop;
   end process;
 
-  P_STALLING : process(i_clk)
+  P_STALLING : process(i_clk, i_rstn)
   begin
     if (rising_edge(i_clk)) then
-      s_reg_dmem_re <= i_reg_id_ex.dmem_re;
+      s_stall_state <= s_nstall_state;
+    end if;
+    -- Asynchronous reset
+    if (i_rstn = '0') then
+      s_stall_state  <= '0';
     end if;
   end process;
-  s_stall         <=  not s_reg_dmem_re and i_reg_id_ex.dmem_re;
+
+  P_NSTALLING : process (s_stall_state, i_reg_id_ex.dmem_re)
+  begin
+    -- default values
+    s_nstall_state <= s_stall_state;
+
+    case s_stall_state is
+      when '0'    =>
+        if (i_reg_id_ex.dmem_re = '1') then
+          s_nstall_state <= '1';
+        end if;
+      when '1'    => 
+        s_nstall_state <= '0';
+      when others => 
+        s_nstall_state <= '0';
+    end case;
+  end process;
 
   P_FLUSHING : process(i_clk)
   begin
@@ -164,7 +189,7 @@ begin
   s_flush         <=  i_reg_id_ex.jump or (i_reg_id_ex.branch and not or_reduce(s_alu_result));
 
   s_ex.flush      <=  s_flush or s_reg_flush;
-  s_ex.stall      <=  s_stall;
+  s_ex.stall      <=  not s_stall_state and i_reg_id_ex.dmem_re;
   s_ex.target     <=  s_sum(XLEN-1 downto 0);
   s_ex.transfert  <=  i_reg_id_ex.jump or (i_reg_id_ex.branch and not or_reduce(s_alu_result));
 

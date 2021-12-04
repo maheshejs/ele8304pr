@@ -77,8 +77,6 @@ begin
   P_REG_ID_EX : process(i_clk, i_rstn)
   begin
     if (rising_edge(i_clk)) then
-      s_reg_stall <= i_stall;
-
       if (i_stall = '0') then
         s_reg_id_ex   <= s_nreg_id_ex;
         -- rs_addr clocked for EX
@@ -205,7 +203,7 @@ begin
   -- Outputs
   o_reg_id_ex <=  s_reg_id_ex;
   o_rs_addr   <=  s_rs_addr;
-  o_rs_data   <=  s_reg_rs_data when s_reg_stall = '1' else 
+  o_rs_data   <=  s_reg_rs_data when i_stall = '1' else 
                   s_rs_data;
 
 end architecture arch;
