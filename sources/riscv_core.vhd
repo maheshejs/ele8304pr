@@ -63,6 +63,7 @@ begin
     i_reg_if_id => s_reg_if_id,
     i_wb        => s_wb,
     i_flush     => s_ex.flush,
+    i_stall     => s_ex.stall,
     o_rs_addr   => s_rs_addr,
     o_rs_data   => s_rs_data,
     o_reg_id_ex => s_reg_id_ex
@@ -86,6 +87,7 @@ begin
   port map(
     i_clk       => i_clk,
     i_rstn      => i_rstn,
+    i_stall     => s_ex.stall,
     i_reg_ex_me => s_reg_ex_me,
     o_dmem_addr => o_dmem_addr,
     o_dmem_en   => o_dmem_en,

@@ -44,6 +44,9 @@ architecture arch of riscv_ex is
       return result;
   end;
 
+  signal s_stall      : std_logic := '0';
+  signal s_reg_stall  : std_logic := '0';
+  signal s_reg2_stall : std_logic := '0';
   signal s_flush      : std_logic := '0';
   signal s_reg_flush  : std_logic := '0';
   signal s_reg_dmem_re: std_logic := '0';
@@ -117,14 +120,14 @@ begin
     end if;
   end process;
 
-  P_FORWARDING : process(i_reg_ex_me, i_reg_me_wb, i_rs_data)
+  P_FORWARDING : process(i_reg_ex_me, i_reg_me_wb, i_rs_data, i_dmem_read)
   begin
     -- default values
     s_rs_data <= i_rs_data;
 
     for I in 0 to 1 loop
       if (i_reg_me_wb.rd_addr = i_rs_addr(I)) then
-        if (i_reg_me_wb.rd_we = '1' or i_reg_me_wb.dmem_we = '1') then
+        if (i_reg_me_wb.rd_we = '1') then
           if (i_reg_me_wb.dmem_re = '1') then
             s_rs_data(I) <= i_dmem_read;
           else
@@ -134,8 +137,12 @@ begin
       end if;
       --
       if (i_reg_ex_me.rd_addr = i_rs_addr(I)) then
-        if (i_reg_ex_me.rd_we = '1' or i_reg_ex_me.dmem_we = '1') then
-          s_rs_data(I) <= i_reg_ex_me.alu_result;
+        if (i_reg_ex_me.rd_we = '1') then
+          if (i_reg_ex_me.dmem_re = '1') then
+            s_rs_data(I) <= i_dmem_read;
+          else
+            s_rs_data(I) <= i_reg_ex_me.alu_result;
+          end if;
         end if;
       end if;
     end loop;
@@ -145,8 +152,11 @@ begin
   begin
     if (rising_edge(i_clk)) then
       s_reg_dmem_re <= i_reg_id_ex.dmem_re;
+      s_reg_stall   <= s_stall;
+      s_reg2_stall  <= s_reg_stall;
     end if;
   end process;
+  s_stall         <= not s_reg_dmem_re and i_reg_id_ex.dmem_re;
 
   P_FLUSHING : process(i_clk)
   begin
@@ -157,7 +167,7 @@ begin
   s_flush         <= i_reg_id_ex.jump or (i_reg_id_ex.branch and not or_reduce(s_alu_result));
 
   s_ex.flush      <= s_flush or s_reg_flush;
-  s_ex.stall      <= not s_reg_dmem_re and i_reg_id_ex.dmem_re;
+  s_ex.stall      <= s_stall;
   s_ex.target     <= s_sum(XLEN-1 downto 0);
   s_ex.transfert  <= i_reg_id_ex.jump or (i_reg_id_ex.branch and not or_reduce(s_alu_result));
 

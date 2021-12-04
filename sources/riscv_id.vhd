@@ -24,6 +24,7 @@ entity riscv_id is
       i_wb        : in E_WB;
       --
       i_flush     : in std_logic;
+      i_stall     : in std_logic;
       --
       o_rs_addr   : out T_RADDR_ARRAY;
       o_rs_data   : out T_RDATA_ARRAY;
@@ -55,6 +56,7 @@ architecture arch of riscv_id is
   signal s_nreg_id_ex : E_REG_ID_EX;
   signal s_rs_addr    : T_RADDR_ARRAY;
   signal s_rs_data    : T_RDATA_ARRAY;
+  signal s_re         : std_logic;
 
 begin
 
@@ -70,17 +72,20 @@ begin
     i_addr_rb => s_inst.rs_addr(1),
     o_data_rb => s_rs_data(1)
   );
+  s_re <= not i_stall;
 
   P_REG_ID_EX : process(i_clk, i_rstn)
   begin
     if (rising_edge(i_clk)) then
-      s_reg_id_ex <= s_nreg_id_ex;
+      if (i_stall = '0') then
+        s_reg_id_ex <= s_nreg_id_ex;
+        -- rs_addr clocked for EX
+        s_rs_addr   <= s_inst.rs_addr;
+      end if;
 
       if (i_flush = '1') then
         s_reg_id_ex <= K_REG_ID_EX_ZERO;
       end if;
-      -- rs_addr clocked for EX
-      s_rs_addr   <= s_inst.rs_addr;
     end if;
     
     -- Asynchronous reset

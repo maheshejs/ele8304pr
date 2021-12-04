@@ -19,6 +19,7 @@ entity riscv_me is
       i_clk       : in std_logic;
       i_rstn      : in std_logic;
       --
+      i_stall     : in std_logic;
       i_reg_ex_me : in E_REG_EX_ME;
       --
       o_dmem_addr : out std_logic_vector(DPM_DEPTH-1 downto 0);
@@ -36,13 +37,15 @@ begin
   P_REG_ME_WB : process(i_clk, i_rstn)
   begin
     if (rising_edge(i_clk)) then
-      s_reg_me_wb <=  (
-                        alu_result  => i_reg_ex_me.alu_result,
-                        dmem_re     => i_reg_ex_me.dmem_re,
-                        dmem_we     => i_reg_ex_me.dmem_we,
-                        rd_addr     => i_reg_ex_me.rd_addr,
-                        rd_we       => i_reg_ex_me.rd_we
-                      );
+      if (i_stall = '0') then
+        s_reg_me_wb <=  (
+                          alu_result  => i_reg_ex_me.alu_result,
+                          dmem_re     => i_reg_ex_me.dmem_re,
+                          dmem_we     => i_reg_ex_me.dmem_we,
+                          rd_addr     => i_reg_ex_me.rd_addr,
+                          rd_we       => i_reg_ex_me.rd_we
+                        );
+      end if;
     end if;
     
     -- Asynchronous reset

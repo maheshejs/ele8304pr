@@ -47,7 +47,7 @@ begin
     WIDTH         => DPM_WIDTH,
     DEPTH         => DPM_DEPTH,
     RESET         => 16#00000000#,
-    INIT          => "../asm/riscv_basic.mem"
+    INIT          => "../asm/riscv_fibo.mem"
   )
   port map ( 
     i_a_clk       => s_clk,
