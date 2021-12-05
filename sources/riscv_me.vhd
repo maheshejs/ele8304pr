@@ -19,7 +19,6 @@ entity riscv_me is
       i_clk       : in std_logic;
       i_rstn      : in std_logic;
       --
-      i_stall     : in std_logic;
       i_reg_ex_me : in E_REG_EX_ME;
       --
       o_dmem_addr : out std_logic_vector(DPM_DEPTH-1 downto 0);

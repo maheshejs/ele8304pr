@@ -120,7 +120,7 @@ begin
     end if;
   end process;
 
-  P_FORWARDING : process(i_reg_ex_me, i_reg_me_wb, i_rs_data, i_dmem_read)
+  P_FORWARDING : process(i_reg_ex_me, i_reg_me_wb, i_rs_data, i_rs_addr, i_dmem_read)
   begin
     -- default values
     s_rs_data         <= i_rs_data;

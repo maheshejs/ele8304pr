@@ -88,7 +88,6 @@ begin
   port map(
     i_clk       => i_clk,
     i_rstn      => i_rstn,
-    i_stall     => s_ex.stall,
     i_reg_ex_me => s_reg_ex_me,
     o_dmem_addr => o_dmem_addr,
     o_dmem_en   => o_dmem_en,
