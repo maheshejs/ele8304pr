@@ -45,7 +45,6 @@ architecture arch of riscv_ex is
   end;
 
   signal s_stall          : std_logic := '0';
-  signal s_stall_conflict : std_logic := '0';
   signal s_nstall_state   : std_logic := '0';
   signal s_stall_state    : std_logic := '0';
   signal s_flush          : std_logic := '0';
@@ -125,7 +124,6 @@ begin
   begin
     -- default values
     s_rs_data         <= i_rs_data;
-    s_stall_conflict  <= '0';
 
     for I in 0 to 1 loop
       -- Source registers are updated in Memory/Write-Back
@@ -142,7 +140,6 @@ begin
       if (i_reg_ex_me.rd_addr = i_rs_addr(I)) then
         if (i_reg_ex_me.rd_we = '1') then
           if (i_reg_ex_me.dmem_re = '1') then
-            s_stall_conflict <= '1';
             s_rs_data(I) <= i_dmem_read;
           else
             s_rs_data(I) <= i_reg_ex_me.alu_result;
@@ -155,29 +152,13 @@ begin
   P_STALLING : process(i_clk, i_rstn)
   begin
     if (rising_edge(i_clk)) then
-      s_stall_state <= s_nstall_state;
+      s_stall_state <= not s_stall_state and i_reg_id_ex.dmem_re;
     end if;
+
     -- Asynchronous reset
     if (i_rstn = '0') then
       s_stall_state  <= '0';
     end if;
-  end process;
-
-  P_NSTALLING : process (s_stall_state, i_reg_id_ex.dmem_re)
-  begin
-    -- default values
-    s_nstall_state <= s_stall_state;
-
-    case s_stall_state is
-      when '0'    =>
-        if (i_reg_id_ex.dmem_re = '1') then
-          s_nstall_state <= '1';
-        end if;
-      when '1'    => 
-        s_nstall_state <= '0';
-      when others => 
-        s_nstall_state <= '0';
-    end case;
   end process;
 
   P_FLUSHING : process(i_clk)
