@@ -9,7 +9,11 @@ end;
 
 architecture bench of riscv_core_tb is
 
+<<<<<<< HEAD
   constant K_CLK_PERIOD : time := 15.385 ns;
+=======
+  constant K_CLK_PERIOD : time := 20 ns;
+>>>>>>> 185fa48 (Lab2: P&R scripts)
 
   signal s_rstn       : std_logic := '1';
   signal s_clk        : std_logic := '0';
@@ -47,7 +51,7 @@ begin
     WIDTH         => DPM_WIDTH,
     DEPTH         => DPM_DEPTH,
     RESET         => 16#00000000#,
-    INIT          => "../asm/riscv_fibo.mem"
+    INIT          => "../../asm/riscv_fibo.mem"
   )
   port map ( 
     i_a_clk       => s_clk,
