@@ -6,7 +6,6 @@ read_libs -max_libs slow_vdd1v0_basicCells.lib -min_libs fast_vdd1v0_basicCells.
 read_physical -lef gsclib045_tech.lef
 read_qrc gpdk045.tch
 set_db interconnect_mode ple
-set_db lp_insert_clock_gating true
 read_hdl -vhdl { riscv_pkg.vhd riscv_half_adder.vhd riscv_adder.vhd riscv_logic.vhd riscv_alu.vhd riscv_pc.vhd riscv_rf.vhd riscv_if.vhd riscv_id.vhd riscv_ex.vhd riscv_me.vhd riscv_wb.vhd riscv_core.vhd }
 elaborate riscv_core
 check_design -unresolved
