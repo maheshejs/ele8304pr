@@ -34,18 +34,6 @@ end entity riscv_ex;
 
 architecture arch of riscv_ex is
 
-  function or_reduce(arg: std_logic_vector) return std_logic is
-    variable result: std_logic;
-  begin
-      result := '0';
-      for i in arg'range loop
-        result := result or arg(i);
-      end loop;
-      return result;
-  end;
-
-  signal s_stall          : std_logic := '0';
-  signal s_nstall_state   : std_logic := '0';
   signal s_stall_state    : std_logic := '0';
   signal s_flush          : std_logic := '0';
   signal s_reg_flush      : std_logic := '0';
@@ -59,6 +47,11 @@ architecture arch of riscv_ex is
   signal s_src2           : std_logic_vector(XLEN-1 downto 0);
   signal s_pc             : std_logic_vector(XLEN-1 downto 0);
   signal s_sum            : std_logic_vector(XLEN downto 0);
+  signal s_or_stage_I     : std_logic_vector(16-1 downto 0);
+  signal s_or_stage_II    : std_logic_vector(8-1 downto 0);
+  signal s_or_stage_III   : std_logic_vector(4-1 downto 0);
+  signal s_or_stage_IV    : std_logic_vector(2-1 downto 0);
+  signal s_or_reduce      : std_logic;
 
 begin
 
@@ -167,12 +160,31 @@ begin
       s_reg_flush <= s_flush;
     end if;
   end process;
-  s_flush         <=  i_reg_id_ex.jump or (i_reg_id_ex.branch and not or_reduce(s_alu_result));
+
+  GEN_OR_STAGE_I : for I in 0 to 16-1 generate
+    s_or_stage_I(I) <= s_alu_result(I) or s_alu_result(16+I); 
+  end generate GEN_OR_STAGE_I;
+
+  GEN_OR_STAGE_II : for I in 0 to 8-1 generate
+    s_or_stage_II(I) <= s_or_stage_I(I) or s_or_stage_I(8+I); 
+  end generate GEN_OR_STAGE_II;
+
+  GEN_OR_STAGE_III : for I in 0 to 4-1 generate
+    s_or_stage_III(I) <= s_or_stage_II(I) or s_or_stage_II(4+I); 
+  end generate GEN_OR_STAGE_III;
+
+  GEN_OR_STAGE_IV : for I in 0 to 2-1 generate
+    s_or_stage_IV(I) <= s_or_stage_III(I) or s_or_stage_III(2+I); 
+  end generate GEN_OR_STAGE_IV;
+
+  s_or_reduce <= s_or_stage_IV(0) or s_or_stage_IV(1);
+
+  s_flush         <=  i_reg_id_ex.jump or (i_reg_id_ex.branch and not s_or_reduce);
 
   s_ex.flush      <=  s_flush or s_reg_flush;
   s_ex.stall      <=  not s_stall_state and i_reg_id_ex.dmem_re;
   s_ex.target     <=  s_sum(XLEN-1 downto 0);
-  s_ex.transfert  <=  i_reg_id_ex.jump or (i_reg_id_ex.branch and not or_reduce(s_alu_result));
+  s_ex.transfert  <=  i_reg_id_ex.jump or (i_reg_id_ex.branch and not s_or_reduce);
 
   -- Outputs
   o_ex            <= s_ex;
