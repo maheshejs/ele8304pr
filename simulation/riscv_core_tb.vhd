@@ -9,7 +9,7 @@ end;
 
 architecture bench of riscv_core_tb is
 
-  constant K_CLK_PERIOD : time := 10 ns;
+  constant K_CLK_PERIOD : time := 20 ns;
 
   signal s_rstn       : std_logic := '1';
   signal s_clk        : std_logic := '0';
@@ -75,9 +75,8 @@ begin
     -- Put initialisation code here
 
     s_rstn <= '0';
-    wait for 5 ns;
+    wait for 5 * K_CLK_PERIOD;
     s_rstn <= '1';
-    wait for 5 ns;
 
     -- Put test bench stimulus code here
 
