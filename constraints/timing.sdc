@@ -26,9 +26,9 @@ set_db [get_clocks $clk] .clock_setup_uncertainty 100
 set_db [get_clocks $clk] .clock_hold_uncertainty  30
 
 # Entrées
-set_input_delay 300 -clock [get_clocks $clk] [all_inputs]
+set_input_delay 200 -clock [get_clocks $clk] [all_inputs]
 set_db [all_inputs] .external_driver [vfind [vfind / -libcell BUFX20] -libpin Y]
 
 # Sorties
-set_output_delay 300 -clock [get_clocks $clk] [all_outputs]
-set_db [all_outputs] .external_pin_cap 1000
+set_output_delay 200 -clock [get_clocks $clk] [all_outputs]
+set_db [all_outputs] .external_pin_cap 200
