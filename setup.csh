@@ -37,21 +37,25 @@ source ${CMC_CONFIG}
 #-----------------------------------------------------------------------------
 # HIERARCHIE DU PROJET
 #-----------------------------------------------------------------------------
-setenv DOC_DIR      ${PROJECT_HOME}/doc
-setenv ASM_DIR      ${PROJECT_HOME}/asm
-setenv SRC_DIR      ${PROJECT_HOME}/sources
-setenv CONST_DIR    ${PROJECT_HOME}/constraints
-setenv SCRIPTS_DIR  ${PROJECT_HOME}/scripts
-setenv SIM_DIR      ${PROJECT_HOME}/simulation
-setenv IMP_DIR      ${PROJECT_HOME}/implementation
-setenv SYN_DIR      ${IMP_DIR}/syn
-setenv SYN_NET_DIR  ${SYN_DIR}/netlist
-setenv SYN_REP_DIR  ${SYN_DIR}/reports
-setenv SYN_LOG_DIR  ${SYN_DIR}/logs
-setenv ATPG_DIR     ${IMP_DIR}/atpg
-setenv PNR_DIR      ${IMP_DIR}/pnr
-setenv PNR_NET_DIR  ${PNR_DIR}/netlist
-setenv PNR_REP_DIR  ${PNR_DIR}/reports
+setenv DOC_DIR      	${PROJECT_HOME}/doc
+setenv ASM_DIR      	${PROJECT_HOME}/asm
+setenv SRC_DIR      	${PROJECT_HOME}/sources
+setenv CONST_DIR    	${PROJECT_HOME}/constraints
+setenv SCRIPTS_DIR  	${PROJECT_HOME}/scripts
+setenv SIM_DIR      	${PROJECT_HOME}/simulation
+setenv IMP_DIR      	${PROJECT_HOME}/implementation
+setenv SYN_DIR      	${IMP_DIR}/syn
+setenv SYN_DFT_DIR  	${IMP_DIR}/syn_dft
+setenv SYN_NET_DIR  	${SYN_DIR}/netlist
+setenv SYN_DFT_NET_DIR	${SYN_DFT_DIR}/netlist
+setenv SYN_REP_DIR  	${SYN_DIR}/reports
+setenv SYN_DFT_REP_DIR	${SYN_DFT_DIR}/reports
+setenv SYN_LOG_DIR  	${SYN_DIR}/logs
+setenv SYN_DFT_LOG_DIR  ${SYN_DFT_DIR}/logs
+setenv ATPG_DIR     	${IMP_DIR}/atpg
+setenv PNR_DIR      	${IMP_DIR}/pnr
+setenv PNR_NET_DIR  	${PNR_DIR}/netlist
+setenv PNR_REP_DIR  	${PNR_DIR}/reports
 
 #-----------------------------------------------------------------------------
 # CONFIGURATION DU KIT GPDK045
@@ -119,7 +123,7 @@ alias modus "modus -overwrite"
 alias modus_help "${CMC_CDS_MODUS_HOME}/bin/cdnshelp"
 
 # XCELIUM
-source ${CMC_HOME}/scripts/cadence.xceliummain19.03.011.csh
+source ${CMC_HOME}/scripts/cadence.xceliummain20.03.010.csh
 alias xcelium_help "${CMC_CDS_XCELIUM_HOME}/bin/cdnshelp"
 
 # INNOVUS

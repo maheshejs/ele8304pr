@@ -1,0 +1,111 @@
+Starting Command: report_fault_statistics 
+
+INFO (TDA-005): Command Line Invocation: 
+            report_fault_statistics -workdir /users/Cours/ele8304/12/Labs/lab2/implementation/atpg/syn  [end TDA_005]
+
+INFO (TDA-014): Cadence(R) Modus(TM) DFT Software Solution, Version 19.12-s004_1, built Dec 04 2019 (linux26_64) [end TDA_014]
+
+INFO (TDA-015): Log File: /users/Cours/ele8304/12/Labs/lab2/implementation/atpg/syn/testresults/logs/log_report_fault_statistics_120721121146-408215000 [end TDA_015]
+
+INFO (TDA-007): Job Information:
+            Date Started: Tuesday Dec 07 12:11:46 2021  EST
+            Host machine is vlsi410.vlsi.polymtl.ca, x86_64 running Linux 3.10.0-1160.45.1.el7.x86_64.
+            This job is process number 13808.
+[end TDA_007]
+
+INFO (TDA-009): Options/Values information.
+            (options marked with '*' have program generated values,
+             options marked with '+' were specified to default.)
+
+            -WORKDIR /users/Cours/ele8304/12/Labs/lab2/implementation/atpg/syn
+
+            -LOGFILE /users/Cours/ele8304/12/Labs/lab2/implementation/atpg/syn/testresults/logs/log_report_fault_statistics_120721121146-408215000
+[end TDA_009]
+Logic Model(GM)   12/07/21
+                  17:07:54
+File Id     faultModel        faultStatus
+Created (GM)  12/07/21           12/07/21
+              17:10:45           17:10:45
+Modified(GM)  12/07/21           12/07/21
+              17:10:45           17:10:45
+Code Level        2019.1             2019.1            
+Max Fault Id      108260
+
+Fault Model Type:   Cell Boundary
+
+
+Global Ignored Static Fault Count            2
+Global Ignored Dynamic Fault Count           2
+
+
+INFO (TFM-701):  Fault Statistics for Global   : 
+
+
+                 -- ATCov --   ------------- Global Faults ----------------------
+                   Global      Total     Tested   Possibly  Redundant   Untested
+
+Total Static         0.00      54128          0          0          0      54128
+Collapsed Static     0.00      40168          0          0          0      40168
+PI Static            0.00        136          0          0          0        136
+PO Static            0.00        108          0          0          0        108
+
+Total Dynamic        0.00      54128          0          0          0      54128
+Collapsed Dynamic    0.00      46418          0          0          0      46418
+PI Dynamic           0.00        136          0          0          0        136
+PO Dynamic           0.00        108          0          0          0        108
+
+Parametric        
+
+IDDq                 0.00      54128          0                            54128
+
+
+
+
+[end TFM_701]
+
+
+INFO (TFM-704): Maximum Global Test Coverage Statistics: 
+
+                  %Active    #Faults    #Active  #Inactive
+Total Static       100.00      54128      54128          0
+Collapsed Static   100.00      40168      40168          0
+PI Static          100.00        136        136          0
+PO Static          100.00        108        108          0
+
+Total Dynamic       89.83      54128      48624       5504
+Collapsed Dynamic   88.14      46418      40914       5504
+PI Dynamic          97.06        136        132          4
+PO Dynamic         100.00        108        108          0
+
+Parametric        
+
+There are 1 test mode(s) defined:
+      FULLSCAN
+
+[end TFM_704]
+
+INFO (TDA-001): Maximum Memory used during the run and Cumulative Time in hours:minutes:seconds:
+
+                  Total Memory =           16,859,024  bytes
+
+                      CPU Time =    0:00:00.01
+                  Elapsed Time =    0:00:00.02                    [end TDA_001]
+
+     Date Ended:  Tuesday Dec 07 12:11:46 2021  EST
+
+
+
+
+-------------------------------------------------------------------------------
+*                      Message Summary                                        *
+-------------------------------------------------------------------------------
+ Count  Number             First Instance of Message Text
+------- ------             ------------------------------
+
+  INFO Messages...
+      1 INFO (TFM-701):  Fault Statistics for Global   : 
+      1 INFO (TFM-704): Maximum Global Test Coverage Statistics: 
+
+ For a detailed explanation of a message and a suggested user response execute 'msgHelp <message id>'.  For example: msgHelp TDA-009
+
+-------------------------------------------------------------------------------

@@ -27,10 +27,10 @@ entity riscv_core is
       i_dmem_read   : in std_logic_vector(31 downto 0);
       o_dmem_write  : out std_logic_vector(31 downto 0);
       -- DFT
-      i_scan_en     : in std_logic;
-      i_test_mode   : in std_logic;
-      i_tdi         : in std_logic;
-      o_tdo         : out std_logic
+      -- i_scan_en     : in std_logic;
+      -- i_test_mode   : in std_logic;
+      -- i_tdi       	: in std_logic;
+      -- o_tdo       	: out std_logic
     );
 end entity riscv_core;
 

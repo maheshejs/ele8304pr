@@ -1,0 +1,35 @@
+//
+// File created by:  xrun
+// Do not modify this file
+//
+-XLMODE
+/users/Cours/ele8304/12/Labs/lab2/implementation/atpg/syn/Inca_libs_12_06_09/run.lnx8664.20.03.d
+-RUNMODE
+-amsdlibdir
+/users/Cours/ele8304/12/Labs/lab2/implementation/atpg/syn/Inca_libs_12_06_09/AMSD
+-STATUS
+-LIBEXT
+.v
+-LIBEXT
+.V
+-LIBEXT
+.z
+-LIBEXT
+.Z
+-LIBEXT
+.gz
+-XMLIBDIRNAME
+/users/Cours/ele8304/12/Labs/lab2/implementation/atpg/syn/Inca_libs_12_06_09
+-VFILE
+/CMC/kits/GPDK45/gsclib045/gsclib045/verilog/fast_vdd1v0_basicCells.v
+/users/Cours/ele8304/12/Labs/lab2/implementation/syn_dft/netlist/riscv_core.syn.v
+/users/Cours/ele8304/12/Labs/lab2/implementation/atpg/syn/testresults/verilog/FULLSCAN_PARALLEL/VER.FULLSCAN.mainsim.v
+-CDSLIB
+/users/Cours/ele8304/12/Labs/lab2/implementation/atpg/syn/Inca_libs_12_06_09/run.lnx8664.20.03.d/cdsrun.lib
+-HDLVAR
+/users/Cours/ele8304/12/Labs/lab2/implementation/atpg/syn/Inca_libs_12_06_09/run.lnx8664.20.03.d/hdlrun.var
+-MESSAGES
+-UPDATE
+-XLLIBSTORE
+/users/Cours/ele8304/12/Labs/lab2/implementation/atpg/syn/Inca_libs_12_06_09/run.lnx8664.20.03.d/xllibs
+-ALLOWUNBOUND

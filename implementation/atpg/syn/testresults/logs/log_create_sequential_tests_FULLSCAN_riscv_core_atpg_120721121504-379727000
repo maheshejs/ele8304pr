@@ -1,0 +1,71 @@
+Starting Command: create_sequential_tests 
+
+INFO (TDA-005): Command Line Invocation: 
+            create_sequential_tests -append yes -testmode FULLSCAN -experiment riscv_core_atpg -workdir /users/Cours/ele8304/12/Labs/lab2/implementation/atpg/syn  [end TDA_005]
+
+INFO (TDA-014): Cadence(R) Modus(TM) DFT Software Solution, Version 19.12-s004_1, built Dec 04 2019 (linux26_64) [end TDA_014]
+
+INFO (TDA-015): Log File: /users/Cours/ele8304/12/Labs/lab2/implementation/atpg/syn/testresults/logs/log_create_sequential_tests_FULLSCAN_riscv_core_atpg_120721121504-379727000 [end TDA_015]
+
+INFO (TDA-007): Job Information:
+            Date Started: Tuesday Dec 07 12:15:04 2021  EST
+            Host machine is vlsi410.vlsi.polymtl.ca, x86_64 running Linux 3.10.0-1160.45.1.el7.x86_64.
+            This job is process number 14038.
+[end TDA_007]
+
+INFO (TDA-009): Options/Values information.
+            (options marked with '*' have program generated values,
+             options marked with '+' were specified to default.)
+
+            -WORKDIR /users/Cours/ele8304/12/Labs/lab2/implementation/atpg/syn
+            -TESTMODE FULLSCAN
+            -EXPERIMENT riscv_core_atpg
+
+            -LOGFILE /users/Cours/ele8304/12/Labs/lab2/implementation/atpg/syn/testresults/logs/log_create_sequential_tests_FULLSCAN_riscv_core_atpg_120721121504-379727000
+            -append yes
+[end TDA_009]
+
+
+WARNING (TTC-111): All static logic faults are resolved or have not been defined for this test mode, thus they will not be targeted.  [end TTC_111] 
+WARNING (TTC-038): There are no tests selected, therefore the run terminates.  [end TTC_038] 
+
+
+              ----Final Pattern Statistics----
+
+ Test Section Type                       # Test Sequences
+----------------------------------------------------------
+ Scan                                           1
+ Logic                                          130
+----------------------------------------------------------
+ Total                                          131
+
+(I) File(s) generated (bytes and name):
+
+         237568 /users/Cours/ele8304/12/Labs/lab2/implementation/atpg/syn/tbdata/faultStatus.FULLSCAN.riscv_core_atpg
+         628679 /users/Cours/ele8304/12/Labs/lab2/implementation/atpg/syn/tbdata/TBDbin.FULLSCAN.riscv_core_atpg
+
+INFO (TDA-001): Maximum Memory used during the run and Cumulative Time in hours:minutes:seconds:
+
+                  Total Memory =            9,291,744  bytes
+
+                      CPU Time =    0:00:00.08
+                  Elapsed Time =    0:00:00.20                    [end TDA_001]
+
+     Date Ended:  Tuesday Dec 07 12:15:04 2021  EST
+
+
+
+
+-------------------------------------------------------------------------------
+*                      Message Summary                                        *
+-------------------------------------------------------------------------------
+ Count  Number             First Instance of Message Text
+------- ------             ------------------------------
+
+  WARNING Messages...
+      1 WARNING (TTC-038): There are no tests selected, therefore the run terminates.   
+      1 WARNING (TTC-111): All static logic faults are resolved or have not been defined for this test mode, thus they will not be targeted.   
+
+ For a detailed explanation of a message and a suggested user response execute 'msgHelp <message id>'.  For example: msgHelp TDA-009
+
+-------------------------------------------------------------------------------

@@ -1,0 +1,169 @@
+Starting Command: report_faults 
+
+INFO (TDA-005): Command Line Invocation: 
+            report_faults -testmode FULLSCAN -experiment riscv_core_atpg -reportkey yes -faulttype static -workdir /users/Cours/ele8304/12/Labs/lab2/implementation/atpg/syn  [end TDA_005]
+
+INFO (TDA-014): Cadence(R) Modus(TM) DFT Software Solution, Version 19.12-s004_1, built Dec 04 2019 (linux26_64) [end TDA_014]
+
+INFO (TDA-015): Log File: /users/Cours/ele8304/12/Labs/lab2/implementation/atpg/syn/testresults/logs/log_report_faults_FULLSCAN_riscv_core_atpg_120721121404-463391000 [end TDA_015]
+
+INFO (TDA-007): Job Information:
+            Date Started: Tuesday Dec 07 12:14:04 2021  EST
+            Host machine is vlsi410.vlsi.polymtl.ca, x86_64 running Linux 3.10.0-1160.45.1.el7.x86_64.
+            This job is process number 13958.
+[end TDA_007]
+
+INFO (TDA-009): Options/Values information.
+            (options marked with '*' have program generated values,
+             options marked with '+' were specified to default.)
+
+            -WORKDIR /users/Cours/ele8304/12/Labs/lab2/implementation/atpg/syn
+            -TESTMODE FULLSCAN
+            -EXPERIMENT riscv_core_atpg
+
+            -LOGFILE /users/Cours/ele8304/12/Labs/lab2/implementation/atpg/syn/testresults/logs/log_report_faults_FULLSCAN_riscv_core_atpg_120721121404-463391000
+            -reportkey yes
+          + -faulttype static
+[end TDA_009]
+
+TFMlist 
+
+Logic Model(GM)   12/07/21
+                  17:07:54
+File Id     faultModel        faultStatus         experiment
+Created (GM)  12/07/21           12/07/21           12/07/21
+              17:10:45           17:10:45           17:13:12
+Modified(GM)  12/07/21           12/07/21           12/07/21
+              17:10:45           17:10:45           17:13:15
+Code Level        2019.1             2019.1             2019.1            
+Max Fault Id      108260
+
+Fault Model Type:   Cell Boundary
+
+
+Global Ignored Static Fault Count            2
+Global Ignored Dynamic Fault Count           2
+
+
+INFO (TFM-705): Testmode: FULLSCAN Experiment: riscv_core_atpg Fault List:   
+
+Status key:
+   i    = inactive in test mode
+   c****= collapsed - listed after equiv. class representative fault (ECR)
+          NOTE: The status of the ECR will be concatenated after the "c".
+          Examples: cu,cT,cP,cR,cUnlo 
+   u    = untested - not processed
+                               
+   I    = ignored (unclassified)
+   It   = ignored (tied)
+   Iu   = ignored (unconnected)
+   Ib   = ignored (blocked)
+   Id   = ignored (dyn SE/SR)
+   If   = ignored (user FRULE)
+                           
+   T    = tested by simulation
+   Ti   = tested by implication
+   P    = possibly tested (limit not reached)
+   Tpdl = tested (possibly detected limit reached)
+   Tm   = tested in another mode
+   Tus  = tested user specifed (fault rule DETECTED statement)
+                    
+   A    = Aborted
+   R    = redundant
+   Rus  = redundant:  user specified 
+                                     
+   Ud   = untestable: undetermined reason
+   Uus  = untestable: user specified
+   Ulh  = untestable: linehold inhibits fault control/observe
+   Utm  = untestable: testmode inhibits fault control/observe
+   Ucn  = untestable: constraint
+   Uxs  = untestable: X sourced or sinked
+   Usd  = untestable: sequential depth (may be testable with more sequential depth)
+   Ugt  = untestable: global termination
+                                        
+   Unio = untestable: Seq or control not specified to target fault (PI to PO Path)
+   Unil = untestable: Seq or control not specified to target fault (PI to LATCH Path)
+   Unlo = untestable: Seq or control not specified to target fault (LATCH to PO Path)
+   Uner = untestable: Seq or control not specified to target fault (interdomain LATCH to LATCH)
+   Unra = untestable: Seq or control not specified to target fault (intradomain LATCH to LATCH)
+                                
+   PTAB (Possibly Tested At Best) status:
+                                
+   3    = PTAB 3-state: Untested
+   P3   = PTAB 3-state: Possibly Tested
+   T3   = PTAB 3-state: Tested (limit reached)
+   X    = PTAB X-state: Untested
+   PX   = PTAB X-state: Possibly Tested
+   TX   = PTAB X-state: Tested (limit reached)
+   TiX  = PTAB X-state: Tested by implication
+   C    = PTAB Clock Stuck Off: Untested
+   PC   = PTAB Clock Stuck Off: Possibly Tested
+   TC   = PTAB Clock Stuck Off: Tested (limit reached)
+   TiC  = PTAB Clock Stuck Off: Tested by implication
+
+Type key:   &  = AND Grouped         |  = OR Grouped
+            ISA0 = stuck-at-zero fault on an input pin
+            ISA1 = stuck-at-one fault on an input pin
+            ISR  = slow-to-rise fault on an input pin
+            ISF  = slow-to-fall fault on an input pin
+            OSA0 = stuck-at-zero fault on an output pin
+            OSA1 = stuck-at-one fault on an output pin
+            OSR  = slow-to-rise fault on an output pin
+            OSF  = slow-to-fall fault on an output pin
+            DPAT = dynamic pattern fault
+            SPAT = static pattern fault
+            DRV0 = driver fault driving 0
+            DRV1 = driver fault driving 1
+            RCV0 = receiver fault receiving 0
+            RCV1 = receiver fault receiving 1
+            SBRG0= static net shorted to 0 bridge fault
+            SBRG1= static net shorted to 1 bridge fault
+            DBRG0= dynamic net shorted to 0 bridge fault
+            DBRG1= dynamic net shorted to 1 bridge fault
+            IDDQ0= Iddq logic 0 fault
+            IDDQ1= Iddq logic 1 fault
+            QPAT = Iddq pattern fault
+
+
+     Fault Status  Type    Sim Func / Cell Name           Fault pin name
+
+
+[end TFM_705]
+INFO (TFM-112): No faults were found which met the selection criteria.  [end TFM_112] 
+
+
+INFO (TFM-901): Fault Status Statistics for faults included in this fault list: 
+ Total                 :          0
+ Tested                :          0
+ Possibly Tested       :          0
+ Redundant             :          0
+ Untested (unprocessed):          0
+[end TFM_901]
+
+
+INFO (TDA-001): Maximum Memory used during the run and Cumulative Time in hours:minutes:seconds:
+
+                  Total Memory =           12,677,936  bytes
+
+                      CPU Time =    0:00:00.08
+                  Elapsed Time =    0:00:00.09                    [end TDA_001]
+
+     Date Ended:  Tuesday Dec 07 12:14:04 2021  EST
+
+
+
+
+-------------------------------------------------------------------------------
+*                      Message Summary                                        *
+-------------------------------------------------------------------------------
+ Count  Number             First Instance of Message Text
+------- ------             ------------------------------
+
+  INFO Messages...
+      1 INFO (TFM-112): No faults were found which met the selection criteria.   
+      1 INFO (TFM-705): Testmode: FULLSCAN Experiment: riscv_core_atpg Fault List:   
+      1 INFO (TFM-901): Fault Status Statistics for faults included in this fault list: 
+
+ For a detailed explanation of a message and a suggested user response execute 'msgHelp <message id>'.  For example: msgHelp TDA-009
+
+-------------------------------------------------------------------------------

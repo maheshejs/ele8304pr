@@ -1,0 +1,172 @@
+Starting Command: build_model 
+
+INFO (TDA-005): Command Line Invocation: 
+            build_model -cell dft_riscv_core -designtop dft_riscv_core -blackboxoutputs z -allowmissingmodules no -workdir /users/Cours/ele8304/12/Labs/lab2/implementation/atpg/syn -designsource /users/Cours/ele8304/12/Labs/lab2/implementation/syn_dft/netlist/dft_riscv_core.syn.v -techlib /CMC/kits/GPDK45/gsclib045/gsclib045/verilog/*.v  [end TDA_005]
+
+INFO (TDA-014): Cadence(R) Modus(TM) DFT Software Solution, Version 19.12-s004_1, built Dec 04 2019 (linux26_64) [end TDA_014]
+
+INFO (TDA-015): Log File: /users/Cours/ele8304/12/Labs/lab2/implementation/atpg/syn/testresults/logs/log_build_model_120721115533-431209000 [end TDA_015]
+
+INFO (TDA-007): Job Information:
+            Date Started: Tuesday Dec 07 11:55:33 2021  EST
+            Host machine is vlsi410.vlsi.polymtl.ca, x86_64 running Linux 3.10.0-1160.45.1.el7.x86_64.
+            This job is process number 10967.
+[end TDA_007]
+
+INFO (TDA-009): Options/Values information.
+            (options marked with '*' have program generated values,
+             options marked with '+' were specified to default.)
+
+            -WORKDIR /users/Cours/ele8304/12/Labs/lab2/implementation/atpg/syn
+
+            -designtop dft_riscv_core
+            -TECHLIB /CMC/kits/GPDK45/gsclib045/gsclib045/verilog/*.v
+            -blackboxoutputs z
+            -LOGFILE /users/Cours/ele8304/12/Labs/lab2/implementation/atpg/syn/testresults/logs/log_build_model_120721115533-431209000
+            -DESIGNSOURCE /users/Cours/ele8304/12/Labs/lab2/implementation/syn_dft/netlist/dft_riscv_core.syn.v
+          + -allowmissingmodules no
+[end TDA_009]
+INFO (TEI-195): Build Model - Controller starting: [end TEI_195] 
+
+
+Search Order  1:  "/users/Cours/ele8304/12/Labs/lab2/implementation/syn_dft/netlist/dft_riscv_core.syn.v"
+Search Order  2:  "/CMC/kits/GPDK45/gsclib045/gsclib045/verilog/fast_vdd1v0_basicCells.v"
+Search Order  3:  "/CMC/kits/GPDK45/gsclib045/gsclib045/verilog/fast_vdd1v0_extvdd1v0.v"
+Search Order  4:  "/CMC/kits/GPDK45/gsclib045/gsclib045/verilog/fast_vdd1v0_extvdd1v2.v"
+Search Order  5:  "/CMC/kits/GPDK45/gsclib045/gsclib045/verilog/fast_vdd1v0_multibitsDFF.v"
+Search Order  6:  "/CMC/kits/GPDK45/gsclib045/gsclib045/verilog/fast_vdd1v2_basicCells.v"
+Search Order  7:  "/CMC/kits/GPDK45/gsclib045/gsclib045/verilog/fast_vdd1v2_extvdd1v0.v"
+Search Order  8:  "/CMC/kits/GPDK45/gsclib045/gsclib045/verilog/fast_vdd1v2_extvdd1v2.v"
+Search Order  9:  "/CMC/kits/GPDK45/gsclib045/gsclib045/verilog/fast_vdd1v2_multibitsDFF.v"
+Search Order 10:  "/CMC/kits/GPDK45/gsclib045/gsclib045/verilog/slow_vdd1v0_basicCells.v"
+Search Order 11:  "/CMC/kits/GPDK45/gsclib045/gsclib045/verilog/slow_vdd1v0_extvdd1v0.v"
+Search Order 12:  "/CMC/kits/GPDK45/gsclib045/gsclib045/verilog/slow_vdd1v0_extvdd1v2.v"
+Search Order 13:  "/CMC/kits/GPDK45/gsclib045/gsclib045/verilog/slow_vdd1v0_multibitsDFF.v"
+Search Order 14:  "/CMC/kits/GPDK45/gsclib045/gsclib045/verilog/slow_vdd1v2_basicCells.v"
+Search Order 15:  "/CMC/kits/GPDK45/gsclib045/gsclib045/verilog/slow_vdd1v2_extvdd1v0.v"
+Search Order 16:  "/CMC/kits/GPDK45/gsclib045/gsclib045/verilog/slow_vdd1v2_extvdd1v2.v"
+Search Order 17:  "/CMC/kits/GPDK45/gsclib045/gsclib045/verilog/slow_vdd1v2_multibitsDFF.v"
+
+
+
+Reading Verilog data from /users/Cours/ele8304/12/Labs/lab2/implementation/syn_dft/netlist/dft_riscv_core.syn.v
+
+Verilog Parser complete - 1 modules, 0 gates, 0 user defined primitives.
+
+
+Reading Verilog data from /CMC/kits/GPDK45/gsclib045/gsclib045/verilog/fast_vdd1v0_basicCells.v
+
+Verilog Parser complete - 489 modules, 1844 gates, 14 user defined primitives.
+
+
+Reading Verilog data from /CMC/kits/GPDK45/gsclib045/gsclib045/verilog/fast_vdd1v0_extvdd1v0.v
+
+Verilog Parser complete - 51 modules, 1149 gates, 14 user defined primitives.
+
+
+Reading Verilog data from /CMC/kits/GPDK45/gsclib045/gsclib045/verilog/fast_vdd1v0_extvdd1v2.v
+
+Verilog Parser complete - 10 modules, 14 gates, 14 user defined primitives.
+
+
+Reading Verilog data from /CMC/kits/GPDK45/gsclib045/gsclib045/verilog/fast_vdd1v0_multibitsDFF.v
+
+Verilog Parser complete - 33 modules, 202 gates, 1 user defined primitives.
+
+
+Reading Verilog data from /CMC/kits/GPDK45/gsclib045/gsclib045/verilog/fast_vdd1v2_basicCells.v
+
+Verilog Parser complete - 489 modules, 1844 gates, 14 user defined primitives.
+
+
+Reading Verilog data from /CMC/kits/GPDK45/gsclib045/gsclib045/verilog/fast_vdd1v2_extvdd1v0.v
+
+Verilog Parser complete - 10 modules, 14 gates, 14 user defined primitives.
+
+
+Reading Verilog data from /CMC/kits/GPDK45/gsclib045/gsclib045/verilog/fast_vdd1v2_extvdd1v2.v
+
+Verilog Parser complete - 51 modules, 1149 gates, 14 user defined primitives.
+
+
+Reading Verilog data from /CMC/kits/GPDK45/gsclib045/gsclib045/verilog/fast_vdd1v2_multibitsDFF.v
+
+Verilog Parser complete - 33 modules, 202 gates, 1 user defined primitives.
+
+
+Reading Verilog data from /CMC/kits/GPDK45/gsclib045/gsclib045/verilog/slow_vdd1v0_basicCells.v
+
+Verilog Parser complete - 489 modules, 1844 gates, 14 user defined primitives.
+
+
+Reading Verilog data from /CMC/kits/GPDK45/gsclib045/gsclib045/verilog/slow_vdd1v0_extvdd1v0.v
+
+Verilog Parser complete - 51 modules, 1149 gates, 14 user defined primitives.
+
+
+Reading Verilog data from /CMC/kits/GPDK45/gsclib045/gsclib045/verilog/slow_vdd1v0_extvdd1v2.v
+
+Verilog Parser complete - 10 modules, 14 gates, 14 user defined primitives.
+
+
+Reading Verilog data from /CMC/kits/GPDK45/gsclib045/gsclib045/verilog/slow_vdd1v0_multibitsDFF.v
+
+Verilog Parser complete - 33 modules, 202 gates, 1 user defined primitives.
+
+
+Reading Verilog data from /CMC/kits/GPDK45/gsclib045/gsclib045/verilog/slow_vdd1v2_basicCells.v
+
+Verilog Parser complete - 489 modules, 1844 gates, 14 user defined primitives.
+
+
+Reading Verilog data from /CMC/kits/GPDK45/gsclib045/gsclib045/verilog/slow_vdd1v2_extvdd1v0.v
+
+Verilog Parser complete - 10 modules, 14 gates, 14 user defined primitives.
+
+
+Reading Verilog data from /CMC/kits/GPDK45/gsclib045/gsclib045/verilog/slow_vdd1v2_extvdd1v2.v
+
+Verilog Parser complete - 51 modules, 1149 gates, 14 user defined primitives.
+
+
+Reading Verilog data from /CMC/kits/GPDK45/gsclib045/gsclib045/verilog/slow_vdd1v2_multibitsDFF.v
+
+Verilog Parser complete - 33 modules, 202 gates, 1 user defined primitives.
+
+ERROR (TEI-002): The 'cell dft_riscv_core' was not found in the design source file(s) specified.   Note that for Verilog, a change has been made to no longer automatically search the directories for explicitly specified files. Therefore it may now be necessary to add the directory of this missing cell to build the complete design.  [end TEI_002] 
+ERROR (TEI-400): Build Model FAILED:
+  Cell named 'dft_riscv_core' could not be resolved
+  Unexpected Model Build Failure
+  [end TEI_400] 
+
+INFO (TDA-001): Maximum Memory used during the run and Cumulative Time in hours:minutes:seconds:
+
+                  Total Memory =          217,123,152  bytes
+
+                      CPU Time =    0:00:04.06
+                  Elapsed Time =    0:00:08.80                    [end TDA_001]
+
+
+
+INFO (TEI-200): Build Model - Controller completed. [end TEI_200] 
+
+
+
+
+-------------------------------------------------------------------------------
+*                      Message Summary                                        *
+-------------------------------------------------------------------------------
+ Count  Number             First Instance of Message Text
+------- ------             ------------------------------
+
+  INFO Messages...
+      1 INFO (TEI-195): Build Model - Controller starting:  
+      1 INFO (TEI-200): Build Model - Controller completed.  
+
+  ERROR Messages...
+      1 ERROR (TEI-002): The 'cell dft_riscv_core' was not found in the design source file(s) specified.   Note that for Verilog, a change has been made to no longer automatically search the directories for explicitly specified files. Therefore it may now be necessary to add the directory of this missing cell to build the complete design.   
+      1 ERROR (TEI-400): Build Model FAILED:
+
+ For a detailed explanation of a message and a suggested user response execute 'msgHelp <message id>'.  For example: msgHelp TDA-009
+
+-------------------------------------------------------------------------------

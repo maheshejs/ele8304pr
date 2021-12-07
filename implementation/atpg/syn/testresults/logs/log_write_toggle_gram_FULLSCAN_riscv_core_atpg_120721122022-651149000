@@ -1,0 +1,231 @@
+Starting Command: write_toggle_gram 
+
+INFO (TDA-005): Command Line Invocation: 
+            write_toggle_gram -experiment riscv_core_atpg -testmode FULLSCAN -workdir /users/Cours/ele8304/12/Labs/lab2/implementation/atpg/syn  [end TDA_005]
+
+INFO (TDA-014): Cadence(R) Modus(TM) DFT Software Solution, Version 19.12-s004_1, built Dec 04 2019 (linux26_64) [end TDA_014]
+
+INFO (TDA-015): Log File: /users/Cours/ele8304/12/Labs/lab2/implementation/atpg/syn/testresults/logs/log_write_toggle_gram_FULLSCAN_riscv_core_atpg_120721122022-651149000 [end TDA_015]
+
+INFO (TDA-007): Job Information:
+            Date Started: Tuesday Dec 07 12:20:22 2021  EST
+            Host machine is vlsi410.vlsi.polymtl.ca, x86_64 running Linux 3.10.0-1160.45.1.el7.x86_64.
+            This job is process number 14531.
+[end TDA_007]
+
+INFO (TDA-009): Options/Values information.
+            (options marked with '*' have program generated values,
+             options marked with '+' were specified to default.)
+
+            -WORKDIR /users/Cours/ele8304/12/Labs/lab2/implementation/atpg/syn
+            -TESTMODE FULLSCAN
+            -EXPERIMENT riscv_core_atpg
+
+            -LOGFILE /users/Cours/ele8304/12/Labs/lab2/implementation/atpg/syn/testresults/logs/log_write_toggle_gram_FULLSCAN_riscv_core_atpg_120721122022-651149000
+[end TDA_009]
+WARNING (TBM-102): Unsupported test section code 64 type IDDq at odometer 1.4. This test section will be ignored for toggle calculations. [end TBM_102] 
+INFO (TBM-088): The total number of test to be analyzed for scan is 363 and for capture is 362. [end TBM_088] 
+
+
+***************************************************************************************************
+Toggle Definitions:
+General:
+  Total scan cycles = Length of longest scan chain
+  max_flop_weight =  Maximum weight assigned to any flop (default weight = 1)
+  Number of wt. toggles for a flop = Number of toggles for the flop * weight of the flop
+  Total wt. load toggles = Number of wt. toggles in controllable registers
+  Total wt. unload toggles = Number of wt. toggles in observable registers
+  Total wt. flops = Sum of all the flop weights
+
+For Scan Shift Toggle report by Sequence:
+  sliding_window_size = Number of cycles to consider for average switching (default = 3)
+  Total wt. toggles in sliding window = sum of wt. toggles in last X cycles, where sliding_window_size=X. Toggles is 0 for first X-1 cycles
+  Max Toggles Possible for sliding window = Total wt. flops * sliding_window_size
+  Sliding Avg Switching % = (Total wt. toggles in sliding window / Max Toggles Possible for sliding window) * 100
+  Max Sliding Average Switching Percentage = Maximum of Sliding Avg Switching %
+  Max Sliding Window Start-End Scan Cycles = Start and End scan cycles for sliding window having Maximum Sliding Avg Switching %
+  Max Toggles possible = Total wt. flops * Total scan cycles
+  Global Avg Switching % = (Total wt. toggles in sequence / Max Toggles possible) * 100
+  Global Avg Scan Load Switching % = (Total wt. Load toggles / Max Toggles possible) * 100
+  Global Avg Scan Unload Switching % = (Total wt. Unload toggles / Max Toggles possible) * 100
+
+For Scan Shift Toggle report by Scan Cycle:
+  Total wt. toggles in scan cycle=total number of wt. toggles in this scan cycle
+  Max Toggles Possible for Scan Cycle=Total wt. flops
+  Total switching % = (Total wt. toggles in scan cycle / Max Toggles Possible for Scan Cycle) * 100
+  Scan Load switching % = (Total wt. Load toggles / Max Toggles Possible for Scan Cycle) * 100
+  Scan Unload switching % = (Total wt. Unload toggles / Max Toggles Possible for Scan Cycle) * 100
+
+For Capture Toggle report by Sequence:
+  Number of pulses = Total number of Pulse, StimClock, PulsePPI and StimPPIClock events for this test sequence
+  Total wt. toggles in sequence=Total number of wt. toggles in all capture pulses in this test sequence
+  Max Toggles possible = Total wt. flops * Number of pulses
+  Global Avg Switching % = (Total wt. toggles in sequence / Max Toggles possible) * 100
+  Max Switching % = Maximum switching for any single pulse event in this sequence
+
+For Capture Toggle report by Capture Cycle:
+  Total wt. toggles in Capture pulse=Total number of wt. toggles for this pulse event
+  Max Toggles Possible for Capture pulse=Total wt. flops
+  Total switching % = (Total wt. toggles in capture pulse / Max Toggles Possible for Capture pulse) * 100
+
+For Scan Shift Toggle report by Flop:
+  Total toggles for a flop = Total number of toggles for the flop across all the sequences * weight of the flop
+  Max Toggles Possible for a flop = Number of sequences * Number of scan cycles per sequence * max_flop_weight
+  Total Switching % = (Total toggles for a flop / Max Toggles Possible for a flop) * 100
+***************************************************************************************************
+
+
+INFO (TBM-054): Scan Shift Toggle report categorized by SEQUENCE [end TBM_054] 
+
+
++=============+==========+============+============+===========+===========+===========+=================+=================+
+|  Odometer   | Relative | Max Sliding| Max Sliding| Global    |Global Ave |Global Ave |  Unload         |  Load           |
+|             | Sequence | Average    | Window     | Average   |Scan Load  |Scan Unload|  Event          |  Event          |
+|             |          | Switching  | Start-End  | Switching |Switching  |Switching  |  Odometer       |  Odometer       |
+|             |          | Percentage | Scan Cycle | Percentage|Percentage |Percentage |                 |                 |
++=============+==========+============+============+===========+===========+===========+=================+=================+
+|1.2.1.3.1    |       3  |    54.82   |  921-923   |    53.38  |    25.95  |    27.42  |1.2.1.3.1.5.1    |1.2.1.3.2.1.1    |
+|1.2.1.5.14   |      48  |    53.69   |  324-326   |    51.68  |    24.63  |    27.04  |1.2.1.5.14.5.1   |1.2.1.5.15.1.1   |
+|1.2.1.8.16   |      98  |    53.60   |  256-258   |    51.21  |    24.32  |    26.89  |1.2.1.8.16.5.1   |1.2.1.9.1.1.1    |
+|1.2.1.5.15   |      49  |    53.48   | 1218-1220  |    52.23  |    26.54  |    25.68  |1.2.1.5.15.5.1   |1.2.1.5.16.1.1   |
+|1.2.1.6.11   |      61  |    53.46   | 1421-1423  |    51.33  |    25.90  |    25.43  |1.2.1.6.11.5.1   |1.2.1.6.12.1.1   |
+|1.2.1.2.1    |       2  |    53.37   | 1450-1452  |    26.55  |    26.34  |     0.21  |1.2.1.2.1.4.1    |1.2.1.3.1.1.1    |
+|1.2.1.6.1    |      51  |    53.35   |  608-610   |    50.80  |    24.95  |    25.84  |1.2.1.6.1.5.1    |1.2.1.6.2.1.1    |
+|1.2.1.6.13   |      63  |    53.12   | 1365-1367  |    50.65  |    24.91  |    25.73  |1.2.1.6.13.5.1   |1.2.1.6.14.1.1   |
+|1.2.1.8.15   |      97  |    53.07   |  789-791   |    51.19  |    26.51  |    24.68  |1.2.1.8.15.5.1   |1.2.1.8.16.1.1   |
+|1.2.1.11.9   |     125  |    52.96   | 1332-1334  |    51.41  |    26.17  |    25.23  |1.2.1.11.9.5.1   |1.2.1.11.10.1.1  |
++=============+==========+============+============+===========+===========+===========+=================+=================+
+
+INFO (TBM-054): Scan Shift Toggle report categorized by SCAN CYCLE [end TBM_054] 
+
+
++=============+==========+=======+===========+===========+===========+=================+=================+
+|  Odometer   | Relative | Scan  | Total     | Scan Load | ScanUnload|  Unload         |  Load           |
+|             | Sequence | Cycle | Switching | Switching | Switching |  Event          |  Event          |
+|             |          | Number| Percentage| Percentage| Percentage|  Odometer       |  Odometer       |
++=============+==========+=======+===========+===========+===========+=================+=================+
+|1.2.1.3.1    |      3   |  849  |    54.82  |    30.99  |    23.82  |1.2.1.3.1.5.1    |1.2.1.3.2.1.1    |
+|1.2.1.5.14   |     48   |  324  |    53.71  |    11.29  |    42.42  |1.2.1.5.14.5.1   |1.2.1.5.15.1.1   |
+|1.2.1.8.16   |     98   |  258  |    53.65  |     8.67  |    44.97  |1.2.1.8.16.5.1   |1.2.1.9.1.1.1    |
+|1.2.1.6.11   |     61   | 1423  |    53.51  |    52.20  |     1.30  |1.2.1.6.11.5.1   |1.2.1.6.12.1.1   |
+|1.2.1.5.15   |     49   | 1219  |    53.51  |    44.00  |     9.50  |1.2.1.5.15.5.1   |1.2.1.5.16.1.1   |
+|1.2.1.6.1    |     51   |  609  |    53.37  |    21.90  |    31.47  |1.2.1.6.1.5.1    |1.2.1.6.2.1.1    |
+|1.2.1.2.1    |      2   | 1450  |    53.37  |    53.37  |     0.00  |1.2.1.2.1.4.1    |1.2.1.3.1.1.1    |
+|1.2.1.6.13   |     63   | 1366  |    53.16  |    47.65  |     5.50  |1.2.1.6.13.5.1   |1.2.1.6.14.1.1   |
+|1.2.1.8.15   |     97   |  790  |    53.09  |    29.95  |    23.14  |1.2.1.8.15.5.1   |1.2.1.8.16.1.1   |
+|1.2.1.11.9   |    125   | 1329  |    52.96  |    48.20  |     4.75  |1.2.1.11.9.5.1   |1.2.1.11.10.1.1  |
++=============+==========+=======+===========+===========+===========+=================+=================+
+
+INFO (TBM-054): Scan Shift Toggle report categorized by FLOP [end TBM_054] 
+
+
++===========+============+==========================================================+
+| Total     | Associated |  Hierarchical                                            |
+| Switching |  Weight    |  Instance Name                                           |
+| Percentage|            |                                                          |
++===========+============+==========================================================+
+|     22.79 |          1 | \X_IF_s_reg_if_id_reg[imem_read][13]                     |
+|     22.79 |          1 | \X_IF_s_reg_if_id_reg[imem_read][12]                     |
+|     22.79 |          1 | \X_IF_s_reg_if_id_reg[imem_read][11]                     |
+|     22.79 |          1 | \X_IF_s_reg_if_id_reg[imem_read][1]                      |
+|     22.79 |          1 | \X_IF_s_reg_if_id_reg[imem_read][0]                      |
+|     22.79 |          1 | \X_IF_s_dly_pc_reg[31]                                   |
+|     22.79 |          1 | \X_IF_s_dly_pc_reg[7]                                    |
+|     22.79 |          1 | \X_IF_s_dly_pc_reg[6]                                    |
+|     22.79 |          1 | \X_IF_s_dly_pc_reg[5]                                    |
+|     22.79 |          1 | \X_IF_s_dly_pc_reg[4]                                    |
++===========+============+==========================================================+
+
+INFO (TBM-054): Capture Toggle report categorized by SEQUENCE [end TBM_054] 
+
+
++=============+===========+============+===========+===========+
+|  Odometer   | Relative  | Number     | Global    | Max       |
+|             | Sequence  | of         | Average   | Switching |
+|             |           | Pulses     | Switching | Percentage|
+|             |           |            | Percentage|           |
++=============+===========+============+===========+===========+
+|1.2.1.2.1    |        2  |         1  |    92.63  |    92.63  |
+|1.2.1.3.4    |        6  |         1  |    21.28  |    21.28  |
+|1.2.1.5.1    |       35  |         1  |    20.24  |    20.24  |
+|1.2.1.4.1    |       19  |         1  |    19.83  |    19.83  |
+|1.2.1.4.12   |       30  |         1  |    19.76  |    19.76  |
+|1.2.1.10.1   |      115  |         1  |    19.55  |    19.55  |
+|1.2.1.3.1    |        3  |         1  |    19.55  |    19.55  |
+|1.2.1.5.5    |       39  |         1  |    19.21  |    19.21  |
+|1.2.1.4.3    |       21  |         1  |    18.80  |    18.80  |
+|1.2.1.4.9    |       27  |         1  |    18.66  |    18.66  |
++=============+===========+============+===========+===========+
+
+INFO (TBM-054): Capture Toggle report categorized by CAPTURE CYCLE [end TBM_054] 
+
+
++=============+==========+=================+===========+=======================================================+
+|  Odometer   | Relative | Event           | Total     |  Clock Name(s)                                        |
+|             | Sequence | Odometer        | Switching |                                                       |
+|             |          |                 | Percentage|                                                       |
++=============+==========+=================+===========+=======================================================+
+|1.2.1.2.1    |        2 |1.2.1.2.1.3.1    |    92.63  | i_rstn                                                |
+|1.3.1.2.1    |      132 |1.3.1.2.1.3.1    |    25.68  | i_clk                                                 |
+|1.3.1.3.3    |      150 |1.3.1.3.3.3.1    |    24.51  | i_clk                                                 |
+|1.3.1.2.11   |      142 |1.3.1.2.11.3.2   |    24.03  | i_clk                                                 |
+|1.3.1.4.5    |      168 |1.3.1.4.5.3.1    |    23.82  | i_clk                                                 |
+|1.3.1.3.9    |      156 |1.3.1.3.9.3.1    |    23.62  | i_clk                                                 |
+|1.3.1.2.8    |      139 |1.3.1.2.8.3.1    |    23.41  | i_clk                                                 |
+|1.3.1.4.6    |      169 |1.3.1.4.6.3.1    |    23.20  | i_clk                                                 |
+|1.3.1.4.5    |      168 |1.3.1.4.5.3.2    |    22.52  | i_clk                                                 |
+|1.3.1.5.1    |      180 |1.3.1.5.1.3.1    |    22.38  | i_clk                                                 |
++=============+==========+=================+===========+=======================================================+
+
+
+
+   ------ Summarized Switching Statistics for SCAN    ------ 
+ -------------------------------------------------------------------------------- 
+  Average Switching   Average Scan Load      Average Scan Unload    Max Switching 
+     Percentage      Switching Percentage    Switching Percentage    Percentage   
+ -------------------------------------------------------------------------------- 
+     22.07               9.96                     12.10                54.82          
+ -------------------------------------------------------------------------------- 
+
+
+
+   ---- Summarized Switching Statistics for CAPTURE ----   
+ --------------------------------------------------------- 
+      Average Switching           Max Switching            
+         Percentage                Percentage              
+ --------------------------------------------------------- 
+          8.60                       92.63                  
+ --------------------------------------------------------- 
+
+
+WARNING (TBM-099):The switching percentage has exceeded the threshold value of 30 percent, in the current testmode. High switching can impact the power numbers at the tester. [end TBM_099] 
+
+INFO (TDA-001): Maximum Memory used during the run and Cumulative Time in hours:minutes:seconds:
+
+                  Total Memory =           21,604,176  bytes
+
+                      CPU Time =    0:00:00.19
+                  Elapsed Time =    0:00:00.60                    [end TDA_001]
+
+     Date Ended:  Tuesday Dec 07 12:20:23 2021  EST
+
+
+
+
+-------------------------------------------------------------------------------
+*                      Message Summary                                        *
+-------------------------------------------------------------------------------
+ Count  Number             First Instance of Message Text
+------- ------             ------------------------------
+
+  INFO Messages...
+      5 INFO (TBM-054): Scan Shift Toggle report categorized by SEQUENCE  
+      1 INFO (TBM-088): The total number of test to be analyzed for scan is 363 and for capture is 362.  
+
+  WARNING Messages...
+      1 WARNING (TBM-099):The switching percentage has exceeded the threshold value of 30 percent, in the current testmode. High switching can impact the power numbers at the tester.  
+      1 WARNING (TBM-102): Unsupported test section code 64 type IDDq at odometer 1.4. This test section will be ignored for toggle calculations.  
+
+ For a detailed explanation of a message and a suggested user response execute 'msgHelp <message id>'.  For example: msgHelp TDA-009
+
+-------------------------------------------------------------------------------

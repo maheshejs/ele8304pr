@@ -1,0 +1,16 @@
+//
+// File created by:  xrun
+// Do not modify this file
+//
+-VFILE
+/CMC/kits/GPDK45/gsclib045/gsclib045/verilog/fast_vdd1v0_basicCells.v
+-LIBEXT
+.v
+-LIBEXT
+.V
+-LIBEXT
+.z
+-LIBEXT
+.Z
+-LIBEXT
+.gz
