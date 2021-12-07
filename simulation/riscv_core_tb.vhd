@@ -7,7 +7,7 @@ use work.riscv_pkg.all;
 entity riscv_core_tb is
 end;
 
-architecture bench of riscv_core_tb is
+architecture core_bench of riscv_core_tb is
 
   constant K_CLK_PERIOD : time := 12.5 ns;
 
@@ -23,6 +23,12 @@ architecture bench of riscv_core_tb is
   signal s_dmem_addr  : std_logic_vector(8 downto 0);
   signal s_dmem_read  : std_logic_vector(31 downto 0);
   signal s_dmem_write : std_logic_vector(31 downto 0);
+  -- DFT
+  signal s_scan_en    : std_logic := '0';
+  signal s_test_mode  : std_logic := '0';
+  signal s_tdi        : std_logic := '0';
+  signal s_tdo        : std_logic := '0';
+
 
 begin
 
@@ -39,7 +45,12 @@ begin
     o_dmem_we     => s_dmem_we,
     o_dmem_addr   => s_dmem_addr,
     i_dmem_read   => s_dmem_read,
-    o_dmem_write  => s_dmem_write
+    o_dmem_write  => s_dmem_write,
+    -- DFT
+    i_scan_en     => s_scan_en,
+    i_test_mode   => s_test_mode,
+    i_tdi         => s_tdi,
+    o_tdo         => s_tdo
   );
 
   X_DPM : dpm 
@@ -84,3 +95,19 @@ begin
   end process;
 
 end;
+
+configuration core_rtl of riscv_core_tb is
+  for core_bench
+    for X_CORE : riscv_core
+      use entity work.riscv_core(core_rtl);
+    end for;
+  end for;
+end configuration;
+
+configuration core_dft of riscv_core_tb is
+  for core_bench
+    for X_CORE : riscv_core
+      use entity work.riscv_core(core_dft);
+    end for;
+  end for;
+end configuration;

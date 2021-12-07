@@ -56,7 +56,6 @@ architecture arch of riscv_id is
   signal s_nreg_id_ex : E_REG_ID_EX;
   signal s_rs_addr    : T_RADDR_ARRAY;
   signal s_rs_data    : T_RDATA_ARRAY;
-  signal s_reg_rs_data: T_RDATA_ARRAY;
   signal s_reg_stall  : std_logic;
 
 begin
@@ -81,8 +80,6 @@ begin
         s_reg_id_ex   <= s_nreg_id_ex;
         -- rs_addr clocked for EX
         s_rs_addr     <= s_inst.rs_addr;
-        --
-        s_reg_rs_data <= s_rs_data;
       end if;
 
       if (i_flush = '1') then
@@ -203,7 +200,6 @@ begin
   -- Outputs
   o_reg_id_ex <=  s_reg_id_ex;
   o_rs_addr   <=  s_rs_addr;
-  o_rs_data   <=  s_reg_rs_data when i_stall = '1' else 
-                  s_rs_data;
+  o_rs_data   <=  s_rs_data;
 
 end architecture arch;
