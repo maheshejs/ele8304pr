@@ -1,0 +1,139 @@
+Starting Command: create_iddq_tests 
+
+INFO (TDA-005): Command Line Invocation: 
+            create_iddq_tests -append yes -testmode FULLSCAN -experiment riscv_core_atpg -workdir /users/Cours/ele8304/12/Labs/implement/lab2/implementation/atpg/syn -stdout summary  [end TDA_005]
+
+INFO (TDA-014): Cadence(R) Modus(TM) DFT Software Solution, Version 19.12-s004_1, built Dec 04 2019 (linux26_64) [end TDA_014]
+
+INFO (TDA-015): Log File: /users/Cours/ele8304/12/Labs/implement/lab2/implementation/atpg/syn/testresults/logs/log_create_iddq_tests_FULLSCAN_riscv_core_atpg_120721153026-144214000 [end TDA_015]
+
+INFO (TDA-007): Job Information:
+            Date Started: Tuesday Dec 07 15:30:26 2021  EST
+            Host machine is vlsi410.vlsi.polymtl.ca, x86_64 running Linux 3.10.0-1160.45.1.el7.x86_64.
+            This job is process number 17598.
+[end TDA_007]
+
+INFO (TDA-009): Options/Values information.
+            (options marked with '*' have program generated values,
+             options marked with '+' were specified to default.)
+
+            -WORKDIR /users/Cours/ele8304/12/Labs/implement/lab2/implementation/atpg/syn
+            -TESTMODE FULLSCAN
+            -EXPERIMENT riscv_core_atpg
+
+            -LOGFILE /users/Cours/ele8304/12/Labs/implement/lab2/implementation/atpg/syn/testresults/logs/log_create_iddq_tests_FULLSCAN_riscv_core_atpg_120721153026-144214000
+            -STDOUT summary
+            -append yes
+[end TDA_009]
+
+
+INFO (TFW-117): Modus checked out a Modus_Test license.  [end TFW_117] 
+*******************************************************************************
+Coverage Definitions:
+ #Faults  : Number of Active Faults (observable).
+ #Tested  : Number of Active Faults marked tested.
+ #Possibly: Number of Active Faults marked possibly tested
+            (good value is 0 or 1; fault value is X).
+ #Redund  : Number of Active Faults untestable due to redundancy.
+ #Untested: Number of Active Faults untested.
+ %TCov  (%Test Coverage)                      : #Tested / #Faults
+ %ATCov (%Adjusted TCov)                      : #Tested / (#Faults-#Redund)
+*******************************************************************************
+*******************************************************************************
+                           Testmode Statistics: FULLSCAN
+
+                         #Faults    #Tested  #Untested  %TCov
+IDDq                       53354          0      53354   0.00
+
+                            Global Statistics
+
+                         #Faults    #Tested  #Untested  %TCov
+IDDq                       53354          0      53354   0.00
+*******************************************************************************
+
+*************************************************************************************************************
+INFO (TTC-110): Starting IDDq Test generation                                                   [end TTC_110] 
+
+INFO (TDA-220):   --- Tests ---   Faults     ---- ATCov ----   -- Faults --   - Elapsed Time -  [end TDA_220] 
+INFO (TDA-220):    Sim.    Eff.  Detected    Tmode    Global     Untested                       [end TDA_220] 
+INFO (TDA-220):      1       1      18932    35.48%   35.48%        34422           00:00.75    [end TDA_220] 
+INFO (TDA-220):      2       2       9777    53.81%   53.81%        24645           00:00.81    [end TDA_220] 
+INFO (TDA-220):      3       3       4506    62.25%   62.25%        20139           00:00.86    [end TDA_220] 
+INFO (TDA-220):      4       4       2749    67.41%   67.41%        17390           00:00.90    [end TDA_220] 
+INFO (TDA-220):      5       5       1860    70.89%   70.89%        15530           00:00.95    [end TDA_220] 
+INFO (TDA-220):      6       6       1142    73.03%   73.03%        14388           00:00.98    [end TDA_220] 
+INFO (TDA-220):      7       7        681    74.31%   74.31%        13707           00:01.00    [end TDA_220] 
+INFO (TDA-220):      8       8        675    75.57%   75.57%        13032           00:01.01    [end TDA_220] 
+INFO (TDA-220):      9       9       1688    78.74%   78.74%        11344           00:01.05    [end TDA_220] 
+INFO (TDA-220):     10      10        564    79.80%   79.80%        10780           00:01.08    [end TDA_220] 
+INFO (TDA-220):     11      11        456    80.65%   80.65%        10324           00:01.09    [end TDA_220] 
+INFO (TDA-220):     12      12        395    81.39%   81.39%         9929           00:01.10    [end TDA_220] 
+INFO (TDA-220):     13      13        456    82.25%   82.25%         9473           00:01.12    [end TDA_220] 
+INFO (TDA-220):     14      14        356    82.91%   82.91%         9117           00:01.13    [end TDA_220] 
+INFO (TDA-220):     15      15        381    83.63%   83.63%         8736           00:01.13    [end TDA_220] 
+INFO (TDA-220):     16      16        298    84.18%   84.18%         8438           00:01.15    [end TDA_220] 
+INFO (TDA-220):     17      17        318    84.78%   84.78%         8120           00:01.15    [end TDA_220] 
+INFO (TDA-220):     18      18        231    85.21%   85.21%         7889           00:01.16    [end TDA_220] 
+INFO (TDA-220):     19      19        228    85.64%   85.64%         7661           00:01.17    [end TDA_220] 
+INFO (TDA-220):     20      20        313    86.23%   86.23%         7348           00:01.18    [end TDA_220] 
+INFO (TTC-112): The IDDq pattern limit of 20 has been reached.  [end TTC_112] 
+INFO (TTC-110): Ending IDDq Test generation - processing limit reached                          [end TTC_110] 
+*************************************************************************************************************
+
+*******************************************************************************
+                           Testmode Statistics: FULLSCAN
+
+                         #Faults    #Tested  #Untested  %TCov
+IDDq                       53354      46006       7348  86.23
+
+                            Global Statistics
+
+                         #Faults    #Tested  #Untested  %TCov
+IDDq                       53354      46006       7348  86.23
+*******************************************************************************
+
+
+              ----Final Pattern Statistics----
+
+ Test Section Type                       # Test Sequences
+----------------------------------------------------------
+ Scan                                           1
+ Logic                                          363
+ IDDq                                           20
+----------------------------------------------------------
+ Total                                          384
+
+(I) File(s) generated (bytes and name):
+
+         430080 /users/Cours/ele8304/12/Labs/implement/lab2/implementation/atpg/syn/tbdata/faultStatus.FULLSCAN.riscv_core_atpg
+        2190494 /users/Cours/ele8304/12/Labs/implement/lab2/implementation/atpg/syn/tbdata/TBDbin.FULLSCAN.riscv_core_atpg
+
+INFO (TDA-001): Maximum Memory used during the run and Cumulative Time in hours:minutes:seconds:
+
+                  Total Memory =           20,502,544  bytes
+
+                      CPU Time =    0:00:00.56
+                  Elapsed Time =    0:00:01.23                    [end TDA_001]
+
+     Date Ended:  Tuesday Dec 07 15:30:27 2021  EST
+
+INFO (TFW-119): Modus checked in a Modus_Test license.  [end TFW_119] 
+
+
+
+-------------------------------------------------------------------------------
+*                      Message Summary                                        *
+-------------------------------------------------------------------------------
+ Count  Number             First Instance of Message Text
+------- ------             ------------------------------
+
+  INFO Messages...
+     22 INFO (TDA-220):   --- Tests ---   Faults     ---- ATCov ----   -- Faults --   - Elapsed Time -   
+      1 INFO (TFW-117): Modus checked out a Modus_Test license.   
+      1 INFO (TFW-119): Modus checked in a Modus_Test license.   
+      2 INFO (TTC-110): Starting IDDq Test generation                                                    
+      1 INFO (TTC-112): The IDDq pattern limit of 20 has been reached.   
+
+ For a detailed explanation of a message and a suggested user response execute 'msgHelp <message id>'.  For example: msgHelp TDA-009
+
+-------------------------------------------------------------------------------

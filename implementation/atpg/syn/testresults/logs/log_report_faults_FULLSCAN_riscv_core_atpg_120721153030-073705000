@@ -1,0 +1,780 @@
+Starting Command: report_faults 
+
+INFO (TDA-005): Command Line Invocation: 
+            report_faults -reportkey yes -testmode FULLSCAN -experiment riscv_core_atpg -faulttype all -workdir /users/Cours/ele8304/12/Labs/implement/lab2/implementation/atpg/syn -stdout summary  [end TDA_005]
+
+INFO (TDA-014): Cadence(R) Modus(TM) DFT Software Solution, Version 19.12-s004_1, built Dec 04 2019 (linux26_64) [end TDA_014]
+
+INFO (TDA-015): Log File: /users/Cours/ele8304/12/Labs/implement/lab2/implementation/atpg/syn/testresults/logs/log_report_faults_FULLSCAN_riscv_core_atpg_120721153030-073705000 [end TDA_015]
+
+INFO (TDA-007): Job Information:
+            Date Started: Tuesday Dec 07 15:30:30 2021  EST
+            Host machine is vlsi410.vlsi.polymtl.ca, x86_64 running Linux 3.10.0-1160.45.1.el7.x86_64.
+            This job is process number 17638.
+[end TDA_007]
+
+INFO (TDA-009): Options/Values information.
+            (options marked with '*' have program generated values,
+             options marked with '+' were specified to default.)
+
+            -WORKDIR /users/Cours/ele8304/12/Labs/implement/lab2/implementation/atpg/syn
+            -TESTMODE FULLSCAN
+            -EXPERIMENT riscv_core_atpg
+
+            -LOGFILE /users/Cours/ele8304/12/Labs/implement/lab2/implementation/atpg/syn/testresults/logs/log_report_faults_FULLSCAN_riscv_core_atpg_120721153030-073705000
+            -STDOUT summary
+            -faulttype all
+            -reportkey yes
+[end TDA_009]
+INFO (TFW-117): Modus checked out a Modus_Test license.  [end TFW_117] 
+
+TFMlist 
+
+Logic Model(GM)   12/07/21
+                  20:29:45
+File Id     faultModel        faultStatus         experiment
+Created (GM)  12/07/21           12/07/21           12/07/21
+              20:29:52           20:29:52           20:30:01
+Modified(GM)  12/07/21           12/07/21           12/07/21
+              20:29:52           20:29:53           20:30:27
+Code Level        2019.1             2019.1             2019.1            
+Max Fault Id      106712
+
+Fault Model Type:   Cell Boundary
+
+
+Global Ignored Static Fault Count            2
+Global Ignored Dynamic Fault Count           2
+
+
+INFO (TFM-705): Testmode: FULLSCAN Experiment: riscv_core_atpg Fault List:   
+
+Status key:
+   i    = inactive in test mode
+   c****= collapsed - listed after equiv. class representative fault (ECR)
+          NOTE: The status of the ECR will be concatenated after the "c".
+          Examples: cu,cT,cP,cR,cUnlo 
+   u    = untested - not processed
+                               
+   I    = ignored (unclassified)
+   It   = ignored (tied)
+   Iu   = ignored (unconnected)
+   Ib   = ignored (blocked)
+   Id   = ignored (dyn SE/SR)
+   If   = ignored (user FRULE)
+                           
+   T    = tested by simulation
+   Ti   = tested by implication
+   P    = possibly tested (limit not reached)
+   Tpdl = tested (possibly detected limit reached)
+   Tm   = tested in another mode
+   Tus  = tested user specifed (fault rule DETECTED statement)
+                    
+   A    = Aborted
+   R    = redundant
+   Rus  = redundant:  user specified 
+                                     
+   Ud   = untestable: undetermined reason
+   Uus  = untestable: user specified
+   Ulh  = untestable: linehold inhibits fault control/observe
+   Utm  = untestable: testmode inhibits fault control/observe
+   Ucn  = untestable: constraint
+   Uxs  = untestable: X sourced or sinked
+   Usd  = untestable: sequential depth (may be testable with more sequential depth)
+   Ugt  = untestable: global termination
+                                        
+   Unio = untestable: Seq or control not specified to target fault (PI to PO Path)
+   Unil = untestable: Seq or control not specified to target fault (PI to LATCH Path)
+   Unlo = untestable: Seq or control not specified to target fault (LATCH to PO Path)
+   Uner = untestable: Seq or control not specified to target fault (interdomain LATCH to LATCH)
+   Unra = untestable: Seq or control not specified to target fault (intradomain LATCH to LATCH)
+                                
+   PTAB (Possibly Tested At Best) status:
+                                
+   3    = PTAB 3-state: Untested
+   P3   = PTAB 3-state: Possibly Tested
+   T3   = PTAB 3-state: Tested (limit reached)
+   X    = PTAB X-state: Untested
+   PX   = PTAB X-state: Possibly Tested
+   TX   = PTAB X-state: Tested (limit reached)
+   TiX  = PTAB X-state: Tested by implication
+   C    = PTAB Clock Stuck Off: Untested
+   PC   = PTAB Clock Stuck Off: Possibly Tested
+   TC   = PTAB Clock Stuck Off: Tested (limit reached)
+   TiC  = PTAB Clock Stuck Off: Tested by implication
+
+Type key:   &  = AND Grouped         |  = OR Grouped
+            ISA0 = stuck-at-zero fault on an input pin
+            ISA1 = stuck-at-one fault on an input pin
+            ISR  = slow-to-rise fault on an input pin
+            ISF  = slow-to-fall fault on an input pin
+            OSA0 = stuck-at-zero fault on an output pin
+            OSA1 = stuck-at-one fault on an output pin
+            OSR  = slow-to-rise fault on an output pin
+            OSF  = slow-to-fall fault on an output pin
+            DPAT = dynamic pattern fault
+            SPAT = static pattern fault
+            DRV0 = driver fault driving 0
+            DRV1 = driver fault driving 1
+            RCV0 = receiver fault receiving 0
+            RCV1 = receiver fault receiving 1
+            SBRG0= static net shorted to 0 bridge fault
+            SBRG1= static net shorted to 1 bridge fault
+            DBRG0= dynamic net shorted to 0 bridge fault
+            DBRG1= dynamic net shorted to 1 bridge fault
+            IDDQ0= Iddq logic 0 fault
+            IDDQ1= Iddq logic 1 fault
+            QPAT = Iddq pattern fault
+
+
+     Fault Status  Type    Sim Func / Cell Name           Fault pin name
+
+         7 Unil    OSR            PI                      i_dmem_read[0]   
+         8 Unil    OSF            PI                      i_dmem_read[0]   
+        11 Unil    OSR            PI                      i_dmem_read[10]   
+        12 Unil    OSF            PI                      i_dmem_read[10]   
+        15 Unil    OSR            PI                      i_dmem_read[11]   
+        16 Unil    OSF            PI                      i_dmem_read[11]   
+        19 Unil    OSR            PI                      i_dmem_read[12]   
+        20 Unil    OSF            PI                      i_dmem_read[12]   
+        23 Unil    OSR            PI                      i_dmem_read[13]   
+        24 Unil    OSF            PI                      i_dmem_read[13]   
+        27 Unil    OSR            PI                      i_dmem_read[14]   
+        28 Unil    OSF            PI                      i_dmem_read[14]   
+        31 Unil    OSR            PI                      i_dmem_read[15]   
+        32 Unil    OSF            PI                      i_dmem_read[15]   
+        35 Unil    OSR            PI                      i_dmem_read[16]   
+        36 Unil    OSF            PI                      i_dmem_read[16]   
+        39 Unil    OSR            PI                      i_dmem_read[17]   
+        40 Unil    OSF            PI                      i_dmem_read[17]   
+        43 Unil    OSR            PI                      i_dmem_read[18]   
+        44 Unil    OSF            PI                      i_dmem_read[18]   
+        47 Unil    OSR            PI                      i_dmem_read[19]   
+        48 Unil    OSF            PI                      i_dmem_read[19]   
+        51 Unil    OSR            PI                      i_dmem_read[1]   
+        52 Unil    OSF            PI                      i_dmem_read[1]   
+        55 Unil    OSR            PI                      i_dmem_read[20]   
+        56 Unil    OSF            PI                      i_dmem_read[20]   
+        59 Unil    OSR            PI                      i_dmem_read[21]   
+        60 Unil    OSF            PI                      i_dmem_read[21]   
+        63 Unil    OSR            PI                      i_dmem_read[22]   
+        64 Unil    OSF            PI                      i_dmem_read[22]   
+        67 Unil    OSR            PI                      i_dmem_read[23]   
+        68 Unil    OSF            PI                      i_dmem_read[23]   
+        71 Unil    OSR            PI                      i_dmem_read[24]   
+        72 Unil    OSF            PI                      i_dmem_read[24]   
+        75 Unil    OSR            PI                      i_dmem_read[25]   
+        76 Unil    OSF            PI                      i_dmem_read[25]   
+        79 Unil    OSR            PI                      i_dmem_read[26]   
+        80 Unil    OSF            PI                      i_dmem_read[26]   
+        83 Unil    OSR            PI                      i_dmem_read[27]   
+        84 Unil    OSF            PI                      i_dmem_read[27]   
+        87 Unil    OSR            PI                      i_dmem_read[28]   
+        88 Unil    OSF            PI                      i_dmem_read[28]   
+        91 Unil    OSR            PI                      i_dmem_read[29]   
+        92 Unil    OSF            PI                      i_dmem_read[29]   
+        95 Unil    OSR            PI                      i_dmem_read[2]   
+        96 Unil    OSF            PI                      i_dmem_read[2]   
+        99 Unil    OSR            PI                      i_dmem_read[30]   
+       100 Unil    OSF            PI                      i_dmem_read[30]   
+       103 Unil    OSR            PI                      i_dmem_read[31]   
+       104 Unil    OSF            PI                      i_dmem_read[31]   
+       107 Unil    OSR            PI                      i_dmem_read[3]   
+       108 Unil    OSF            PI                      i_dmem_read[3]   
+       111 Unil    OSR            PI                      i_dmem_read[4]   
+       112 Unil    OSF            PI                      i_dmem_read[4]   
+       115 Unil    OSR            PI                      i_dmem_read[5]   
+       116 Unil    OSF            PI                      i_dmem_read[5]   
+       119 Unil    OSR            PI                      i_dmem_read[6]   
+       120 Unil    OSF            PI                      i_dmem_read[6]   
+       123 Unil    OSR            PI                      i_dmem_read[7]   
+       124 Unil    OSF            PI                      i_dmem_read[7]   
+       127 Unil    OSR            PI                      i_dmem_read[8]   
+       128 Unil    OSF            PI                      i_dmem_read[8]   
+       131 Unil    OSR            PI                      i_dmem_read[9]   
+       132 Unil    OSF            PI                      i_dmem_read[9]   
+       135 Unil    OSR            PI                      i_imem_read[0]   
+       136 Unil    OSF            PI                      i_imem_read[0]   
+       139 Unil    OSR            PI                      i_imem_read[10]   
+       140 Unil    OSF            PI                      i_imem_read[10]   
+       143 Unil    OSR            PI                      i_imem_read[11]   
+       144 Unil    OSF            PI                      i_imem_read[11]   
+       147 Unil    OSR            PI                      i_imem_read[12]   
+       148 Unil    OSF            PI                      i_imem_read[12]   
+       151 Unil    OSR            PI                      i_imem_read[13]   
+       152 Unil    OSF            PI                      i_imem_read[13]   
+       155 Unil    OSR            PI                      i_imem_read[14]   
+       156 Unil    OSF            PI                      i_imem_read[14]   
+       159 Unil    OSR            PI                      i_imem_read[15]   
+       160 Unil    OSF            PI                      i_imem_read[15]   
+       163 Unil    OSR            PI                      i_imem_read[16]   
+       164 Unil    OSF            PI                      i_imem_read[16]   
+       167 Unil    OSR            PI                      i_imem_read[17]   
+       168 Unil    OSF            PI                      i_imem_read[17]   
+       171 Unil    OSR            PI                      i_imem_read[18]   
+       172 Unil    OSF            PI                      i_imem_read[18]   
+       175 Unil    OSR            PI                      i_imem_read[19]   
+       176 Unil    OSF            PI                      i_imem_read[19]   
+       179 Unil    OSR            PI                      i_imem_read[1]   
+       180 Unil    OSF            PI                      i_imem_read[1]   
+       183 Unil    OSR            PI                      i_imem_read[20]   
+       184 Unil    OSF            PI                      i_imem_read[20]   
+       187 Unil    OSR            PI                      i_imem_read[21]   
+       188 Unil    OSF            PI                      i_imem_read[21]   
+       191 Unil    OSR            PI                      i_imem_read[22]   
+       192 Unil    OSF            PI                      i_imem_read[22]   
+       195 Unil    OSR            PI                      i_imem_read[23]   
+       196 Unil    OSF            PI                      i_imem_read[23]   
+       199 Unil    OSR            PI                      i_imem_read[24]   
+       200 Unil    OSF            PI                      i_imem_read[24]   
+       203 Unil    OSR            PI                      i_imem_read[25]   
+       204 Unil    OSF            PI                      i_imem_read[25]   
+       207 Unil    OSR            PI                      i_imem_read[26]   
+       208 Unil    OSF            PI                      i_imem_read[26]   
+       211 Unil    OSR            PI                      i_imem_read[27]   
+       212 Unil    OSF            PI                      i_imem_read[27]   
+       215 Unil    OSR            PI                      i_imem_read[28]   
+       216 Unil    OSF            PI                      i_imem_read[28]   
+       219 Unil    OSR            PI                      i_imem_read[29]   
+       220 Unil    OSF            PI                      i_imem_read[29]   
+       223 Unil    OSR            PI                      i_imem_read[2]   
+       224 Unil    OSF            PI                      i_imem_read[2]   
+       227 Unil    OSR            PI                      i_imem_read[30]   
+       228 Unil    OSF            PI                      i_imem_read[30]   
+       231 Unil    OSR            PI                      i_imem_read[31]   
+       232 Unil    OSF            PI                      i_imem_read[31]   
+       235 Unil    OSR            PI                      i_imem_read[3]   
+       236 Unil    OSF            PI                      i_imem_read[3]   
+       239 Unil    OSR            PI                      i_imem_read[4]   
+       240 Unil    OSF            PI                      i_imem_read[4]   
+       243 Unil    OSR            PI                      i_imem_read[5]   
+       244 Unil    OSF            PI                      i_imem_read[5]   
+       247 Unil    OSR            PI                      i_imem_read[6]   
+       248 Unil    OSF            PI                      i_imem_read[6]   
+       251 Unil    OSR            PI                      i_imem_read[7]   
+       252 Unil    OSF            PI                      i_imem_read[7]   
+       255 Unil    OSR            PI                      i_imem_read[8]   
+       256 Unil    OSF            PI                      i_imem_read[8]   
+       259 Unil    OSR            PI                      i_imem_read[9]   
+       260 Unil    OSF            PI                      i_imem_read[9]   
+       279 Unlo    OSR            PO                      o_dmem_addr[0]   
+       280 Unlo    OSF            PO                      o_dmem_addr[0]   
+       283 Unlo    OSR            PO                      o_dmem_addr[1]   
+       284 Unlo    OSF            PO                      o_dmem_addr[1]   
+       287 Unlo    OSR            PO                      o_dmem_addr[2]   
+       288 Unlo    OSF            PO                      o_dmem_addr[2]   
+       291 Unlo    OSR            PO                      o_dmem_addr[3]   
+       292 Unlo    OSF            PO                      o_dmem_addr[3]   
+       295 Unlo    OSR            PO                      o_dmem_addr[4]   
+       296 Unlo    OSF            PO                      o_dmem_addr[4]   
+       299 Unlo    OSR            PO                      o_dmem_addr[5]   
+       300 Unlo    OSF            PO                      o_dmem_addr[5]   
+       303 Unlo    OSR            PO                      o_dmem_addr[6]   
+       304 Unlo    OSF            PO                      o_dmem_addr[6]   
+       307 Unlo    OSR            PO                      o_dmem_addr[7]   
+       308 Unlo    OSF            PO                      o_dmem_addr[7]   
+       311 Unlo    OSR            PO                      o_dmem_addr[8]   
+       312 Unlo    OSF            PO                      o_dmem_addr[8]   
+       315 Unlo    OSR            PO                      o_dmem_en   
+    105767 cUnlo   OSR            OR2X6                   g96573.Y   
+       316 Unlo    OSF            PO                      o_dmem_en   
+    105768 cUnlo   OSF            OR2X6                   g96573.Y   
+       319 Unlo    OSR            PO                      o_dmem_we   
+       320 Unlo    OSF            PO                      o_dmem_we   
+       323 Unlo    OSR            PO                      o_dmem_write[0]   
+       324 Unlo    OSF            PO                      o_dmem_write[0]   
+       327 Unlo    OSR            PO                      o_dmem_write[10]   
+       328 Unlo    OSF            PO                      o_dmem_write[10]   
+       331 Unlo    OSR            PO                      o_dmem_write[11]   
+       332 Unlo    OSF            PO                      o_dmem_write[11]   
+       335 Unlo    OSR            PO                      o_dmem_write[12]   
+       336 Unlo    OSF            PO                      o_dmem_write[12]   
+       339 Unlo    OSR            PO                      o_dmem_write[13]   
+       340 Unlo    OSF            PO                      o_dmem_write[13]   
+       343 Unlo    OSR            PO                      o_dmem_write[14]   
+       344 Unlo    OSF            PO                      o_dmem_write[14]   
+       347 Unlo    OSR            PO                      o_dmem_write[15]   
+       348 Unlo    OSF            PO                      o_dmem_write[15]   
+       351 Unlo    OSR            PO                      o_dmem_write[16]   
+       352 Unlo    OSF            PO                      o_dmem_write[16]   
+       355 Unlo    OSR            PO                      o_dmem_write[17]   
+       356 Unlo    OSF            PO                      o_dmem_write[17]   
+       359 Unlo    OSR            PO                      o_dmem_write[18]   
+       360 Unlo    OSF            PO                      o_dmem_write[18]   
+       363 Unlo    OSR            PO                      o_dmem_write[19]   
+       364 Unlo    OSF            PO                      o_dmem_write[19]   
+       367 Unlo    OSR            PO                      o_dmem_write[1]   
+       368 Unlo    OSF            PO                      o_dmem_write[1]   
+       371 Unlo    OSR            PO                      o_dmem_write[20]   
+       372 Unlo    OSF            PO                      o_dmem_write[20]   
+       375 Unlo    OSR            PO                      o_dmem_write[21]   
+       376 Unlo    OSF            PO                      o_dmem_write[21]   
+       379 Unlo    OSR            PO                      o_dmem_write[22]   
+       380 Unlo    OSF            PO                      o_dmem_write[22]   
+       383 Unlo    OSR            PO                      o_dmem_write[23]   
+       384 Unlo    OSF            PO                      o_dmem_write[23]   
+       387 Unlo    OSR            PO                      o_dmem_write[24]   
+       388 Unlo    OSF            PO                      o_dmem_write[24]   
+       391 Unlo    OSR            PO                      o_dmem_write[25]   
+       392 Unlo    OSF            PO                      o_dmem_write[25]   
+       395 Unlo    OSR            PO                      o_dmem_write[26]   
+       396 Unlo    OSF            PO                      o_dmem_write[26]   
+       399 Unlo    OSR            PO                      o_dmem_write[27]   
+       400 Unlo    OSF            PO                      o_dmem_write[27]   
+       403 Unlo    OSR            PO                      o_dmem_write[28]   
+       404 Unlo    OSF            PO                      o_dmem_write[28]   
+       407 Unlo    OSR            PO                      o_dmem_write[29]   
+       408 Unlo    OSF            PO                      o_dmem_write[29]   
+       411 Unlo    OSR            PO                      o_dmem_write[2]   
+       412 Unlo    OSF            PO                      o_dmem_write[2]   
+       415 Unlo    OSR            PO                      o_dmem_write[30]   
+       416 Unlo    OSF            PO                      o_dmem_write[30]   
+       419 Unlo    OSR            PO                      o_dmem_write[31]   
+       420 Unlo    OSF            PO                      o_dmem_write[31]   
+       423 Unlo    OSR            PO                      o_dmem_write[3]   
+       424 Unlo    OSF            PO                      o_dmem_write[3]   
+       427 Unlo    OSR            PO                      o_dmem_write[4]   
+       428 Unlo    OSF            PO                      o_dmem_write[4]   
+       431 Unlo    OSR            PO                      o_dmem_write[5]   
+       432 Unlo    OSF            PO                      o_dmem_write[5]   
+       435 Unlo    OSR            PO                      o_dmem_write[6]   
+       436 Unlo    OSF            PO                      o_dmem_write[6]   
+       439 Unlo    OSR            PO                      o_dmem_write[7]   
+       440 Unlo    OSF            PO                      o_dmem_write[7]   
+       443 Unlo    OSR            PO                      o_dmem_write[8]   
+       444 Unlo    OSF            PO                      o_dmem_write[8]   
+       447 Unlo    OSR            PO                      o_dmem_write[9]   
+       448 Unlo    OSF            PO                      o_dmem_write[9]   
+       451 Unlo    OSR            PO                      o_imem_addr[0]   
+       452 Unlo    OSF            PO                      o_imem_addr[0]   
+       455 Unlo    OSR            PO                      o_imem_addr[1]   
+       456 Unlo    OSF            PO                      o_imem_addr[1]   
+       459 Unlo    OSR            PO                      o_imem_addr[2]   
+       460 Unlo    OSF            PO                      o_imem_addr[2]   
+       463 Unlo    OSR            PO                      o_imem_addr[3]   
+       464 Unlo    OSF            PO                      o_imem_addr[3]   
+       467 Unlo    OSR            PO                      o_imem_addr[4]   
+       468 Unlo    OSF            PO                      o_imem_addr[4]   
+       471 Unlo    OSR            PO                      o_imem_addr[5]   
+       472 Unlo    OSF            PO                      o_imem_addr[5]   
+       475 Unlo    OSR            PO                      o_imem_addr[6]   
+       476 Unlo    OSF            PO                      o_imem_addr[6]   
+       479 Unlo    OSR            PO                      o_imem_addr[7]   
+       480 Unlo    OSF            PO                      o_imem_addr[7]   
+       483 Unlo    OSR            PO                      o_imem_addr[8]   
+       484 Unlo    OSF            PO                      o_imem_addr[8]   
+       487 Unlo    OSR            PO                      o_imem_en   
+       488 Unlo    OSF            PO                      o_imem_en   
+     34043 Ud      ISR            AO21X1                  g2.A0   
+     34047 Ucn     ISR            AO21X1                  g2.A1   
+     34528 Ud      ISF            OAI222X1                g91059__6083.C0   
+     34532 Ud      ISF            OAI222X1                g91059__6083.C1   
+     34619 Ud      ISR            AOI22X1                 g91070__2250.B0   
+     34623 Ud      ISR            AOI22X1                 g91070__2250.B1   
+     34695 Ud      ISR            AO22X1                  g91074__2703.B0   
+     34699 Ud      ISR            AO22X1                  g91074__2703.B1   
+     34747 Ud      ISR            AOI22X1                 g91076__5795.B0   
+     34751 Ud      ISR            AOI22X1                 g91076__5795.B1   
+     34754 Ud      ISR            AND2X1                  g96661.A   
+     34839 Ud      ISR            OAI211X1                g91081__5703.A0   
+    106377 cUd     OSR            INVX1                   g96679.Y   
+    106380 cUd     ISF            INVX1                   g96679.A   
+     35000 Ud      ISF            AO22XL                  g91093__1857.B0   
+     35075 Ud      ISR            OAI222X1                g91096__2391.C0   
+     35239 Ud      ISR            OAI221X1                g91126__1786.A1   
+     35267 Ud      ISR            OAI2BB1X1               g91128__1309.A0N   
+     35271 Ud      ISR            OAI2BB1X1               g91128__1309.A1N   
+     35471 Ud      ISR            OAI2BB1X1               g91154__2900.A0N   
+     35475 Ud      ISR            OAI2BB1X1               g91154__2900.A1N   
+     35619 Ud      ISR            OAI222X1                g91166__3772.B1   
+     35797 Unlo    ISF            OR2X6                   g96573.B   
+     35798 Unlo    ISR            OR2X6                   g96573.B   
+     35800 Unlo    ISF            OR2X6                   g96573.A   
+     35806 Unlo    ISR            OR2X6                   g96573.A   
+     35984 Ucn     ISF            AOI22X1                 g91243__6083.A1   
+     36036 Ud      ISF            AOI22X1                 g91246__6877.A1   
+     36056 Ucn     ISF            AOI22X1                 g91247__2900.A1   
+     36076 Ud      ISF            AOI22X1                 g91248__2391.A1   
+     36096 Ud      ISF            AOI22X1                 g91249__7675.A1   
+     36116 Ud      ISF            AOI22X1                 g91250__7118.A1   
+     36136 Ucn     ISF            AOI22X1                 g91251__8757.A1   
+     36156 Ud      ISF            AOI22X1                 g91252__1786.A1   
+     36176 Ud      ISF            AOI22X1                 g91253__5953.A1   
+     36196 Ud      ISF            AOI22X1                 g91254__5703.A1   
+     36216 Ucn     ISF            AOI22X1                 g91255__7114.A1   
+     36236 Ucn     ISF            AOI22X1                 g91256__5266.A1   
+     36256 Ud      ISF            AOI22X1                 g91257__2250.A1   
+     36276 Ud      ISF            AOI22X1                 g91258__1309.A1   
+     36296 Ucn     ISF            AOI22X1                 g91259__8780.A1   
+     36316 Ud      ISF            AOI22X1                 g91260__5795.A1   
+     36322 Ud      ISR            MXI2XL                  g96553.S0   
+     36336 Ucn     ISF            AOI22X1                 g91261__7344.A1   
+     36345 Unil    ISF            MXI2XL                  g96553.A   
+     36346 Unil    ISR            MXI2XL                  g96553.A   
+     36356 Ud      ISF            AOI22X1                 g91262__1840.A1   
+     36376 Ud      ISF            AOI22X1                 g91263__5019.A1   
+     36396 Ud      ISF            AOI22X1                 g91264__1857.A1   
+     36416 Ucn     ISF            AOI22X1                 g91265__9906.A1   
+     36436 Ud      ISF            AOI22X1                 g91266__2703.A1   
+     36442 Ud      ISR            MXI2XL                  g96550.S0   
+     36466 Unil    ISF            MXI2XL                  g96550.A   
+     36468 Ud      ISF            AOI32X1                 g91267__9682.B1   
+     36469 Unil    ISR            MXI2XL                  g96550.A   
+     36480 Ud      ISF            AOI22X1                 g91268__4296.A1   
+     36500 Ud      ISF            AOI22X1                 g91269__3772.A1   
+     36520 Ud      ISF            AOI22X1                 g91270__1474.A1   
+     36540 Ud      ISF            AOI22X1                 g91271__4547.A1   
+     36560 Ucn     ISF            AOI22X1                 g91272__9682.A1   
+     36613 Ud      ISR            MXI2XL                  g96546.S0   
+     36654 Unil    ISF            MXI2XL                  g96546.A   
+     36658 Unil    ISR            MXI2XL                  g96546.A   
+     36700 Ucn     ISF            NOR2X1                  g91299__2900.B   
+     36704 Ud      ISR            MXI2XL                  g96544.S0   
+     36718 Unil    ISF            MXI2XL                  g96544.A   
+     36722 Unil    ISR            MXI2XL                  g96544.A   
+     36728 Ud      ISR            MXI2XL                  g96543.S0   
+     36742 Unil    ISF            MXI2XL                  g96543.A   
+     36746 Unil    ISR            MXI2XL                  g96543.A   
+     36752 Ud      ISR            MXI2XL                  g96542.S0   
+     36766 Unil    ISF            MXI2XL                  g96542.A   
+     36770 Unil    ISR            MXI2XL                  g96542.A   
+     36776 Ud      ISR            MXI2XL                  g96541.S0   
+     36790 Unil    ISF            MXI2XL                  g96541.A   
+     36794 Unil    ISR            MXI2XL                  g96541.A   
+     36920 Ud      ISR            MXI2XL                  g96535.S0   
+     36934 Unil    ISF            MXI2XL                  g96535.A   
+     36938 Unil    ISR            MXI2XL                  g96535.A   
+     36968 Ud      ISR            MXI2XL                  g96533.S0   
+     36977 Ud      ISF            MXI2XL                  g96533.B   
+     36982 Unil    ISF            MXI2XL                  g96533.A   
+     36986 Unil    ISR            MXI2XL                  g96533.A   
+     36992 Ud      ISR            MXI2XL                  g96532.S0   
+     37001 Ud      ISF            MXI2XL                  g96532.B   
+     37006 Unil    ISF            MXI2XL                  g96532.A   
+     37010 Unil    ISR            MXI2XL                  g96532.A   
+     37103 Ud      ISR            AND2X1                  g91333__1309.A   
+     37104 A       ISF            AND2X1                  g91333__1309.A   
+     37130 Ud      ISR            MXI2XL                  g96527.S0   
+     37132 Ud      ISF            NOR2X1                  g91335__6083.B   
+     37144 Ucn     ISF            NOR2X1                  g91336__5953.B   
+     37145 Unil    ISF            MXI2XL                  g96527.A   
+     37146 Unil    ISR            MXI2XL                  g96527.A   
+     37156 Ucn     ISF            NOR2X1                  g91337__5703.B   
+     37336 Ucn     ISF            NOR2X1                  g91352__1474.B   
+     37466 Ud      ISR            MXI2XL                  g96513.S0   
+     37481 Unil    ISF            MXI2XL                  g96513.A   
+     37482 Unil    ISR            MXI2XL                  g96513.A   
+     37514 Ud      ISR            MXI2XL                  g96511.S0   
+     37519 Ud      ISF            MXI2XL                  g96511.B   
+     37529 Unil    ISF            MXI2XL                  g96511.A   
+     37530 Unil    ISR            MXI2XL                  g96511.A   
+     37538 Ud      ISR            MXI2XL                  g96510.S0   
+     37551 Unil    ISF            MXI2XL                  g96510.A   
+     37552 Unil    ISR            MXI2XL                  g96510.A   
+     37560 Ud      ISF            OR2X4                   g91372__2703.B   
+     37568 Ud      ISR            MXI2XL                  g96509.S0   
+     37576 Ud      ISR            MXI2XL                  g96509.B   
+     37582 Unil    ISF            MXI2XL                  g96509.A   
+     37586 Unil    ISR            MXI2XL                  g96509.A   
+     37600 A       ISF            AND2X1                  g91376__7344.B   
+     37610 Ud      ISR            MXI2XL                  g96508.S0   
+     37635 Unil    ISF            MXI2XL                  g96508.A   
+     37636 Unil    ISR            MXI2XL                  g96508.A   
+     37643 A       ISR            NOR4X1                  g91381__8780.B   
+     37879 A       ISR            AOI22X1                 g91396__7118.B0   
+     37883 A       ISR            AOI22X1                 g91396__7118.B1   
+     38143 Ud      ISR            MXI2XL                  g96494.S0   
+     38162 Unil    ISF            MXI2XL                  g96494.A   
+     38165 Unil    ISR            MXI2XL                  g96494.A   
+     38520 Ud      ISR            MXI2XL                  g96482.S0   
+     38542 Unil    ISF            MXI2XL                  g96482.A   
+     38546 Unil    ISR            MXI2XL                  g96482.A   
+     38598 Ud      ISR            MXI2XL                  g96480.S0   
+     38607 Unil    ISF            MXI2XL                  g96480.A   
+     38608 Unil    ISR            MXI2XL                  g96480.A   
+     38761 Ud      ISR            MX2XL                   g96475.S0   
+     38894 Ud      ISR            MXI2XL                  g96471.S0   
+     38918 Unil    ISF            MXI2XL                  g96471.A   
+     38921 Unil    ISR            MXI2XL                  g96471.A   
+     38975 Ud      ISR            MXI2XL                  g96468.S0   
+     38978 Ud      ISF            MXI2XL                  g96468.B   
+     38982 Unil    ISF            MXI2XL                  g96468.A   
+     38983 Unil    ISR            MXI2XL                  g96468.A   
+     39042 Ud      ISR            MXI2XL                  g96466.S0   
+     39066 Unil    ISF            MXI2XL                  g96466.A   
+     39067 Unil    ISR            MXI2XL                  g96466.A   
+     39081 Ud      ISR            MXI2XL                  g96465.S0   
+     39084 Ud      ISF            MXI2XL                  g96465.B   
+     39098 Unil    ISF            MXI2XL                  g96465.A   
+     39101 Unil    ISR            MXI2XL                  g96465.A   
+     39468 Ud      ISR            MXI2XL                  g96453.S0   
+     39475 Unil    ISF            MXI2XL                  g96453.A   
+     39476 Unil    ISR            MXI2XL                  g96453.A   
+     39614 Ud      ISR            MXI2XL                  g96449.S0   
+     39634 Unil    ISF            MXI2XL                  g96449.A   
+     39638 Unil    ISR            MXI2XL                  g96449.A   
+     39664 Ud      ISR            MXI2XL                  g96447.S0   
+     39690 Unil    ISF            MXI2XL                  g96447.A   
+     39693 Unil    ISR            MXI2XL                  g96447.A   
+     39751 Ud      ISR            MXI2XL                  g96445.S0   
+     39764 Unil    ISF            MXI2XL                  g96445.A   
+     39770 Unil    ISR            MXI2XL                  g96445.A   
+     39826 Ud      ISR            MX2XL                   g96442.S0   
+     39909 Ud      ISR            MXI2XL                  g96440.S0   
+     39914 Ud      ISR            MXI2XL                  g96440.B   
+     39922 Unil    ISF            MXI2XL                  g96440.A   
+     39923 Unil    ISR            MXI2XL                  g96440.A   
+     40213 Ud      ISR            MXI2XL                  g96430.S0   
+     40220 Unil    ISF            MXI2XL                  g96430.A   
+     40234 Unil    ISR            MXI2XL                  g96430.A   
+     40432 Ud      ISR            MXI2XL                  g96423.S0   
+     40447 Unil    ISF            MXI2XL                  g96423.A   
+     40448 Unil    ISR            MXI2XL                  g96423.A   
+     40553 Ud      ISR            MXI2XL                  g96419.S0   
+     40589 Unil    ISF            MXI2XL                  g96419.A   
+     40590 Unil    ISR            MXI2XL                  g96419.A   
+     40598 Ud      ISR            MXI2XL                  g96417.S0   
+     40613 Unil    ISF            MXI2XL                  g96417.A   
+     40614 Unil    ISR            MXI2XL                  g96417.A   
+     40801 Unil    ISF            MXI2XL                  g96409.B   
+     40802 Unil    ISR            MXI2XL                  g96409.B   
+     40841 Unil    ISF            MXI2XL                  g96408.B   
+     40842 Unil    ISR            MXI2XL                  g96408.B   
+     40863 Unil    ISF            MXI2XL                  g96407.B   
+     40864 Unil    ISR            MXI2XL                  g96407.B   
+     40937 Unil    ISF            MXI2XL                  g96406.B   
+     40938 Unil    ISR            MXI2XL                  g96406.B   
+     40967 Unil    ISF            MXI2XL                  g96405.B   
+     40968 Unil    ISR            MXI2XL                  g96405.B   
+     41002 Unil    ISF            MXI2XL                  g96404.B   
+     41003 Unil    ISR            MXI2XL                  g96404.B   
+     41034 Unil    ISF            MXI2XL                  g96403.B   
+     41035 Unil    ISR            MXI2XL                  g96403.B   
+     41085 Unil    ISF            MXI2XL                  g96402.B   
+     41090 Unil    ISR            MXI2XL                  g96402.B   
+     41120 Unil    ISF            MXI2XL                  g96401.B   
+     41129 Unil    ISR            MXI2XL                  g96401.B   
+     41152 Unil    ISF            MXI2XL                  g96400.B   
+     41166 Unil    ISR            MXI2XL                  g96400.B   
+     41206 Unil    ISF            MXI2XL                  g96399.B   
+     41210 Unil    ISR            MXI2XL                  g96399.B   
+     41233 Unil    ISF            MXI2XL                  g96398.B   
+     41234 Unil    ISR            MXI2XL                  g96398.B   
+     41282 Unil    ISF            MXI2XL                  g96397.B   
+     41283 Unil    ISR            MXI2XL                  g96397.B   
+     41326 Unil    ISF            MXI2XL                  g96396.B   
+     41327 Unil    ISR            MXI2XL                  g96396.B   
+     41348 Unil    ISF            MXI2XL                  g96395.B   
+     41357 Unil    ISR            MXI2XL                  g96395.B   
+     41397 Unil    ISF            MXI2XL                  g96394.B   
+     41398 Unil    ISR            MXI2XL                  g96394.B   
+     41442 Unil    ISF            MXI2XL                  g96393.B   
+     41446 Unil    ISR            MXI2XL                  g96393.B   
+     41471 Unil    ISF            MXI2XL                  g96392.B   
+     41472 Unil    ISR            MXI2XL                  g96392.B   
+     41514 Unil    ISF            MXI2XL                  g96391.B   
+     41526 Unil    ISR            MXI2XL                  g96391.B   
+     41562 Unil    ISF            MXI2XL                  g96390.B   
+     41565 Unil    ISR            MXI2XL                  g96390.B   
+     41586 Unil    ISF            MXI2XL                  g96389.B   
+     41587 Unil    ISR            MXI2XL                  g96389.B   
+     41635 Unil    ISF            MXI2XL                  g96388.B   
+     41636 Unil    ISR            MXI2XL                  g96388.B   
+     41673 Unil    ISF            MXI2XL                  g96387.B   
+     41674 Unil    ISR            MXI2XL                  g96387.B   
+     41722 Unil    ISF            MXI2XL                  g96386.B   
+     41726 Unil    ISR            MXI2XL                  g96386.B   
+     41786 Unil    ISF            MXI2XL                  g96385.B   
+     41789 Unil    ISR            MXI2XL                  g96385.B   
+     41825 Unil    ISF            MXI2XL                  g96384.B   
+     41826 Unil    ISR            MXI2XL                  g96384.B   
+     41841 Unil    ISF            MXI2XL                  g96383.B   
+     41842 Unil    ISR            MXI2XL                  g96383.B   
+     41900 Unil    ISF            MXI2XL                  g96382.B   
+     41914 Unil    ISR            MXI2XL                  g96382.B   
+     41979 Unil    ISF            MXI2XL                  g96381.B   
+     41980 Unil    ISR            MXI2XL                  g96381.B   
+     42013 Unil    ISF            MXI2XL                  g96380.B   
+     42014 Unil    ISR            MXI2XL                  g96380.B   
+     42066 Unil    ISF            MXI2XL                  g96379.B   
+     42070 Unil    ISR            MXI2XL                  g96379.B   
+     42121 Unil    ISF            MXI2XL                  g96378.B   
+     42122 Unil    ISR            MXI2XL                  g96378.B   
+     48736 A       ISF            MX2X1                   g92082__1857.B   
+     50907 Unil    ISR            AOI222X1                g92236.C0   
+     50908 Unil    ISF            AOI222X1                g92236.C0   
+     50935 Unil    ISR            AOI222X1                g92237.C0   
+     50936 Unil    ISF            AOI222X1                g92237.C0   
+     50963 Unil    ISR            AOI222X1                g92238.C0   
+     50964 Unil    ISF            AOI222X1                g92238.C0   
+     50991 Unil    ISR            AOI222X1                g92239.C0   
+     50992 Unil    ISF            AOI222X1                g92239.C0   
+     51019 Unil    ISR            AOI222X1                g92240.C0   
+     51020 Unil    ISF            AOI222X1                g92240.C0   
+     51047 Unil    ISR            AOI222X1                g92241.C0   
+     51048 Unil    ISF            AOI222X1                g92241.C0   
+     51091 Unil    ISR            AOI222X1                g92243.C0   
+     51092 Unil    ISF            AOI222X1                g92243.C0   
+     51119 Unil    ISR            AOI222X1                g92244.C0   
+     51120 Unil    ISF            AOI222X1                g92244.C0   
+     51131 Unil    ISR            AOI222X1                g92245.B0   
+     51132 Unil    ISF            AOI222X1                g92245.B0   
+     51175 Unil    ISR            AOI222X1                g92246.C0   
+     51176 Unil    ISF            AOI222X1                g92246.C0   
+     51203 Unil    ISR            AOI222X1                g92247.C0   
+     51204 Unil    ISF            AOI222X1                g92247.C0   
+     51567 Unil    ISR            AOI222X1                g92281.C0   
+     51568 Unil    ISF            AOI222X1                g92281.C0   
+     52111 Unil    ISR            AOI222X1                g92332.C0   
+     52112 Unil    ISF            AOI222X1                g92332.C0   
+     52191 Unil    ISR            AOI222X1                g92336.C0   
+     52192 Unil    ISF            AOI222X1                g92336.C0   
+     52219 Unil    ISR            AOI222X1                g92337.C0   
+     52220 Unil    ISF            AOI222X1                g92337.C0   
+     52247 Unil    ISR            AOI222X1                g92338.C0   
+     52248 Unil    ISF            AOI222X1                g92338.C0   
+     52287 Unil    ISR            AOI222X1                g92340.C0   
+     52288 Unil    ISF            AOI222X1                g92340.C0   
+     52315 Unil    ISR            AOI222X1                g92341.C0   
+     52316 Unil    ISF            AOI222X1                g92341.C0   
+     52343 Unil    ISR            AOI222X1                g92342.C0   
+     52344 Unil    ISF            AOI222X1                g92342.C0   
+     52371 Unil    ISR            AOI222X1                g92343.C0   
+     52372 Unil    ISF            AOI222X1                g92343.C0   
+     52399 Unil    ISR            AOI222X1                g92344.C0   
+     52400 Unil    ISF            AOI222X1                g92344.C0   
+     52951 Unil    ISR            AOI222X1                g92400.C0   
+     52952 Unil    ISF            AOI222X1                g92400.C0   
+     53011 Unil    ISR            AOI222X1                g92403.C0   
+     53012 Unil    ISF            AOI222X1                g92403.C0   
+     54819 Unil    ISR            AOI222X1                g92537.C0   
+     54820 Unil    ISF            AOI222X1                g92537.C0   
+     54847 Unil    ISR            AOI222X1                g92538.C0   
+     54848 Unil    ISF            AOI222X1                g92538.C0   
+     54875 Unil    ISR            AOI222X1                g92539.C0   
+     54876 Unil    ISF            AOI222X1                g92539.C0   
+     54903 Unil    ISR            AOI222X1                g92540.C0   
+     54904 Unil    ISF            AOI222X1                g92540.C0   
+     54931 Unil    ISR            AOI222X1                g92541.C0   
+     54932 Unil    ISF            AOI222X1                g92541.C0   
+     54959 Unil    ISR            AOI222X1                g92542.C0   
+     54960 Unil    ISF            AOI222X1                g92542.C0   
+     54987 Unil    ISR            AOI222X1                g92543.C0   
+     54988 Unil    ISF            AOI222X1                g92543.C0   
+     55015 Unil    ISR            AOI222X1                g92544.C0   
+     55016 Unil    ISF            AOI222X1                g92544.C0   
+     55043 Unil    ISR            AOI222X1                g92545.C0   
+     55044 Unil    ISF            AOI222X1                g92545.C0   
+     55147 Ud      ISR            OA21X1                  g92552.A0   
+     55151 Ud      ISR            OA21X1                  g92552.A1   
+     56951 Unil    ISR            AOI222X1                g92693.C0   
+     56952 Unil    ISF            AOI222X1                g92693.C0   
+     57187 Unil    ISR            AOI222X1                g92705.C0   
+     57188 Unil    ISF            AOI222X1                g92705.C0   
+     57215 Unil    ISR            AOI222X1                g92706.C0   
+     57216 Unil    ISF            AOI222X1                g92706.C0   
+     57243 Unil    ISR            AOI222X1                g92707.C0   
+     57244 Unil    ISF            AOI222X1                g92707.C0   
+     57271 Unil    ISR            AOI222X1                g92708.C0   
+     57272 Unil    ISF            AOI222X1                g92708.C0   
+     58723 Unil    ISR            AOI222X1                g92797.C0   
+     58724 Unil    ISF            AOI222X1                g92797.C0   
+     58751 Unil    ISR            AOI222X1                g92798.C0   
+     58752 Unil    ISF            AOI222X1                g92798.C0   
+     58779 Unil    ISR            AOI222X1                g92799.C0   
+     58780 Unil    ISF            AOI222X1                g92799.C0   
+     58807 Unil    ISR            AOI222X1                g92800.C0   
+     58808 Unil    ISF            AOI222X1                g92800.C0   
+     58835 Unil    ISR            AOI222X1                g92801.C0   
+     58836 Unil    ISF            AOI222X1                g92801.C0   
+     58863 Unil    ISR            AOI222X1                g92802.C0   
+     58864 Unil    ISF            AOI222X1                g92802.C0   
+     58891 Unil    ISR            AOI222X1                g92803.C0   
+     58892 Unil    ISF            AOI222X1                g92803.C0   
+     58919 Unil    ISR            AOI222X1                g92804.C0   
+     58920 Unil    ISF            AOI222X1                g92804.C0   
+     58947 Unil    ISR            AOI222X1                g92805.C0   
+     58948 Unil    ISF            AOI222X1                g92805.C0   
+     58975 Unil    ISR            AOI222X1                g92806.C0   
+     58976 Unil    ISF            AOI222X1                g92806.C0   
+     59003 Unil    ISR            AOI222X1                g92807.C0   
+     59004 Unil    ISF            AOI222X1                g92807.C0   
+     59031 Unil    ISR            AOI222X1                g92808.C0   
+     59032 Unil    ISF            AOI222X1                g92808.C0   
+     59059 Unil    ISR            AOI222X1                g92809.C0   
+     59060 Unil    ISF            AOI222X1                g92809.C0   
+     59087 Unil    ISR            AOI222X1                g92810.C0   
+     59088 Unil    ISF            AOI222X1                g92810.C0   
+     59115 Unil    ISR            AOI222X1                g92811.C0   
+     59116 Unil    ISF            AOI222X1                g92811.C0   
+     59143 Unil    ISR            AOI222X1                g92812.C0   
+     59144 Unil    ISF            AOI222X1                g92812.C0   
+     59171 Unil    ISR            AOI222X1                g92813.C0   
+     59172 Unil    ISF            AOI222X1                g92813.C0   
+     59199 Unil    ISR            AOI222X1                g92814.C0   
+     59200 Unil    ISF            AOI222X1                g92814.C0   
+     59783 Unil    ISR            AOI222X1                g92868.C0   
+     59784 Unil    ISF            AOI222X1                g92868.C0   
+     59811 Unil    ISR            AOI222X1                g92869.C0   
+     59812 Unil    ISF            AOI222X1                g92869.C0   
+     59839 Unil    ISR            AOI222X1                g92870.C0   
+     59840 Unil    ISF            AOI222X1                g92870.C0   
+     62779 Unil    ISR            AOI222X1                g93041.C0   
+     62780 Unil    ISF            AOI222X1                g93041.C0   
+     62807 Unil    ISR            AOI222X1                g93042.C0   
+     62808 Unil    ISF            AOI222X1                g93042.C0   
+     62835 Unil    ISR            AOI222X1                g93043.C0   
+     62836 Unil    ISF            AOI222X1                g93043.C0   
+     62863 Unil    ISR            AOI222X1                g93044.C0   
+     62864 Unil    ISF            AOI222X1                g93044.C0   
+     62891 Unil    ISR            AOI222X1                g93045.C0   
+     62892 Unil    ISF            AOI222X1                g93045.C0   
+     62919 Unil    ISR            AOI222X1                g93046.C0   
+     62920 Unil    ISF            AOI222X1                g93046.C0   
+
+[end TFM_705]
+
+
+INFO (TFM-901): Fault Status Statistics for faults included in this fault list: 
+ Total                 :        602
+ Tested                :          0
+ Possibly Tested       :          0
+ Redundant             :          0
+ Untested (unprocessed):          0
+ ATPG Untestable       :        596
+   Ud                  :         86
+   Ucn                 :         14
+   Unil                :        384
+   Unlo                :        112
+ ATPG Aborted          :          6
+[end TFM_901]
+
+
+INFO (TDA-001): Maximum Memory used during the run and Cumulative Time in hours:minutes:seconds:
+
+                  Total Memory =           12,605,392  bytes
+
+                      CPU Time =    0:00:00.09
+                  Elapsed Time =    0:00:00.11                    [end TDA_001]
+
+     Date Ended:  Tuesday Dec 07 15:30:30 2021  EST
+
+INFO (TFW-119): Modus checked in a Modus_Test license.  [end TFW_119] 
+
+
+
+-------------------------------------------------------------------------------
+*                      Message Summary                                        *
+-------------------------------------------------------------------------------
+ Count  Number             First Instance of Message Text
+------- ------             ------------------------------
+
+  INFO Messages...
+      1 INFO (TFM-705): Testmode: FULLSCAN Experiment: riscv_core_atpg Fault List:   
+      1 INFO (TFM-901): Fault Status Statistics for faults included in this fault list: 
+      1 INFO (TFW-117): Modus checked out a Modus_Test license.   
+      1 INFO (TFW-119): Modus checked in a Modus_Test license.   
+
+ For a detailed explanation of a message and a suggested user response execute 'msgHelp <message id>'.  For example: msgHelp TDA-009
+
+-------------------------------------------------------------------------------

@@ -1,0 +1,146 @@
+Starting Command: create_logic_tests 
+
+INFO (TDA-005): Command Line Invocation: 
+            create_logic_tests -testmode FULLSCAN -experiment riscv_core_atpg -workdir /users/Cours/ele8304/12/Labs/implement/lab2/implementation/atpg/syn -stdout summary  [end TDA_005]
+
+INFO (TDA-014): Cadence(R) Modus(TM) DFT Software Solution, Version 19.12-s004_1, built Dec 04 2019 (linux26_64) [end TDA_014]
+
+INFO (TDA-015): Log File: /users/Cours/ele8304/12/Labs/implement/lab2/implementation/atpg/syn/testresults/logs/log_create_logic_tests_FULLSCAN_riscv_core_atpg_120721153000-903937000 [end TDA_015]
+
+INFO (TDA-007): Job Information:
+            Date Started: Tuesday Dec 07 15:30:00 2021  EST
+            Host machine is vlsi410.vlsi.polymtl.ca, x86_64 running Linux 3.10.0-1160.45.1.el7.x86_64.
+            This job is process number 17281.
+[end TDA_007]
+
+INFO (TDA-009): Options/Values information.
+            (options marked with '*' have program generated values,
+             options marked with '+' were specified to default.)
+
+            -WORKDIR /users/Cours/ele8304/12/Labs/implement/lab2/implementation/atpg/syn
+            -TESTMODE FULLSCAN
+            -EXPERIMENT riscv_core_atpg
+
+            -LOGFILE /users/Cours/ele8304/12/Labs/implement/lab2/implementation/atpg/syn/testresults/logs/log_create_logic_tests_FULLSCAN_riscv_core_atpg_120721153000-903937000
+            -STDOUT summary
+[end TDA_009]
+
+
+INFO (TFW-117): Modus checked out a Modus_Test license.  [end TFW_117] 
+******************************************************************************************
+Coverage Definitions:
+ #Faults  : Number of Active Faults (observable).
+ #Tested  : Number of Active Faults marked tested.
+ #Possibly: Number of Active Faults marked possibly tested
+            (good value is 0 or 1; fault value is X).
+ #Redund  : Number of Active Faults untestable due to redundancy.
+ #Untested: Number of Active Faults untested.
+ %TCov  (%Test Coverage)                      : #Tested / #Faults
+ %ATCov (%Adjusted TCov)                      : #Tested / (#Faults-#Redund)
+******************************************************************************************
+******************************************************************************************
+                           Testmode Statistics: FULLSCAN
+
+                         #Faults    #Tested  #Possibly    #Redund  #Untested  %TCov %ATCov
+Total Static               53354          0          0          0      53354   0.00   0.00
+Total Dynamic              47978          0          0          0      47978   0.00   0.00
+
+                            Global Statistics
+
+                         #Faults    #Tested  #Possibly    #Redund  #Untested  %TCov %ATCov
+Total Static               53354          0          0          0      53354   0.00   0.00
+Total Dynamic              53354          0          0          0      53354   0.00   0.00
+******************************************************************************************
+
+*************************************************************************************************************
+INFO (TTC-110): Starting Scan Test generation                                                   [end TTC_110] 
+
+INFO (TDA-220):   --- Tests ---   Faults     ---- ATCov ----   -- Faults --   - Elapsed Time -  [end TDA_220] 
+INFO (TDA-220):    Sim.    Eff.  Detected    Tmode    Global     Untested                       [end TDA_220] 
+INFO (TDA-220):      1       1      11410    21.39%   21.39%        41944           00:00.79    [end TDA_220] 
+INFO (TTC-110): Ending Scan Test generation                                                     [end TTC_110] 
+*************************************************************************************************************
+
+*************************************************************************************************************
+INFO (TTC-110): Starting Reset/Set Test Generation                                              [end TTC_110] 
+
+INFO (TDA-220):   --- Tests ---   Faults     ---- ATCov ----   -- Faults --   - Elapsed Time -  [end TDA_220] 
+INFO (TDA-220):    Sim.    Eff.  Detected    Tmode    Global     Untested                       [end TDA_220] 
+INFO (TDA-220):      1       1       1346    23.91%   23.91%        40598           00:00.98    [end TDA_220] 
+INFO (TTC-110): Ending Reset/Set Test Generation                                                [end TTC_110] 
+*************************************************************************************************************
+
+*************************************************************************************************************
+INFO (TTC-110): Starting Static Logic Test generation                                           [end TTC_110] 
+
+INFO (TDA-220):   --- Tests ---   Faults     ---- ATCov ----   -- Faults --   - Elapsed Time -  [end TDA_220] 
+INFO (TDA-220):    Sim.    Eff.  Detected    Tmode    Global     Untested                       [end TDA_220] 
+INFO (TDA-220):     16      16      29833    79.82%   79.82%        10765           00:01.98    [end TDA_220] 
+INFO (TDA-220):     32      32       4990    89.18%   89.18%         5775           00:02.16    [end TDA_220] 
+INFO (TDA-220):     48      48       2620    94.09%   94.09%         3155           00:02.27    [end TDA_220] 
+INFO (TDA-220):     64      64       1979    97.80%   97.80%         1176           00:02.36    [end TDA_220] 
+INFO (TDA-220):     80      80        806    99.31%   99.31%          370           00:02.41    [end TDA_220] 
+INFO (TDA-220):     96      96        128    99.55%   99.55%          242           00:02.45    [end TDA_220] 
+INFO (TDA-220):    112     112         72    99.68%   99.68%          170           00:02.48    [end TDA_220] 
+INFO (TDA-220):    116     116        161    99.98%   99.98%            9           00:02.50    [end TDA_220] 
+INFO (TDA-220):    123     123          9    99.99%   99.99%            0           00:02.50    [end TDA_220] 
+INFO (TTC-110): Ending Static Logic Test generation - processing limit reached                  [end TTC_110] 
+*************************************************************************************************************
+
+******************************************************************************************
+                           Testmode Statistics: FULLSCAN
+
+                         #Faults    #Tested  #Possibly    #Redund  #Untested  %TCov %ATCov
+Total Static               53354      53354          0          0          0 100.00 100.00
+Total Dynamic              47978       8722          0          0      39256  18.18  18.18
+
+                            Global Statistics
+
+                         #Faults    #Tested  #Possibly    #Redund  #Untested  %TCov %ATCov
+Total Static               53354      53354          0          0          0 100.00 100.00
+Total Dynamic              53354       8722          0          0      44632  16.35  16.35
+******************************************************************************************
+
+
+              ----Final Pattern Statistics----
+
+ Test Section Type                       # Test Sequences
+----------------------------------------------------------
+ Scan                                           1
+ Logic                                          124
+----------------------------------------------------------
+ Total                                          125
+
+(I) File(s) generated (bytes and name):
+
+         229376 /users/Cours/ele8304/12/Labs/implement/lab2/implementation/atpg/syn/tbdata/faultStatus.FULLSCAN.riscv_core_atpg
+         614235 /users/Cours/ele8304/12/Labs/implement/lab2/implementation/atpg/syn/tbdata/TBDbin.FULLSCAN.riscv_core_atpg
+
+INFO (TDA-001): Maximum Memory used during the run and Cumulative Time in hours:minutes:seconds:
+
+                  Total Memory =           21,165,536  bytes
+
+                      CPU Time =    0:00:01.54
+                  Elapsed Time =    0:00:02.57                    [end TDA_001]
+
+     Date Ended:  Tuesday Dec 07 15:30:03 2021  EST
+
+INFO (TFW-119): Modus checked in a Modus_Test license.  [end TFW_119] 
+
+
+
+-------------------------------------------------------------------------------
+*                      Message Summary                                        *
+-------------------------------------------------------------------------------
+ Count  Number             First Instance of Message Text
+------- ------             ------------------------------
+
+  INFO Messages...
+     17 INFO (TDA-220):   --- Tests ---   Faults     ---- ATCov ----   -- Faults --   - Elapsed Time -   
+      1 INFO (TFW-117): Modus checked out a Modus_Test license.   
+      1 INFO (TFW-119): Modus checked in a Modus_Test license.   
+      6 INFO (TTC-110): Starting Scan Test generation                                                    
+
+ For a detailed explanation of a message and a suggested user response execute 'msgHelp <message id>'.  For example: msgHelp TDA-009
+
+-------------------------------------------------------------------------------

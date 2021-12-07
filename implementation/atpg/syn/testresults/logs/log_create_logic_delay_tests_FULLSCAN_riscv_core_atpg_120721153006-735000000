@@ -1,0 +1,135 @@
+Starting Command: create_logic_delay_tests 
+
+INFO (TDA-005): Command Line Invocation: 
+            create_logic_delay_tests -append yes -testmode FULLSCAN -experiment riscv_core_atpg -workdir /users/Cours/ele8304/12/Labs/implement/lab2/implementation/atpg/syn -stdout summary  [end TDA_005]
+
+INFO (TDA-014): Cadence(R) Modus(TM) DFT Software Solution, Version 19.12-s004_1, built Dec 04 2019 (linux26_64) [end TDA_014]
+
+INFO (TDA-015): Log File: /users/Cours/ele8304/12/Labs/implement/lab2/implementation/atpg/syn/testresults/logs/log_create_logic_delay_tests_FULLSCAN_riscv_core_atpg_120721153006-735000000 [end TDA_015]
+
+INFO (TDA-007): Job Information:
+            Date Started: Tuesday Dec 07 15:30:06 2021  EST
+            Host machine is vlsi410.vlsi.polymtl.ca, x86_64 running Linux 3.10.0-1160.45.1.el7.x86_64.
+            This job is process number 17465.
+[end TDA_007]
+
+INFO (TDA-009): Options/Values information.
+            (options marked with '*' have program generated values,
+             options marked with '+' were specified to default.)
+
+            -WORKDIR /users/Cours/ele8304/12/Labs/implement/lab2/implementation/atpg/syn
+            -TESTMODE FULLSCAN
+            -EXPERIMENT riscv_core_atpg
+
+            -LOGFILE /users/Cours/ele8304/12/Labs/implement/lab2/implementation/atpg/syn/testresults/logs/log_create_logic_delay_tests_FULLSCAN_riscv_core_atpg_120721153006-735000000
+            -STDOUT summary
+            -append yes
+[end TDA_009]
+
+
+INFO (TFW-117): Modus checked out a Modus_Test license.  [end TFW_117] 
+******************************************************************************************
+Coverage Definitions:
+ #Faults  : Number of Active Faults (observable).
+ #Tested  : Number of Active Faults marked tested.
+ #Possibly: Number of Active Faults marked possibly tested
+            (good value is 0 or 1; fault value is X).
+ #Redund  : Number of Active Faults untestable due to redundancy.
+ #Untested: Number of Active Faults untested.
+ %TCov  (%Test Coverage)                      : #Tested / #Faults
+ %ATCov (%Adjusted TCov)                      : #Tested / (#Faults-#Redund)
+******************************************************************************************
+******************************************************************************************
+                           Testmode Statistics: FULLSCAN
+
+                         #Faults    #Tested  #Possibly    #Redund  #Untested  %TCov %ATCov
+Total Static               53354      53354          0          0          0 100.00 100.00
+Total Dynamic              47978       8722          0          0      39256  18.18  18.18
+
+                            Global Statistics
+
+                         #Faults    #Tested  #Possibly    #Redund  #Untested  %TCov %ATCov
+Total Static               53354      53354          0          0          0 100.00 100.00
+Total Dynamic              53354       8722          0          0      44632  16.35  16.35
+******************************************************************************************
+
+*************************************************************************************************************
+INFO (TTC-110): Starting Dynamic Logic Test generation                                          [end TTC_110] 
+
+INFO (TDA-220):   --- Tests ---   Faults     ---- ATCov ----   -- Faults --   - Elapsed Time -  [end TDA_220] 
+INFO (TDA-220):    Sim.    Eff.  Detected    Tmode    Global     Untested                       [end TDA_220] 
+INFO (TDA-220):     16      16      14732    48.88%   43.96%        24524           00:08.19    [end TDA_220] 
+INFO (TDA-220):     32      32       6224    61.86%   55.62%        18300           00:09.92    [end TDA_220] 
+INFO (TDA-220):     48      48       4676    71.60%   64.39%        13624           00:11.26    [end TDA_220] 
+INFO (TDA-220):     64      64       3260    78.40%   70.50%        10364           00:12.88    [end TDA_220] 
+INFO (TDA-220):     80      80       2738    84.11%   75.63%         7626           00:13.82    [end TDA_220] 
+INFO (TDA-220):     96      96       2186    88.66%   79.73%         5440           00:14.62    [end TDA_220] 
+INFO (TDA-220):    112     112       1637    92.07%   82.80%         3803           00:15.23    [end TDA_220] 
+INFO (TDA-220):    128     128       1485    95.17%   85.58%         2318           00:15.78    [end TDA_220] 
+INFO (TDA-220):    144     144        645    96.51%   86.79%         1673           00:16.22    [end TDA_220] 
+INFO (TDA-220):    160     160        529    97.62%   87.78%         1144           00:16.65    [end TDA_220] 
+INFO (TDA-220):    176     176        281    98.20%   88.31%          863           00:16.94    [end TDA_220] 
+INFO (TDA-220):    192     192        129    98.47%   88.55%          734           00:17.21    [end TDA_220] 
+INFO (TDA-220):    208     208         76    98.63%   88.69%          658           00:17.46    [end TDA_220] 
+INFO (TDA-220):    224     224         37    98.71%   88.76%          621           00:17.59    [end TDA_220] 
+INFO (TDA-220):    239     239         19    98.75%   88.80%          602           00:17.66    [end TDA_220] 
+INFO (TTC-110): Ending Dynamic Logic Test generation - processing limit reached                [end TTC_110] 
+*************************************************************************************************************
+
+******************************************************************************************
+                           Testmode Statistics: FULLSCAN
+
+                         #Faults    #Tested  #Possibly    #Redund  #Untested  %TCov %ATCov
+Total Static               53354      53354          0          0          0 100.00 100.00
+Total Dynamic              47978      47376          0          0        602  98.75  98.75
+
+                            Global Statistics
+
+                         #Faults    #Tested  #Possibly    #Redund  #Untested  %TCov %ATCov
+Total Static               53354      53354          0          0          0 100.00 100.00
+Total Dynamic              53354      47376          0          0       5978  88.80  88.80
+******************************************************************************************
+
+
+              ----Final Pattern Statistics----
+
+ Test Section Type                       # Test Sequences
+----------------------------------------------------------
+ Scan                                           1
+ Logic                                          363
+----------------------------------------------------------
+ Total                                          364
+
+(I) File(s) generated (bytes and name):
+
+         409600 /users/Cours/ele8304/12/Labs/implement/lab2/implementation/atpg/syn/tbdata/faultStatus.FULLSCAN.riscv_core_atpg
+        1490740 /users/Cours/ele8304/12/Labs/implement/lab2/implementation/atpg/syn/tbdata/TBDbin.FULLSCAN.riscv_core_atpg
+
+INFO (TDA-001): Maximum Memory used during the run and Cumulative Time in hours:minutes:seconds:
+
+                  Total Memory =           23,341,216  bytes
+
+                      CPU Time =    0:00:15.82
+                  Elapsed Time =    0:00:17.79                    [end TDA_001]
+
+     Date Ended:  Tuesday Dec 07 15:30:24 2021  EST
+
+INFO (TFW-119): Modus checked in a Modus_Test license.  [end TFW_119] 
+
+
+
+-------------------------------------------------------------------------------
+*                      Message Summary                                        *
+-------------------------------------------------------------------------------
+ Count  Number             First Instance of Message Text
+------- ------             ------------------------------
+
+  INFO Messages...
+     17 INFO (TDA-220):   --- Tests ---   Faults     ---- ATCov ----   -- Faults --   - Elapsed Time -   
+      1 INFO (TFW-117): Modus checked out a Modus_Test license.   
+      1 INFO (TFW-119): Modus checked in a Modus_Test license.   
+      2 INFO (TTC-110): Starting Dynamic Logic Test generation                                           
+
+ For a detailed explanation of a message and a suggested user response execute 'msgHelp <message id>'.  For example: msgHelp TDA-009
+
+-------------------------------------------------------------------------------
