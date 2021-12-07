@@ -9,7 +9,7 @@ end;
 
 architecture bench of riscv_core_tb is
 
-  constant K_CLK_PERIOD : time := 15.385 ns;
+  constant K_CLK_PERIOD : time := 12.5 ns;
 
   signal s_rstn       : std_logic := '1';
   signal s_clk        : std_logic := '0';

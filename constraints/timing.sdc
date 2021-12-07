@@ -17,9 +17,9 @@ set_load_unit -femtofarads
 # Point de fonctionnement
 set_operating_conditions -max_library PVT_1P1V_0C -min_library PVT_0P9V_125C
 
-# Horloge principale: 65 MHz
+# Horloge principale: 80 MHz
 set clk "clk"
-create_clock -period 15385 -name $clk [get_ports i_clk]
+create_clock -period 12500 -name $clk [get_ports i_clk]
 
 # Incertitudes sur l'horloge: setup = 100ps, hold = 30ps 
 set_db [get_clocks $clk] .clock_setup_uncertainty 100
