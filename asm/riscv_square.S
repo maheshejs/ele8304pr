@@ -2,7 +2,7 @@
  * Project  ELE8304 : Circuits intégrés à très grande échelle
  *          Mini-RISCV
  ******************************************************************************
- * File     riscv_fibo.S
+ * File     riscv_square.S
  * Author   Mickael Fiorentino  <mickael.fiorentino@polymtl.ca>
  * Lab      GRM - Polytechnique Montreal
  * Date     <2019-08-15 Thu>
@@ -13,8 +13,8 @@
 #define FAILURE       0xDDDDDDDD
 #define MASK0         0xF0F0F0F0
 #define MASK1         0x0F0F0F0F
-#define MAX_FIBO_LOOP 20
-#define MAX_FIBO_VAL  6765
+#define MAX_SQUA_LOOP 19
+#define MAX_SQUA_VAL  400
 
 .global start
 
@@ -49,7 +49,7 @@ init:
     beqz  sp, fail
     beqz  gp, fail
     jal   ra, main
-    li    t0, MAX_FIBO_VAL
+    li    t0, MAX_SQUA_VAL
     beq   a0, t0, pass
     jal   zero,  fail
 
@@ -71,20 +71,19 @@ main:
 
 square:
     li    t0, 0
-    li    s0, MAX_FIBO_LOOP
-    li    t1, 0
-    li    t2, 1
+    li    s0, MAX_SQUA_LOOP
+    addi  t1, zero, 1
     sw    t1, 0(sp)
-    sw    t2, -4(sp)
 
 loop:
     sltu  t3, t0, s0
     beqz  t3, endmain
     addi  t0, t0, 1
-    lw    t1, 0(sp)
-    lw    t2, -4(sp)
+    add   t1, t0, t0
+    addi  t1, t1, 1
+    lw    t2, 0(sp)
     add   t2, t1, t2
-    sw    t2, -8(sp)
+    sw    t2, -4(sp)
     srai  sp, sp,  2
     addi  sp, sp, -1
     slli  sp, sp,  2

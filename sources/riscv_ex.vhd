@@ -52,6 +52,7 @@ architecture arch of riscv_ex is
   signal s_or_stage_III   : std_logic_vector(4-1 downto 0);
   signal s_or_stage_IV    : std_logic_vector(2-1 downto 0);
   signal s_or_reduce      : std_logic;
+  signal s_reg_rs_data    : T_RDATA_ARRAY;
 
 begin
 
@@ -113,10 +114,14 @@ begin
     end if;
   end process;
 
-  P_FORWARDING : process(i_reg_ex_me, i_reg_me_wb, i_rs_data, i_rs_addr, i_dmem_read)
+  P_FORWARDING : process(i_reg_ex_me, i_reg_me_wb, i_rs_data, s_reg_rs_data, i_rs_addr, i_dmem_read, s_stall_state)
   begin
     -- default values
-    s_rs_data         <= i_rs_data;
+    if (s_stall_state = '1') then
+      s_rs_data <= s_reg_rs_data;
+    else
+      s_rs_data <= i_rs_data;
+    end if;
 
     for I in 0 to 1 loop
       -- Source registers are updated in Memory/Write-Back
@@ -145,6 +150,7 @@ begin
   P_STALLING : process(i_clk, i_rstn)
   begin
     if (rising_edge(i_clk)) then
+      s_reg_rs_data <= i_rs_data;
       s_stall_state <= not s_stall_state and i_reg_id_ex.dmem_re;
     end if;
 
