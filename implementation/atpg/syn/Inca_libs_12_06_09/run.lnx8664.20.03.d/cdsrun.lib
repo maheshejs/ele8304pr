@@ -1,1 +1,2 @@
+include ../../../../../build/cds.lib
 define worklib ../worklib

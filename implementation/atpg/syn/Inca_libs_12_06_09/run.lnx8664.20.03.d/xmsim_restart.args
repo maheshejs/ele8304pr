@@ -2,10 +2,10 @@
 // File created by:  xrun
 // Do not modify this file
 //
-+TESTFILE1=/users/Cours/ele8304/12/Labs/lab2/implementation/atpg/syn/testresults/verilog/FULLSCAN_PARALLEL/VER.FULLSCAN.data.scan.ex1.ts1.verilog
-+TESTFILE2=/users/Cours/ele8304/12/Labs/lab2/implementation/atpg/syn/testresults/verilog/FULLSCAN_PARALLEL/VER.FULLSCAN.data.logic.ex1.ts2.verilog
-+TESTFILE2=/users/Cours/ele8304/12/Labs/lab2/implementation/atpg/syn/testresults/verilog/FULLSCAN_PARALLEL/VER.FULLSCAN.data.logic.ex1.ts3.verilog
-+TESTFILE2=/users/Cours/ele8304/12/Labs/lab2/implementation/atpg/syn/testresults/verilog/FULLSCAN_PARALLEL/VER.FULLSCAN.data.IDDq.ex1.ts4.verilog
++TESTFILE1=/users/Cours/ele8304/12/Labs/implement/lab2/implementation/atpg/syn/testresults/verilog/FULLSCAN_PARALLEL/VER.FULLSCAN.data.scan.ex1.ts1.verilog
++TESTFILE2=/users/Cours/ele8304/12/Labs/implement/lab2/implementation/atpg/syn/testresults/verilog/FULLSCAN_PARALLEL/VER.FULLSCAN.data.logic.ex1.ts2.verilog
++TESTFILE2=/users/Cours/ele8304/12/Labs/implement/lab2/implementation/atpg/syn/testresults/verilog/FULLSCAN_PARALLEL/VER.FULLSCAN.data.logic.ex1.ts3.verilog
++TESTFILE2=/users/Cours/ele8304/12/Labs/implement/lab2/implementation/atpg/syn/testresults/verilog/FULLSCAN_PARALLEL/VER.FULLSCAN.data.IDDq.ex1.ts4.verilog
 +HEARTBEAT
 +FAILSET
 +access+rwc
@@ -15,26 +15,26 @@
 +xmoverride_timescale
 +xmseq_udp_delay+2ps
 +libext+.v+.V+.z+.Z+.gz
-+xmlibdirname+/users/Cours/ele8304/12/Labs/lab2/implementation/atpg/syn/Inca_libs_12_06_09
++xmlibdirname+/users/Cours/ele8304/12/Labs/implement/lab2/implementation/atpg/syn/Inca_libs_12_06_09
 -amsdlibdir
-/users/Cours/ele8304/12/Labs/lab2/implementation/atpg/syn/Inca_libs_12_06_09/AMSD
+/users/Cours/ele8304/12/Labs/implement/lab2/implementation/atpg/syn/Inca_libs_12_06_09/AMSD
 -STATUS
 -MESSAGES
 +EMGRLOG
-/users/Cours/ele8304/12/Labs/lab2/implementation/atpg/syn/ncverilog_FULLSCAN.log
+/users/Cours/ele8304/12/Labs/implement/lab2/implementation/atpg/syn/ncverilog_FULLSCAN.log
 -XLSTIME
-1638899187
+1638909332
 -XLKEEP
 -XLMODE
-/users/Cours/ele8304/12/Labs/lab2/implementation/atpg/syn/Inca_libs_12_06_09/run.lnx8664.20.03.d
+/users/Cours/ele8304/12/Labs/implement/lab2/implementation/atpg/syn/Inca_libs_12_06_09/run.lnx8664.20.03.d
 -RUNMODE
 -CDSLIB
-/users/Cours/ele8304/12/Labs/lab2/implementation/atpg/syn/Inca_libs_12_06_09/run.lnx8664.20.03.d/cds.lib
+/users/Cours/ele8304/12/Labs/implement/lab2/implementation/atpg/syn/Inca_libs_12_06_09/run.lnx8664.20.03.d/cds.lib
 -HDLVAR
-/users/Cours/ele8304/12/Labs/lab2/implementation/atpg/syn/Inca_libs_12_06_09/run.lnx8664.20.03.d/hdl.var
+/users/Cours/ele8304/12/Labs/implement/lab2/implementation/atpg/syn/Inca_libs_12_06_09/run.lnx8664.20.03.d/hdl.var
 -XLNAME
 xrun
 -XLVERSION
 "TOOL:	xrun(64)	20.03-s010"
 -XLNAME
-./implementation/atpg/syn/Inca_libs_12_06_09/run.lnx8664.20.03.d/vlsi410.vlsi.polymtl.ca_17159
+../implementation/atpg/syn/Inca_libs_12_06_09/run.lnx8664.20.03.d/vlsi410.vlsi.polymtl.ca_18169

@@ -129,6 +129,15 @@ write_toggle_gram \
     -testmode   FULLSCAN \
 
 #-------------------------------------------------------------------------------
+# ATPG - Save Experiment to the Master Database for the Testmode
+#-------------------------------------------------------------------------------
+commit_tests \
+    -testmode     FULLSCAN \
+    -inexperiment ${DESIGN}_atpg \
+
+check_log log_commit_tests_FULLSCAN_riscv_core_atpg
+
+#-------------------------------------------------------------------------------
 # VERILOG VECTORS - For PARALLEL Simulation
 #-------------------------------------------------------------------------------
 write_vectors \
@@ -140,13 +149,5 @@ write_vectors \
 
 check_log log_write_vectors_FULLSCAN_riscv_core_atpg
 
-#-------------------------------------------------------------------------------
-# ATPG - Save Experiment to the Master Database for the Testmode
-#-------------------------------------------------------------------------------
-commit_tests \
-    -testmode     FULLSCAN \
-    -inexperiment ${DESIGN}_atpg \
-
-check_log log_commit_tests_FULLSCAN_riscv_core_atpg
 
 exit

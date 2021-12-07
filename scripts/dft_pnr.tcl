@@ -44,7 +44,7 @@ timeDesign -prePlace -outDir $::env(PNR_DFT_REP_DIR)/timing
 setDesignMode -process 45 -flowEffort standard
 setPlaceMode -timingDriven true -place_global_cong_effort auto -place_global_reorder_scan true
 setPlaceMode -place_global_reorder_scan true
-defIn $::env(SYN_DFT_NET_DIR)/riscv_core.syn.scandef
+defIn $::env(ATPG_DIR)/syn/riscv_core.syn.scandef
 setScanReorderMode -compLogic true
 setOptMode -drcMargin 0.5
 place_opt_design

@@ -11,7 +11,7 @@
 #-------------------------------------------------------------------------------
 # "set_db workdir" is recommended to be set first to initialize where the Database is to be located
 # WORKDIR Tcl variable can be used in the script to reference file locations
-set    WORKDIR /users/Cours/ele8304/12/Labs/lab2/implementation/atpg/syn;                                         # Define Tcl variable
+set    WORKDIR /users/Cours/ele8304/12/Labs/implement/lab2/implementation/atpg/syn;                                         # Define Tcl variable
 set_db workdir $WORKDIR;                                  # Specify the directory for the ATPG database
  
 # Configure the database
