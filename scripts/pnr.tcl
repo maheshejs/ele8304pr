@@ -43,11 +43,10 @@ editPin -pin [list i_dmem_read[0]  i_dmem_read[1]  i_dmem_read[2]  i_dmem_read[3
 timeDesign -prePlace -outDir $::env(PNR_REP_DIR)/timing
 setDesignMode -process 45 -flowEffort standard
 setPlaceMode -timingDriven true -place_global_cong_effort auto -place_global_reorder_scan true
-setPlaceMode -place_global_reorder_scan true
-defIn $::env(SYN_NET_DIR)/riscv_core.syn.scandef
-setScanReorderMode -compLogic true
+setPlaceMode -place_global_reorder_scan false
+deleteAllScanCells
+setOptMode -drcMargin 0.5
 place_opt_design
-defOutBySection $::env(PNR_NET_DIR)/compteur.place.scandef -noNets -noComps -scanChains
 set_ccopt_property buffer_cells [list CLKBUFX20 CLKBUFX16 CLKBUFX12 CLKBUFX8 CLKBUFX6 CLKBUFX4 CLKBUFX3 CLKBUFX2]
 set_ccopt_property inverter_cells [list CLKINVX20 CLKINVX6 CLKINVX8 CLKINVX16 CLKINVX12 CLKINVX4 CLKINVX3 CLKINVX2 CLKINVX1]
 set_ccopt_property use_inverters true

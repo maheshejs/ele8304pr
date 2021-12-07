@@ -23,11 +23,6 @@ architecture core_bench of riscv_core_tb is
   signal s_dmem_addr  : std_logic_vector(8 downto 0);
   signal s_dmem_read  : std_logic_vector(31 downto 0);
   signal s_dmem_write : std_logic_vector(31 downto 0);
-  -- DFT
-  signal s_scan_en    : std_logic := '0';
-  signal s_test_mode  : std_logic := '0';
-  signal s_tdi        : std_logic := '0';
-  signal s_tdo        : std_logic := '0';
 
 
 begin
@@ -45,12 +40,7 @@ begin
     o_dmem_we     => s_dmem_we,
     o_dmem_addr   => s_dmem_addr,
     i_dmem_read   => s_dmem_read,
-    o_dmem_write  => s_dmem_write,
-    -- DFT
-    i_scan_en     => s_scan_en,
-    i_test_mode   => s_test_mode,
-    i_tdi         => s_tdi,
-    o_tdo         => s_tdo
+    o_dmem_write  => s_dmem_write
   );
 
   X_DPM : dpm 
