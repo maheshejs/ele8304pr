@@ -284,4 +284,6 @@ package riscv_pkg is
           o_b_read  : out std_logic_vector(WIDTH-1 downto 0)
         );
     end component dpm;
+
+    
 end package riscv_pkg;

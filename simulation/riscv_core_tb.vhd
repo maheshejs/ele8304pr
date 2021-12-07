@@ -95,19 +95,3 @@ begin
   end process;
 
 end;
-
-configuration core_rtl of riscv_core_tb is
-  for core_bench
-    for X_CORE : riscv_core
-      use entity work.riscv_core(core_rtl);
-    end for;
-  end for;
-end configuration;
-
-configuration core_dft of riscv_core_tb is
-  for core_bench
-    for X_CORE : riscv_core
-      use entity work.riscv_core(core_dft);
-    end for;
-  end for;
-end configuration;

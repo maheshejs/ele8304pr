@@ -56,6 +56,9 @@ setenv ATPG_DIR     	${IMP_DIR}/atpg
 setenv PNR_DIR      	${IMP_DIR}/pnr
 setenv PNR_NET_DIR  	${PNR_DIR}/netlist
 setenv PNR_REP_DIR  	${PNR_DIR}/reports
+setenv PNR_DFT_DIR      	${IMP_DIR}/pnr_dft
+setenv PNR_DFT_NET_DIR  	${PNR_DFT_DIR}/netlist
+setenv PNR_DFT_REP_DIR  	${PNR_DFT_DIR}/reports
 
 #-----------------------------------------------------------------------------
 # CONFIGURATION DU KIT GPDK045
