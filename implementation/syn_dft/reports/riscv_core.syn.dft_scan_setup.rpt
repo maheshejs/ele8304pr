@@ -1,0 +1,1042 @@
+
+Design Name
+===========
+    riscv_core
+
+Scan Style
+==========
+    muxed_scan
+Design has a valid DFT rule check status
+
+Global Constraints
+==================
+    Minimum number of scan chains: 1
+    Maximum length of scan chains: 10000
+    Lock-up element type: preferred_level_sensitive
+    Mix clock edges in scan chain: true
+    Prefix for unnamed scan objects: DFT_
+
+Test signal objects
+===================
+    shift_enable: 
+          object name: i_scan_en 
+          pin name: i_scan_en 
+          hookup_pin: i_scan_en 
+          hookup_polarity: non_inverted 
+          function: shift_enable 
+          active: high 
+          ideal: false 
+          user defined: true
+
+    test_mode: 
+          object name: i_test_mode 
+          pin name: i_test_mode 
+          hookup_pin: i_test_mode 
+          hookup_polarity: non_inverted 
+          function: test_mode 
+          active: high 
+          ideal: false 
+          user defined: true
+
+    test_mode: 
+          object name: i_rstn 
+          pin name: i_rstn 
+          hookup_pin: i_rstn 
+          hookup_polarity: non_inverted 
+          function: async_set_reset 
+          active: high 
+          ideal: false 
+          user defined: false
+
+
+Test clock objects
+==================
+    test_clock:
+          object name: clk_scan 
+          test_clock_domain: dom_1 
+          user defined: true 
+          source: i_clk  
+          root source: i_clk  
+          root source polarity: non_inverting
+          hookup_pin: i_clk 
+          period: 12500.0
+
+
+DFT controllable objects
+========================
+
+DFT don't scan objects
+======================
+
+DFT abstract don't scan objects
+===============================
+
+DFT scan segment constraints
+============================
+    Segment:
+          object name: DFT_AutoSegment_1 
+          scan-in: X_ID_s_reg_id_ex_reg[dmem_re]/SI 
+          scan-out: X_ME_s_reg_me_wb_reg[dmem_re]/QN 
+          shift-enable: internal 
+          connected_shift_enable: false 
+          length: 3 
+          type: shift_register 
+
+    Segment:
+          object name: DFT_AutoSegment_2 
+          scan-in: X_ID_s_reg_id_ex_reg[dmem_we]/SI 
+          scan-out: X_EX_s_reg_ex_me_reg[dmem_we]/Q 
+          shift-enable: internal 
+          connected_shift_enable: false 
+          length: 2 
+          type: shift_register 
+
+    Segment:
+          object name: DFT_AutoSegment_3 
+          scan-in: X_ID_s_reg_id_ex_reg[rd_addr][0]/SI 
+          scan-out: X_ME_s_reg_me_wb_reg[rd_addr][0]/Q 
+          shift-enable: internal 
+          connected_shift_enable: false 
+          length: 3 
+          type: shift_register 
+
+    Segment:
+          object name: DFT_AutoSegment_4 
+          scan-in: X_ID_s_reg_id_ex_reg[rd_addr][1]/SI 
+          scan-out: X_ME_s_reg_me_wb_reg[rd_addr][1]/Q 
+          shift-enable: internal 
+          connected_shift_enable: false 
+          length: 3 
+          type: shift_register 
+
+    Segment:
+          object name: DFT_AutoSegment_5 
+          scan-in: X_ID_s_reg_id_ex_reg[rd_addr][2]/SI 
+          scan-out: X_ME_s_reg_me_wb_reg[rd_addr][2]/Q 
+          shift-enable: internal 
+          connected_shift_enable: false 
+          length: 3 
+          type: shift_register 
+
+    Segment:
+          object name: DFT_AutoSegment_6 
+          scan-in: X_ID_s_reg_id_ex_reg[rd_addr][3]/SI 
+          scan-out: X_ME_s_reg_me_wb_reg[rd_addr][3]/Q 
+          shift-enable: internal 
+          connected_shift_enable: false 
+          length: 3 
+          type: shift_register 
+
+    Segment:
+          object name: DFT_AutoSegment_7 
+          scan-in: X_ID_s_reg_id_ex_reg[rd_addr][4]/SI 
+          scan-out: X_ME_s_reg_me_wb_reg[rd_addr][4]/Q 
+          shift-enable: internal 
+          connected_shift_enable: false 
+          length: 3 
+          type: shift_register 
+
+    Segment:
+          object name: DFT_AutoSegment_8 
+          scan-in: X_ID_s_reg_id_ex_reg[rd_we]/SI 
+          scan-out: X_ME_s_reg_me_wb_reg[rd_we]/Q 
+          shift-enable: internal 
+          connected_shift_enable: false 
+          length: 3 
+          type: shift_register 
+
+    Segment:
+          object name: DFT_AutoSegment_9 
+          scan-in: X_ID_X_RF_s_data_r_reg[0][0]/SI 
+          scan-out: X_EX_s_reg_rs_data_reg[0][0]/Q 
+          shift-enable: internal 
+          connected_shift_enable: false 
+          length: 2 
+          type: shift_register 
+
+    Segment:
+          object name: DFT_AutoSegment_10 
+          scan-in: X_ID_X_RF_s_data_r_reg[0][10]/SI 
+          scan-out: X_EX_s_reg_rs_data_reg[0][10]/Q 
+          shift-enable: internal 
+          connected_shift_enable: false 
+          length: 2 
+          type: shift_register 
+
+    Segment:
+          object name: DFT_AutoSegment_11 
+          scan-in: X_ID_X_RF_s_data_r_reg[0][11]/SI 
+          scan-out: X_EX_s_reg_rs_data_reg[0][11]/Q 
+          shift-enable: internal 
+          connected_shift_enable: false 
+          length: 2 
+          type: shift_register 
+
+    Segment:
+          object name: DFT_AutoSegment_12 
+          scan-in: X_ID_X_RF_s_data_r_reg[0][12]/SI 
+          scan-out: X_EX_s_reg_rs_data_reg[0][12]/Q 
+          shift-enable: internal 
+          connected_shift_enable: false 
+          length: 2 
+          type: shift_register 
+
+    Segment:
+          object name: DFT_AutoSegment_13 
+          scan-in: X_ID_X_RF_s_data_r_reg[0][13]/SI 
+          scan-out: X_EX_s_reg_rs_data_reg[0][13]/Q 
+          shift-enable: internal 
+          connected_shift_enable: false 
+          length: 2 
+          type: shift_register 
+
+    Segment:
+          object name: DFT_AutoSegment_14 
+          scan-in: X_ID_X_RF_s_data_r_reg[0][14]/SI 
+          scan-out: X_EX_s_reg_rs_data_reg[0][14]/Q 
+          shift-enable: internal 
+          connected_shift_enable: false 
+          length: 2 
+          type: shift_register 
+
+    Segment:
+          object name: DFT_AutoSegment_15 
+          scan-in: X_ID_X_RF_s_data_r_reg[0][15]/SI 
+          scan-out: X_EX_s_reg_rs_data_reg[0][15]/Q 
+          shift-enable: internal 
+          connected_shift_enable: false 
+          length: 2 
+          type: shift_register 
+
+    Segment:
+          object name: DFT_AutoSegment_16 
+          scan-in: X_ID_X_RF_s_data_r_reg[0][16]/SI 
+          scan-out: X_EX_s_reg_rs_data_reg[0][16]/Q 
+          shift-enable: internal 
+          connected_shift_enable: false 
+          length: 2 
+          type: shift_register 
+
+    Segment:
+          object name: DFT_AutoSegment_17 
+          scan-in: X_ID_X_RF_s_data_r_reg[0][17]/SI 
+          scan-out: X_EX_s_reg_rs_data_reg[0][17]/Q 
+          shift-enable: internal 
+          connected_shift_enable: false 
+          length: 2 
+          type: shift_register 
+
+    Segment:
+          object name: DFT_AutoSegment_18 
+          scan-in: X_ID_X_RF_s_data_r_reg[0][18]/SI 
+          scan-out: X_EX_s_reg_rs_data_reg[0][18]/Q 
+          shift-enable: internal 
+          connected_shift_enable: false 
+          length: 2 
+          type: shift_register 
+
+    Segment:
+          object name: DFT_AutoSegment_19 
+          scan-in: X_ID_X_RF_s_data_r_reg[0][19]/SI 
+          scan-out: X_EX_s_reg_rs_data_reg[0][19]/Q 
+          shift-enable: internal 
+          connected_shift_enable: false 
+          length: 2 
+          type: shift_register 
+
+    Segment:
+          object name: DFT_AutoSegment_20 
+          scan-in: X_ID_X_RF_s_data_r_reg[0][1]/SI 
+          scan-out: X_EX_s_reg_rs_data_reg[0][1]/Q 
+          shift-enable: internal 
+          connected_shift_enable: false 
+          length: 2 
+          type: shift_register 
+
+    Segment:
+          object name: DFT_AutoSegment_21 
+          scan-in: X_ID_X_RF_s_data_r_reg[0][20]/SI 
+          scan-out: X_EX_s_reg_rs_data_reg[0][20]/Q 
+          shift-enable: internal 
+          connected_shift_enable: false 
+          length: 2 
+          type: shift_register 
+
+    Segment:
+          object name: DFT_AutoSegment_22 
+          scan-in: X_ID_X_RF_s_data_r_reg[0][21]/SI 
+          scan-out: X_EX_s_reg_rs_data_reg[0][21]/Q 
+          shift-enable: internal 
+          connected_shift_enable: false 
+          length: 2 
+          type: shift_register 
+
+    Segment:
+          object name: DFT_AutoSegment_23 
+          scan-in: X_ID_X_RF_s_data_r_reg[0][22]/SI 
+          scan-out: X_EX_s_reg_rs_data_reg[0][22]/Q 
+          shift-enable: internal 
+          connected_shift_enable: false 
+          length: 2 
+          type: shift_register 
+
+    Segment:
+          object name: DFT_AutoSegment_24 
+          scan-in: X_ID_X_RF_s_data_r_reg[0][23]/SI 
+          scan-out: X_EX_s_reg_rs_data_reg[0][23]/Q 
+          shift-enable: internal 
+          connected_shift_enable: false 
+          length: 2 
+          type: shift_register 
+
+    Segment:
+          object name: DFT_AutoSegment_25 
+          scan-in: X_ID_X_RF_s_data_r_reg[0][24]/SI 
+          scan-out: X_EX_s_reg_rs_data_reg[0][24]/Q 
+          shift-enable: internal 
+          connected_shift_enable: false 
+          length: 2 
+          type: shift_register 
+
+    Segment:
+          object name: DFT_AutoSegment_26 
+          scan-in: X_ID_X_RF_s_data_r_reg[0][25]/SI 
+          scan-out: X_EX_s_reg_rs_data_reg[0][25]/Q 
+          shift-enable: internal 
+          connected_shift_enable: false 
+          length: 2 
+          type: shift_register 
+
+    Segment:
+          object name: DFT_AutoSegment_27 
+          scan-in: X_ID_X_RF_s_data_r_reg[0][26]/SI 
+          scan-out: X_EX_s_reg_rs_data_reg[0][26]/Q 
+          shift-enable: internal 
+          connected_shift_enable: false 
+          length: 2 
+          type: shift_register 
+
+    Segment:
+          object name: DFT_AutoSegment_28 
+          scan-in: X_ID_X_RF_s_data_r_reg[0][27]/SI 
+          scan-out: X_EX_s_reg_rs_data_reg[0][27]/Q 
+          shift-enable: internal 
+          connected_shift_enable: false 
+          length: 2 
+          type: shift_register 
+
+    Segment:
+          object name: DFT_AutoSegment_29 
+          scan-in: X_ID_X_RF_s_data_r_reg[0][28]/SI 
+          scan-out: X_EX_s_reg_rs_data_reg[0][28]/Q 
+          shift-enable: internal 
+          connected_shift_enable: false 
+          length: 2 
+          type: shift_register 
+
+    Segment:
+          object name: DFT_AutoSegment_30 
+          scan-in: X_ID_X_RF_s_data_r_reg[0][29]/SI 
+          scan-out: X_EX_s_reg_rs_data_reg[0][29]/Q 
+          shift-enable: internal 
+          connected_shift_enable: false 
+          length: 2 
+          type: shift_register 
+
+    Segment:
+          object name: DFT_AutoSegment_31 
+          scan-in: X_ID_X_RF_s_data_r_reg[0][2]/SI 
+          scan-out: X_EX_s_reg_rs_data_reg[0][2]/Q 
+          shift-enable: internal 
+          connected_shift_enable: false 
+          length: 2 
+          type: shift_register 
+
+    Segment:
+          object name: DFT_AutoSegment_32 
+          scan-in: X_ID_X_RF_s_data_r_reg[0][30]/SI 
+          scan-out: X_EX_s_reg_rs_data_reg[0][30]/Q 
+          shift-enable: internal 
+          connected_shift_enable: false 
+          length: 2 
+          type: shift_register 
+
+    Segment:
+          object name: DFT_AutoSegment_33 
+          scan-in: X_ID_X_RF_s_data_r_reg[0][31]/SI 
+          scan-out: X_EX_s_reg_rs_data_reg[0][31]/Q 
+          shift-enable: internal 
+          connected_shift_enable: false 
+          length: 2 
+          type: shift_register 
+
+    Segment:
+          object name: DFT_AutoSegment_34 
+          scan-in: X_ID_X_RF_s_data_r_reg[0][3]/SI 
+          scan-out: X_EX_s_reg_rs_data_reg[0][3]/Q 
+          shift-enable: internal 
+          connected_shift_enable: false 
+          length: 2 
+          type: shift_register 
+
+    Segment:
+          object name: DFT_AutoSegment_35 
+          scan-in: X_ID_X_RF_s_data_r_reg[0][4]/SI 
+          scan-out: X_EX_s_reg_rs_data_reg[0][4]/Q 
+          shift-enable: internal 
+          connected_shift_enable: false 
+          length: 2 
+          type: shift_register 
+
+    Segment:
+          object name: DFT_AutoSegment_36 
+          scan-in: X_ID_X_RF_s_data_r_reg[0][5]/SI 
+          scan-out: X_EX_s_reg_rs_data_reg[0][5]/Q 
+          shift-enable: internal 
+          connected_shift_enable: false 
+          length: 2 
+          type: shift_register 
+
+    Segment:
+          object name: DFT_AutoSegment_37 
+          scan-in: X_ID_X_RF_s_data_r_reg[0][6]/SI 
+          scan-out: X_EX_s_reg_rs_data_reg[0][6]/Q 
+          shift-enable: internal 
+          connected_shift_enable: false 
+          length: 2 
+          type: shift_register 
+
+    Segment:
+          object name: DFT_AutoSegment_38 
+          scan-in: X_ID_X_RF_s_data_r_reg[0][7]/SI 
+          scan-out: X_EX_s_reg_rs_data_reg[0][7]/Q 
+          shift-enable: internal 
+          connected_shift_enable: false 
+          length: 2 
+          type: shift_register 
+
+    Segment:
+          object name: DFT_AutoSegment_39 
+          scan-in: X_ID_X_RF_s_data_r_reg[0][8]/SI 
+          scan-out: X_EX_s_reg_rs_data_reg[0][8]/Q 
+          shift-enable: internal 
+          connected_shift_enable: false 
+          length: 2 
+          type: shift_register 
+
+    Segment:
+          object name: DFT_AutoSegment_40 
+          scan-in: X_ID_X_RF_s_data_r_reg[0][9]/SI 
+          scan-out: X_EX_s_reg_rs_data_reg[0][9]/Q 
+          shift-enable: internal 
+          connected_shift_enable: false 
+          length: 2 
+          type: shift_register 
+
+    Segment:
+          object name: DFT_AutoSegment_41 
+          scan-in: X_ID_X_RF_s_data_r_reg[1][0]/SI 
+          scan-out: X_EX_s_reg_rs_data_reg[1][0]/Q 
+          shift-enable: internal 
+          connected_shift_enable: false 
+          length: 2 
+          type: shift_register 
+
+    Segment:
+          object name: DFT_AutoSegment_42 
+          scan-in: X_ID_X_RF_s_data_r_reg[1][10]/SI 
+          scan-out: X_EX_s_reg_rs_data_reg[1][10]/Q 
+          shift-enable: internal 
+          connected_shift_enable: false 
+          length: 2 
+          type: shift_register 
+
+    Segment:
+          object name: DFT_AutoSegment_43 
+          scan-in: X_ID_X_RF_s_data_r_reg[1][11]/SI 
+          scan-out: X_EX_s_reg_rs_data_reg[1][11]/Q 
+          shift-enable: internal 
+          connected_shift_enable: false 
+          length: 2 
+          type: shift_register 
+
+    Segment:
+          object name: DFT_AutoSegment_44 
+          scan-in: X_ID_X_RF_s_data_r_reg[1][12]/SI 
+          scan-out: X_EX_s_reg_rs_data_reg[1][12]/Q 
+          shift-enable: internal 
+          connected_shift_enable: false 
+          length: 2 
+          type: shift_register 
+
+    Segment:
+          object name: DFT_AutoSegment_45 
+          scan-in: X_ID_X_RF_s_data_r_reg[1][13]/SI 
+          scan-out: X_EX_s_reg_rs_data_reg[1][13]/Q 
+          shift-enable: internal 
+          connected_shift_enable: false 
+          length: 2 
+          type: shift_register 
+
+    Segment:
+          object name: DFT_AutoSegment_46 
+          scan-in: X_ID_X_RF_s_data_r_reg[1][14]/SI 
+          scan-out: X_EX_s_reg_rs_data_reg[1][14]/Q 
+          shift-enable: internal 
+          connected_shift_enable: false 
+          length: 2 
+          type: shift_register 
+
+    Segment:
+          object name: DFT_AutoSegment_47 
+          scan-in: X_ID_X_RF_s_data_r_reg[1][15]/SI 
+          scan-out: X_EX_s_reg_rs_data_reg[1][15]/Q 
+          shift-enable: internal 
+          connected_shift_enable: false 
+          length: 2 
+          type: shift_register 
+
+    Segment:
+          object name: DFT_AutoSegment_48 
+          scan-in: X_ID_X_RF_s_data_r_reg[1][16]/SI 
+          scan-out: X_EX_s_reg_rs_data_reg[1][16]/Q 
+          shift-enable: internal 
+          connected_shift_enable: false 
+          length: 2 
+          type: shift_register 
+
+    Segment:
+          object name: DFT_AutoSegment_49 
+          scan-in: X_ID_X_RF_s_data_r_reg[1][17]/SI 
+          scan-out: X_EX_s_reg_rs_data_reg[1][17]/Q 
+          shift-enable: internal 
+          connected_shift_enable: false 
+          length: 2 
+          type: shift_register 
+
+    Segment:
+          object name: DFT_AutoSegment_50 
+          scan-in: X_ID_X_RF_s_data_r_reg[1][18]/SI 
+          scan-out: X_EX_s_reg_rs_data_reg[1][18]/Q 
+          shift-enable: internal 
+          connected_shift_enable: false 
+          length: 2 
+          type: shift_register 
+
+    Segment:
+          object name: DFT_AutoSegment_51 
+          scan-in: X_ID_X_RF_s_data_r_reg[1][19]/SI 
+          scan-out: X_EX_s_reg_rs_data_reg[1][19]/Q 
+          shift-enable: internal 
+          connected_shift_enable: false 
+          length: 2 
+          type: shift_register 
+
+    Segment:
+          object name: DFT_AutoSegment_52 
+          scan-in: X_ID_X_RF_s_data_r_reg[1][1]/SI 
+          scan-out: X_EX_s_reg_rs_data_reg[1][1]/Q 
+          shift-enable: internal 
+          connected_shift_enable: false 
+          length: 2 
+          type: shift_register 
+
+    Segment:
+          object name: DFT_AutoSegment_53 
+          scan-in: X_ID_X_RF_s_data_r_reg[1][20]/SI 
+          scan-out: X_EX_s_reg_rs_data_reg[1][20]/Q 
+          shift-enable: internal 
+          connected_shift_enable: false 
+          length: 2 
+          type: shift_register 
+
+    Segment:
+          object name: DFT_AutoSegment_54 
+          scan-in: X_ID_X_RF_s_data_r_reg[1][21]/SI 
+          scan-out: X_EX_s_reg_rs_data_reg[1][21]/Q 
+          shift-enable: internal 
+          connected_shift_enable: false 
+          length: 2 
+          type: shift_register 
+
+    Segment:
+          object name: DFT_AutoSegment_55 
+          scan-in: X_ID_X_RF_s_data_r_reg[1][22]/SI 
+          scan-out: X_EX_s_reg_rs_data_reg[1][22]/Q 
+          shift-enable: internal 
+          connected_shift_enable: false 
+          length: 2 
+          type: shift_register 
+
+    Segment:
+          object name: DFT_AutoSegment_56 
+          scan-in: X_ID_X_RF_s_data_r_reg[1][23]/SI 
+          scan-out: X_EX_s_reg_rs_data_reg[1][23]/Q 
+          shift-enable: internal 
+          connected_shift_enable: false 
+          length: 2 
+          type: shift_register 
+
+    Segment:
+          object name: DFT_AutoSegment_57 
+          scan-in: X_ID_X_RF_s_data_r_reg[1][24]/SI 
+          scan-out: X_EX_s_reg_rs_data_reg[1][24]/Q 
+          shift-enable: internal 
+          connected_shift_enable: false 
+          length: 2 
+          type: shift_register 
+
+    Segment:
+          object name: DFT_AutoSegment_58 
+          scan-in: X_ID_X_RF_s_data_r_reg[1][25]/SI 
+          scan-out: X_EX_s_reg_rs_data_reg[1][25]/Q 
+          shift-enable: internal 
+          connected_shift_enable: false 
+          length: 2 
+          type: shift_register 
+
+    Segment:
+          object name: DFT_AutoSegment_59 
+          scan-in: X_ID_X_RF_s_data_r_reg[1][26]/SI 
+          scan-out: X_EX_s_reg_rs_data_reg[1][26]/Q 
+          shift-enable: internal 
+          connected_shift_enable: false 
+          length: 2 
+          type: shift_register 
+
+    Segment:
+          object name: DFT_AutoSegment_60 
+          scan-in: X_ID_X_RF_s_data_r_reg[1][27]/SI 
+          scan-out: X_EX_s_reg_rs_data_reg[1][27]/Q 
+          shift-enable: internal 
+          connected_shift_enable: false 
+          length: 2 
+          type: shift_register 
+
+    Segment:
+          object name: DFT_AutoSegment_61 
+          scan-in: X_ID_X_RF_s_data_r_reg[1][28]/SI 
+          scan-out: X_EX_s_reg_rs_data_reg[1][28]/Q 
+          shift-enable: internal 
+          connected_shift_enable: false 
+          length: 2 
+          type: shift_register 
+
+    Segment:
+          object name: DFT_AutoSegment_62 
+          scan-in: X_ID_X_RF_s_data_r_reg[1][29]/SI 
+          scan-out: X_EX_s_reg_rs_data_reg[1][29]/Q 
+          shift-enable: internal 
+          connected_shift_enable: false 
+          length: 2 
+          type: shift_register 
+
+    Segment:
+          object name: DFT_AutoSegment_63 
+          scan-in: X_ID_X_RF_s_data_r_reg[1][2]/SI 
+          scan-out: X_EX_s_reg_rs_data_reg[1][2]/Q 
+          shift-enable: internal 
+          connected_shift_enable: false 
+          length: 2 
+          type: shift_register 
+
+    Segment:
+          object name: DFT_AutoSegment_64 
+          scan-in: X_ID_X_RF_s_data_r_reg[1][30]/SI 
+          scan-out: X_EX_s_reg_rs_data_reg[1][30]/Q 
+          shift-enable: internal 
+          connected_shift_enable: false 
+          length: 2 
+          type: shift_register 
+
+    Segment:
+          object name: DFT_AutoSegment_65 
+          scan-in: X_ID_X_RF_s_data_r_reg[1][31]/SI 
+          scan-out: X_EX_s_reg_rs_data_reg[1][31]/Q 
+          shift-enable: internal 
+          connected_shift_enable: false 
+          length: 2 
+          type: shift_register 
+
+    Segment:
+          object name: DFT_AutoSegment_66 
+          scan-in: X_ID_X_RF_s_data_r_reg[1][3]/SI 
+          scan-out: X_EX_s_reg_rs_data_reg[1][3]/Q 
+          shift-enable: internal 
+          connected_shift_enable: false 
+          length: 2 
+          type: shift_register 
+
+    Segment:
+          object name: DFT_AutoSegment_67 
+          scan-in: X_ID_X_RF_s_data_r_reg[1][4]/SI 
+          scan-out: X_EX_s_reg_rs_data_reg[1][4]/Q 
+          shift-enable: internal 
+          connected_shift_enable: false 
+          length: 2 
+          type: shift_register 
+
+    Segment:
+          object name: DFT_AutoSegment_68 
+          scan-in: X_ID_X_RF_s_data_r_reg[1][5]/SI 
+          scan-out: X_EX_s_reg_rs_data_reg[1][5]/Q 
+          shift-enable: internal 
+          connected_shift_enable: false 
+          length: 2 
+          type: shift_register 
+
+    Segment:
+          object name: DFT_AutoSegment_69 
+          scan-in: X_ID_X_RF_s_data_r_reg[1][6]/SI 
+          scan-out: X_EX_s_reg_rs_data_reg[1][6]/Q 
+          shift-enable: internal 
+          connected_shift_enable: false 
+          length: 2 
+          type: shift_register 
+
+    Segment:
+          object name: DFT_AutoSegment_70 
+          scan-in: X_ID_X_RF_s_data_r_reg[1][7]/SI 
+          scan-out: X_EX_s_reg_rs_data_reg[1][7]/Q 
+          shift-enable: internal 
+          connected_shift_enable: false 
+          length: 2 
+          type: shift_register 
+
+    Segment:
+          object name: DFT_AutoSegment_71 
+          scan-in: X_ID_X_RF_s_data_r_reg[1][8]/SI 
+          scan-out: X_EX_s_reg_rs_data_reg[1][8]/Q 
+          shift-enable: internal 
+          connected_shift_enable: false 
+          length: 2 
+          type: shift_register 
+
+    Segment:
+          object name: DFT_AutoSegment_72 
+          scan-in: X_ID_X_RF_s_data_r_reg[1][9]/SI 
+          scan-out: X_EX_s_reg_rs_data_reg[1][9]/Q 
+          shift-enable: internal 
+          connected_shift_enable: false 
+          length: 2 
+          type: shift_register 
+
+    Segment:
+          object name: DFT_AutoSegment_73 
+          scan-in: X_EX_s_reg_ex_me_reg[alu_result][0]/SI 
+          scan-out: X_ME_s_reg_me_wb_reg[alu_result][0]/Q 
+          shift-enable: internal 
+          connected_shift_enable: false 
+          length: 2 
+          type: shift_register 
+
+    Segment:
+          object name: DFT_AutoSegment_74 
+          scan-in: X_EX_s_reg_ex_me_reg[alu_result][10]/SI 
+          scan-out: X_ME_s_reg_me_wb_reg[alu_result][10]/Q 
+          shift-enable: internal 
+          connected_shift_enable: false 
+          length: 2 
+          type: shift_register 
+
+    Segment:
+          object name: DFT_AutoSegment_75 
+          scan-in: X_EX_s_reg_ex_me_reg[alu_result][11]/SI 
+          scan-out: X_ME_s_reg_me_wb_reg[alu_result][11]/Q 
+          shift-enable: internal 
+          connected_shift_enable: false 
+          length: 2 
+          type: shift_register 
+
+    Segment:
+          object name: DFT_AutoSegment_76 
+          scan-in: X_EX_s_reg_ex_me_reg[alu_result][12]/SI 
+          scan-out: X_ME_s_reg_me_wb_reg[alu_result][12]/Q 
+          shift-enable: internal 
+          connected_shift_enable: false 
+          length: 2 
+          type: shift_register 
+
+    Segment:
+          object name: DFT_AutoSegment_77 
+          scan-in: X_EX_s_reg_ex_me_reg[alu_result][13]/SI 
+          scan-out: X_ME_s_reg_me_wb_reg[alu_result][13]/Q 
+          shift-enable: internal 
+          connected_shift_enable: false 
+          length: 2 
+          type: shift_register 
+
+    Segment:
+          object name: DFT_AutoSegment_78 
+          scan-in: X_EX_s_reg_ex_me_reg[alu_result][14]/SI 
+          scan-out: X_ME_s_reg_me_wb_reg[alu_result][14]/Q 
+          shift-enable: internal 
+          connected_shift_enable: false 
+          length: 2 
+          type: shift_register 
+
+    Segment:
+          object name: DFT_AutoSegment_79 
+          scan-in: X_EX_s_reg_ex_me_reg[alu_result][15]/SI 
+          scan-out: X_ME_s_reg_me_wb_reg[alu_result][15]/Q 
+          shift-enable: internal 
+          connected_shift_enable: false 
+          length: 2 
+          type: shift_register 
+
+    Segment:
+          object name: DFT_AutoSegment_80 
+          scan-in: X_EX_s_reg_ex_me_reg[alu_result][16]/SI 
+          scan-out: X_ME_s_reg_me_wb_reg[alu_result][16]/Q 
+          shift-enable: internal 
+          connected_shift_enable: false 
+          length: 2 
+          type: shift_register 
+
+    Segment:
+          object name: DFT_AutoSegment_81 
+          scan-in: X_EX_s_reg_ex_me_reg[alu_result][17]/SI 
+          scan-out: X_ME_s_reg_me_wb_reg[alu_result][17]/Q 
+          shift-enable: internal 
+          connected_shift_enable: false 
+          length: 2 
+          type: shift_register 
+
+    Segment:
+          object name: DFT_AutoSegment_82 
+          scan-in: X_EX_s_reg_ex_me_reg[alu_result][18]/SI 
+          scan-out: X_ME_s_reg_me_wb_reg[alu_result][18]/Q 
+          shift-enable: internal 
+          connected_shift_enable: false 
+          length: 2 
+          type: shift_register 
+
+    Segment:
+          object name: DFT_AutoSegment_83 
+          scan-in: X_EX_s_reg_ex_me_reg[alu_result][19]/SI 
+          scan-out: X_ME_s_reg_me_wb_reg[alu_result][19]/Q 
+          shift-enable: internal 
+          connected_shift_enable: false 
+          length: 2 
+          type: shift_register 
+
+    Segment:
+          object name: DFT_AutoSegment_84 
+          scan-in: X_EX_s_reg_ex_me_reg[alu_result][1]/SI 
+          scan-out: X_ME_s_reg_me_wb_reg[alu_result][1]/Q 
+          shift-enable: internal 
+          connected_shift_enable: false 
+          length: 2 
+          type: shift_register 
+
+    Segment:
+          object name: DFT_AutoSegment_85 
+          scan-in: X_EX_s_reg_ex_me_reg[alu_result][20]/SI 
+          scan-out: X_ME_s_reg_me_wb_reg[alu_result][20]/Q 
+          shift-enable: internal 
+          connected_shift_enable: false 
+          length: 2 
+          type: shift_register 
+
+    Segment:
+          object name: DFT_AutoSegment_86 
+          scan-in: X_EX_s_reg_ex_me_reg[alu_result][21]/SI 
+          scan-out: X_ME_s_reg_me_wb_reg[alu_result][21]/Q 
+          shift-enable: internal 
+          connected_shift_enable: false 
+          length: 2 
+          type: shift_register 
+
+    Segment:
+          object name: DFT_AutoSegment_87 
+          scan-in: X_EX_s_reg_ex_me_reg[alu_result][22]/SI 
+          scan-out: X_ME_s_reg_me_wb_reg[alu_result][22]/Q 
+          shift-enable: internal 
+          connected_shift_enable: false 
+          length: 2 
+          type: shift_register 
+
+    Segment:
+          object name: DFT_AutoSegment_88 
+          scan-in: X_EX_s_reg_ex_me_reg[alu_result][23]/SI 
+          scan-out: X_ME_s_reg_me_wb_reg[alu_result][23]/Q 
+          shift-enable: internal 
+          connected_shift_enable: false 
+          length: 2 
+          type: shift_register 
+
+    Segment:
+          object name: DFT_AutoSegment_89 
+          scan-in: X_EX_s_reg_ex_me_reg[alu_result][24]/SI 
+          scan-out: X_ME_s_reg_me_wb_reg[alu_result][24]/Q 
+          shift-enable: internal 
+          connected_shift_enable: false 
+          length: 2 
+          type: shift_register 
+
+    Segment:
+          object name: DFT_AutoSegment_90 
+          scan-in: X_EX_s_reg_ex_me_reg[alu_result][25]/SI 
+          scan-out: X_ME_s_reg_me_wb_reg[alu_result][25]/Q 
+          shift-enable: internal 
+          connected_shift_enable: false 
+          length: 2 
+          type: shift_register 
+
+    Segment:
+          object name: DFT_AutoSegment_91 
+          scan-in: X_EX_s_reg_ex_me_reg[alu_result][26]/SI 
+          scan-out: X_ME_s_reg_me_wb_reg[alu_result][26]/Q 
+          shift-enable: internal 
+          connected_shift_enable: false 
+          length: 2 
+          type: shift_register 
+
+    Segment:
+          object name: DFT_AutoSegment_92 
+          scan-in: X_EX_s_reg_ex_me_reg[alu_result][27]/SI 
+          scan-out: X_ME_s_reg_me_wb_reg[alu_result][27]/Q 
+          shift-enable: internal 
+          connected_shift_enable: false 
+          length: 2 
+          type: shift_register 
+
+    Segment:
+          object name: DFT_AutoSegment_93 
+          scan-in: X_EX_s_reg_ex_me_reg[alu_result][28]/SI 
+          scan-out: X_ME_s_reg_me_wb_reg[alu_result][28]/Q 
+          shift-enable: internal 
+          connected_shift_enable: false 
+          length: 2 
+          type: shift_register 
+
+    Segment:
+          object name: DFT_AutoSegment_94 
+          scan-in: X_EX_s_reg_ex_me_reg[alu_result][29]/SI 
+          scan-out: X_ME_s_reg_me_wb_reg[alu_result][29]/Q 
+          shift-enable: internal 
+          connected_shift_enable: false 
+          length: 2 
+          type: shift_register 
+
+    Segment:
+          object name: DFT_AutoSegment_95 
+          scan-in: X_EX_s_reg_ex_me_reg[alu_result][2]/SI 
+          scan-out: X_ME_s_reg_me_wb_reg[alu_result][2]/Q 
+          shift-enable: internal 
+          connected_shift_enable: false 
+          length: 2 
+          type: shift_register 
+
+    Segment:
+          object name: DFT_AutoSegment_96 
+          scan-in: X_EX_s_reg_ex_me_reg[alu_result][30]/SI 
+          scan-out: X_ME_s_reg_me_wb_reg[alu_result][30]/Q 
+          shift-enable: internal 
+          connected_shift_enable: false 
+          length: 2 
+          type: shift_register 
+
+    Segment:
+          object name: DFT_AutoSegment_97 
+          scan-in: X_EX_s_reg_ex_me_reg[alu_result][31]/SI 
+          scan-out: X_ME_s_reg_me_wb_reg[alu_result][31]/Q 
+          shift-enable: internal 
+          connected_shift_enable: false 
+          length: 2 
+          type: shift_register 
+
+    Segment:
+          object name: DFT_AutoSegment_98 
+          scan-in: X_EX_s_reg_ex_me_reg[alu_result][3]/SI 
+          scan-out: X_ME_s_reg_me_wb_reg[alu_result][3]/Q 
+          shift-enable: internal 
+          connected_shift_enable: false 
+          length: 2 
+          type: shift_register 
+
+    Segment:
+          object name: DFT_AutoSegment_99 
+          scan-in: X_EX_s_reg_ex_me_reg[alu_result][4]/SI 
+          scan-out: X_ME_s_reg_me_wb_reg[alu_result][4]/Q 
+          shift-enable: internal 
+          connected_shift_enable: false 
+          length: 2 
+          type: shift_register 
+
+    Segment:
+          object name: DFT_AutoSegment_100 
+          scan-in: X_EX_s_reg_ex_me_reg[alu_result][5]/SI 
+          scan-out: X_ME_s_reg_me_wb_reg[alu_result][5]/Q 
+          shift-enable: internal 
+          connected_shift_enable: false 
+          length: 2 
+          type: shift_register 
+
+    Segment:
+          object name: DFT_AutoSegment_101 
+          scan-in: X_EX_s_reg_ex_me_reg[alu_result][6]/SI 
+          scan-out: X_ME_s_reg_me_wb_reg[alu_result][6]/Q 
+          shift-enable: internal 
+          connected_shift_enable: false 
+          length: 2 
+          type: shift_register 
+
+    Segment:
+          object name: DFT_AutoSegment_102 
+          scan-in: X_EX_s_reg_ex_me_reg[alu_result][7]/SI 
+          scan-out: X_ME_s_reg_me_wb_reg[alu_result][7]/Q 
+          shift-enable: internal 
+          connected_shift_enable: false 
+          length: 2 
+          type: shift_register 
+
+    Segment:
+          object name: DFT_AutoSegment_103 
+          scan-in: X_EX_s_reg_ex_me_reg[alu_result][8]/SI 
+          scan-out: X_ME_s_reg_me_wb_reg[alu_result][8]/Q 
+          shift-enable: internal 
+          connected_shift_enable: false 
+          length: 2 
+          type: shift_register 
+
+    Segment:
+          object name: DFT_AutoSegment_104 
+          scan-in: X_EX_s_reg_ex_me_reg[alu_result][9]/SI 
+          scan-out: X_ME_s_reg_me_wb_reg[alu_result][9]/Q 
+          shift-enable: internal 
+          connected_shift_enable: false 
+          length: 2 
+          type: shift_register 
+
+
+DFT scan chain constraints
+==========================
+    User Chain: 
+          object name: chain1 
+          scan-in: i_tdi 
+          scan-in hookup_pin: i_tdi
+          scan-out: o_tdo 
+          scan-out hookup_pin: o_tdo
+          shared out: false 
+          shift_enable object name: none
+          max length: no_value
+          complete: false
+
+
+DFT actual scan chains
+======================
+    Actual Chain:
+          object name: chain1 
+          scan-in: i_tdi 
+          scan-in hookup_pin: i_tdi 
+          scan-out: o_tdo 
+          scan-out hookup_pin: o_tdo 
+          shared out: false
+          shift_enable: i_scan_en 
+          length: 1452
+          segment objects: DFT_AutoSegment_8 DFT_AutoSegment_7 DFT_AutoSegment_6 DFT_AutoSegment_5 DFT_AutoSegment_4 DFT_AutoSegment_3 DFT_AutoSegment_1 DFT_AutoSegment_104 DFT_AutoSegment_103 DFT_AutoSegment_102 DFT_AutoSegment_101 DFT_AutoSegment_100 DFT_AutoSegment_99 DFT_AutoSegment_98 DFT_AutoSegment_97 DFT_AutoSegment_96 DFT_AutoSegment_95 DFT_AutoSegment_94 DFT_AutoSegment_93 DFT_AutoSegment_92 DFT_AutoSegment_91 DFT_AutoSegment_90 DFT_AutoSegment_89 DFT_AutoSegment_88 DFT_AutoSegment_87 DFT_AutoSegment_86 DFT_AutoSegment_85 DFT_AutoSegment_84 DFT_AutoSegment_83 DFT_AutoSegment_82 DFT_AutoSegment_81 DFT_AutoSegment_80 DFT_AutoSegment_79 DFT_AutoSegment_78 DFT_AutoSegment_77 DFT_AutoSegment_76 DFT_AutoSegment_75 DFT_AutoSegment_74 DFT_AutoSegment_73 DFT_AutoSegment_72 DFT_AutoSegment_71 DFT_AutoSegment_70 DFT_AutoSegment_69 DFT_AutoSegment_68 DFT_AutoSegment_67 DFT_AutoSegment_66 DFT_AutoSegment_65 DFT_AutoSegment_64 DFT_AutoSegment_63 DFT_AutoSegment_62 DFT_AutoSegment_61 DFT_AutoSegment_60 DFT_AutoSegment_59 DFT_AutoSegment_58 DFT_AutoSegment_57 DFT_AutoSegment_56 DFT_AutoSegment_55 DFT_AutoSegment_54 DFT_AutoSegment_53 DFT_AutoSegment_52 DFT_AutoSegment_51 DFT_AutoSegment_50 DFT_AutoSegment_49 DFT_AutoSegment_48 DFT_AutoSegment_47 DFT_AutoSegment_46 DFT_AutoSegment_45 DFT_AutoSegment_44 DFT_AutoSegment_43 DFT_AutoSegment_42 DFT_AutoSegment_41 DFT_AutoSegment_40 DFT_AutoSegment_39 DFT_AutoSegment_38 DFT_AutoSegment_37 DFT_AutoSegment_36 DFT_AutoSegment_35 DFT_AutoSegment_34 DFT_AutoSegment_33 DFT_AutoSegment_32 DFT_AutoSegment_31 DFT_AutoSegment_30 DFT_AutoSegment_29 DFT_AutoSegment_28 DFT_AutoSegment_27 DFT_AutoSegment_26 DFT_AutoSegment_25 DFT_AutoSegment_24 DFT_AutoSegment_23 DFT_AutoSegment_22 DFT_AutoSegment_21 DFT_AutoSegment_20 DFT_AutoSegment_19 DFT_AutoSegment_18 DFT_AutoSegment_17 DFT_AutoSegment_16 DFT_AutoSegment_15 DFT_AutoSegment_14 DFT_AutoSegment_13 DFT_AutoSegment_12 DFT_AutoSegment_11 DFT_AutoSegment_10 DFT_AutoSegment_9 DFT_AutoSegment_2  
+          analyzed: false
+          test_clock domain: dom_1
+          test_clock edge: rise
+

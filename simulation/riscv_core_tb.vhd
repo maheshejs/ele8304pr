@@ -7,9 +7,9 @@ use work.riscv_pkg.all;
 entity riscv_core_tb is
 end;
 
-architecture bench of riscv_core_tb is
+architecture core_bench of riscv_core_tb is
 
-  constant K_CLK_PERIOD : time := 10 ns;
+  constant K_CLK_PERIOD : time := 12.5 ns;
 
   signal s_rstn       : std_logic := '1';
   signal s_clk        : std_logic := '0';
@@ -23,6 +23,7 @@ architecture bench of riscv_core_tb is
   signal s_dmem_addr  : std_logic_vector(8 downto 0);
   signal s_dmem_read  : std_logic_vector(31 downto 0);
   signal s_dmem_write : std_logic_vector(31 downto 0);
+
 
 begin
 
@@ -75,9 +76,8 @@ begin
     -- Put initialisation code here
 
     s_rstn <= '0';
-    wait for 5 ns;
+    wait for 10 * K_CLK_PERIOD;
     s_rstn <= '1';
-    wait for 5 ns;
 
     -- Put test bench stimulus code here
 

@@ -12,7 +12,6 @@ preferred_layer_short_segment.rpt
 .rs*
 rc_model.bin
 opt/
-power/
 voltus_*
 *.cmdlog
 *.sdc1

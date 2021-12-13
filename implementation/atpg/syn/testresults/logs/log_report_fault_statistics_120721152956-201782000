@@ -1,0 +1,116 @@
+Starting Command: report_fault_statistics 
+
+INFO (TDA-005): Command Line Invocation: 
+            report_fault_statistics -workdir /users/Cours/ele8304/12/Labs/implement/lab2/implementation/atpg/syn -stdout summary  [end TDA_005]
+
+INFO (TDA-014): Cadence(R) Modus(TM) DFT Software Solution, Version 19.12-s004_1, built Dec 04 2019 (linux26_64) [end TDA_014]
+
+INFO (TDA-015): Log File: /users/Cours/ele8304/12/Labs/implement/lab2/implementation/atpg/syn/testresults/logs/log_report_fault_statistics_120721152956-201782000 [end TDA_015]
+
+INFO (TDA-007): Job Information:
+            Date Started: Tuesday Dec 07 15:29:56 2021  EST
+            Host machine is vlsi410.vlsi.polymtl.ca, x86_64 running Linux 3.10.0-1160.45.1.el7.x86_64.
+            This job is process number 17254.
+[end TDA_007]
+
+INFO (TDA-009): Options/Values information.
+            (options marked with '*' have program generated values,
+             options marked with '+' were specified to default.)
+
+            -WORKDIR /users/Cours/ele8304/12/Labs/implement/lab2/implementation/atpg/syn
+
+            -LOGFILE /users/Cours/ele8304/12/Labs/implement/lab2/implementation/atpg/syn/testresults/logs/log_report_fault_statistics_120721152956-201782000
+            -STDOUT summary
+[end TDA_009]
+INFO (TFW-117): Modus checked out a Modus_Test license.  [end TFW_117] 
+Logic Model(GM)   12/07/21
+                  20:29:45
+File Id     faultModel        faultStatus
+Created (GM)  12/07/21           12/07/21
+              20:29:52           20:29:52
+Modified(GM)  12/07/21           12/07/21
+              20:29:52           20:29:53
+Code Level        2019.1             2019.1            
+Max Fault Id      106712
+
+Fault Model Type:   Cell Boundary
+
+
+Global Ignored Static Fault Count            2
+Global Ignored Dynamic Fault Count           2
+
+
+INFO (TFM-701):  Fault Statistics for Global   : 
+
+
+                 -- ATCov --   ------------- Global Faults ----------------------
+                   Global      Total     Tested   Possibly  Redundant   Untested
+
+Total Static         0.00      53354          0          0          0      53354
+Collapsed Static     0.00      39526          0          0          0      39526
+PI Static            0.00        136          0          0          0        136
+PO Static            0.00        108          0          0          0        108
+
+Total Dynamic        0.00      53354          0          0          0      53354
+Collapsed Dynamic    0.00      45878          0          0          0      45878
+PI Dynamic           0.00        136          0          0          0        136
+PO Dynamic           0.00        108          0          0          0        108
+
+Parametric        
+
+IDDq                 0.00      53354          0                            53354
+
+
+
+
+[end TFM_701]
+
+
+INFO (TFM-704): Maximum Global Test Coverage Statistics: 
+
+                  %Active    #Faults    #Active  #Inactive
+Total Static       100.00      53354      53354          0
+Collapsed Static   100.00      39526      39526          0
+PI Static          100.00        136        136          0
+PO Static          100.00        108        108          0
+
+Total Dynamic       89.92      53354      47978       5376
+Collapsed Dynamic   88.28      45878      40502       5376
+PI Dynamic          97.06        136        132          4
+PO Dynamic         100.00        108        108          0
+
+Parametric        
+
+There are 1 test mode(s) defined:
+      FULLSCAN
+
+[end TFM_704]
+
+INFO (TDA-001): Maximum Memory used during the run and Cumulative Time in hours:minutes:seconds:
+
+                  Total Memory =           16,779,552  bytes
+
+                      CPU Time =    0:00:00.01
+                  Elapsed Time =    0:00:00.02                    [end TDA_001]
+
+     Date Ended:  Tuesday Dec 07 15:29:56 2021  EST
+
+INFO (TFW-119): Modus checked in a Modus_Test license.  [end TFW_119] 
+
+
+
+-------------------------------------------------------------------------------
+*                      Message Summary                                        *
+-------------------------------------------------------------------------------
+ Count  Number             First Instance of Message Text
+------- ------             ------------------------------
+
+  INFO Messages...
+      1 INFO (TFM-701):  Fault Statistics for Global   : 
+      1 INFO (TFM-704): Maximum Global Test Coverage Statistics: 
+      1 INFO (TFW-117): Modus checked out a Modus_Test license.   
+      1 INFO (TFW-119): Modus checked in a Modus_Test license.   
+
+ For a detailed explanation of a message and a suggested user response execute 'msgHelp <message id>'.  For example: msgHelp TDA-009
+
+-------------------------------------------------------------------------------

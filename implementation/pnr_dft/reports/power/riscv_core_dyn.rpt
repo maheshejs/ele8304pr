@@ -1,0 +1,95 @@
+*----------------------------------------------------------------------------------------
+*	Voltus Power Analysis - Power Calculator - Version v16.16-s020_1 64-bit (05/03/2017 02:27:51)
+*	Copyright 2007, Cadence Design Systems, Inc.
+*
+* 	Date & Time:	2021-Dec-07 23:52:47 (2021-Dec-08 04:52:47 GMT)
+*
+*----------------------------------------------------------------------------------------
+*
+*	Design: riscv_core
+*
+*	Liberty Libraries used: 
+*	        /CMC/kits/GPDK45/gsclib045/gsclib045/timing/slow_vdd1v0_basicCells.lib
+*
+*	Power Domain used: 
+*		Rail:        VDD 	Voltage:        0.9 
+*
+*	DEF Files used: 
+*	        /tmp/ssv_tmpdir_7376_RDSWkU/eps_out_7376.def.gz
+*
+*	Switching Activity File used: 
+*	        ../../build/riscv_core.pnr.vcd
+*                    Vcd Window used(Start Time, Stop Time):  (0,5000)  
+*                     Vcd Scale Factor: 1 
+* *                    Design annotation coverage: 11149/11149 = 100% 
+*
+*       Hierarchical Global Activity: N.A.
+*
+*       Global Activity: N.A.
+*
+*       Sequential Element Activity: N.A.
+*
+*       Primary Input Activity: N.A.
+*
+*       Default icg ratio: N.A.
+*
+*       Global Comb ClockGate Ratio: N.A.
+*
+*	Power Units = 1mW
+*
+*	Time Units = 1e-09 secs 
+*
+*       report_power -output /users/Cours/ele8304/12/Labs/implement/lab2/implementation/pnr_dft/reports/power -format detailed -report_prefix riscv_core_dyn
+*
+-----------------------------------------------------------------------------------------
+
+
+Total Power 
+-----------------------------------------------------------------------------------------
+Total Internal Power:        0.48669125 	   80.3184%
+Total Switching Power:       0.11831755 	   19.5259%
+Total Leakage Power:         0.00094389 	    0.1558%
+Total Power:                 0.60595270 
+-----------------------------------------------------------------------------------------
+
+
+Group                           Internal   Switching     Leakage       Total  Percentage 
+                                Power      Power         Power         Power  (%)        
+-----------------------------------------------------------------------------------------
+Sequential                        0.3413     0.00162   0.0002366      0.3432       56.63 
+Macro                                  0           0           0           0           0 
+IO                                     0           0           0           0           0 
+Combinational                     0.1319     0.09254   0.0006971      0.2252       37.16 
+Clock (Combinational)            0.01345     0.02416   1.018e-05     0.03762       6.208 
+Clock (Sequential)                     0           0           0           0           0 
+-----------------------------------------------------------------------------------------
+Total                             0.4867      0.1183   0.0009439       0.606         100 
+-----------------------------------------------------------------------------------------
+
+
+Rail                  Voltage   Internal   Switching     Leakage       Total  Percentage 
+                                Power      Power         Power         Power  (%)        
+-----------------------------------------------------------------------------------------
+VDD                       0.9          0           0           0           0           0 
+
+
+Clock                           Internal   Switching     Leakage       Total  Percentage 
+                                Power      Power         Power         Power  (%)        
+-----------------------------------------------------------------------------------------
+clk                              0.01345     0.02416   1.018e-05     0.03762       6.208 
+-----------------------------------------------------------------------------------------
+Total (excluding duplicates)     0.01345     0.02416   1.018e-05     0.03762       6.208 
+-----------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------
+*	Power Distribution Summary: 
+* 		Highest Average Power:  FE_OFC3402_o_imem_addr_0 (CLKINVX20): 	  0.005857 
+* 		Highest Leakage Power:                    g92998 (NAND4X8): 	 7.771e-07 
+* 		Total Cap: 	2.34755e-11 F
+* 		Total instances in design: 10934
+* 		Total instances in design with no power:     0
+*          Total instances in design with no activity:     0
+* 		Total Fillers and Decap:     0
+-----------------------------------------------------------------------------------------
+

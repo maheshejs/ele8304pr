@@ -1,0 +1,24 @@
+//
+// File created by:  xrun
+// Do not modify this file
+//
++access+rwc
++xmstatus
++xm64bit
++TESTFILE1=/users/Cours/ele8304/12/Labs/implement/lab2/implementation/atpg/syn/testresults/verilog/FULLSCAN_PARALLEL/VER.FULLSCAN.data.scan.ex1.ts1.verilog
++TESTFILE2=/users/Cours/ele8304/12/Labs/implement/lab2/implementation/atpg/syn/testresults/verilog/FULLSCAN_PARALLEL/VER.FULLSCAN.data.logic.ex1.ts2.verilog
++TESTFILE2=/users/Cours/ele8304/12/Labs/implement/lab2/implementation/atpg/syn/testresults/verilog/FULLSCAN_PARALLEL/VER.FULLSCAN.data.logic.ex1.ts3.verilog
++TESTFILE2=/users/Cours/ele8304/12/Labs/implement/lab2/implementation/atpg/syn/testresults/verilog/FULLSCAN_PARALLEL/VER.FULLSCAN.data.IDDq.ex1.ts4.verilog
++HEARTBEAT
++FAILSET
++xmtimescale+1ns/1ps
++xmoverride_timescale
++xmseq_udp_delay+2ps
++libext+.v+.V+.z+.Z+.gz
++xmlibdirname+/users/Cours/ele8304/12/Labs/implement/lab2/implementation/atpg/syn/Inca_libs_12_06_09
+-l
+/users/Cours/ele8304/12/Labs/implement/lab2/implementation/atpg/syn/ncverilog_FULLSCAN.log
+-v
+/CMC/kits/GPDK45/gsclib045/gsclib045/verilog/fast_vdd1v0_basicCells.v
+/users/Cours/ele8304/12/Labs/implement/lab2/implementation/syn_dft/netlist/riscv_core.syn.v
+/users/Cours/ele8304/12/Labs/implement/lab2/implementation/atpg/syn/testresults/verilog/FULLSCAN_PARALLEL/VER.FULLSCAN.mainsim.v

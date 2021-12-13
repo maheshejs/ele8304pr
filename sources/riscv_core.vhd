@@ -26,15 +26,10 @@ entity riscv_core is
       o_dmem_addr   : out std_logic_vector(8 downto 0);
       i_dmem_read   : in std_logic_vector(31 downto 0);
       o_dmem_write  : out std_logic_vector(31 downto 0)
-      -- DFT
-      --i_scan_en     : in std_logic;
-      --i_test_mode   : in std_logic;
-      --i_tdi       : in std_logic;
-      --o_tdo       : out std_logic
     );
 end entity riscv_core;
 
-architecture arch of riscv_core is
+architecture core_rtl of riscv_core is
   signal s_ex         : E_EX;
   signal s_reg_if_id  : E_REG_IF_ID;
   signal s_reg_id_ex  : E_REG_ID_EX;
@@ -103,4 +98,4 @@ begin
     o_wb        => s_wb
   );
 
-end architecture arch;
+end architecture core_rtl;
