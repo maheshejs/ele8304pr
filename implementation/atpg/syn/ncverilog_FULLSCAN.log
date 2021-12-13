@@ -1,0 +1,1311 @@
+xrun(64): 20.03-s010: (c) Copyright 1995-2020 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	20.03-s010: Started on Dec 07, 2021 at 15:35:32 EST
+xrun
+	+access+rwc
+	+xmstatus
+	+xm64bit
+	+TESTFILE1=/users/Cours/ele8304/12/Labs/implement/lab2/implementation/atpg/syn/testresults/verilog/FULLSCAN_PARALLEL/VER.FULLSCAN.data.scan.ex1.ts1.verilog
+	+TESTFILE2=/users/Cours/ele8304/12/Labs/implement/lab2/implementation/atpg/syn/testresults/verilog/FULLSCAN_PARALLEL/VER.FULLSCAN.data.logic.ex1.ts2.verilog
+	+TESTFILE2=/users/Cours/ele8304/12/Labs/implement/lab2/implementation/atpg/syn/testresults/verilog/FULLSCAN_PARALLEL/VER.FULLSCAN.data.logic.ex1.ts3.verilog
+	+TESTFILE2=/users/Cours/ele8304/12/Labs/implement/lab2/implementation/atpg/syn/testresults/verilog/FULLSCAN_PARALLEL/VER.FULLSCAN.data.IDDq.ex1.ts4.verilog
+	+HEARTBEAT
+	+FAILSET
+	+xmtimescale+1ns/1ps
+	+xmoverride_timescale
+	+xmseq_udp_delay+2ps
+	+libext+.v+.V+.z+.Z+.gz
+	+xmlibdirname+/users/Cours/ele8304/12/Labs/implement/lab2/implementation/atpg/syn/Inca_libs_12_06_09
+	-l /users/Cours/ele8304/12/Labs/implement/lab2/implementation/atpg/syn/ncverilog_FULLSCAN.log
+	-v /CMC/kits/GPDK45/gsclib045/gsclib045/verilog/fast_vdd1v0_basicCells.v
+	/users/Cours/ele8304/12/Labs/implement/lab2/implementation/syn_dft/netlist/riscv_core.syn.v
+	/users/Cours/ele8304/12/Labs/implement/lab2/implementation/atpg/syn/testresults/verilog/FULLSCAN_PARALLEL/VER.FULLSCAN.mainsim.v
+
+   User defined plus("+") options:
+	+TESTFILE1=/users/Cours/ele8304/12/Labs/implement/lab2/implementation/atpg/syn/testresults/verilog/FULLSCAN_PARALLEL/VER.FULLSCAN.data.scan.ex1.ts1.verilog
+	+TESTFILE2=/users/Cours/ele8304/12/Labs/implement/lab2/implementation/atpg/syn/testresults/verilog/FULLSCAN_PARALLEL/VER.FULLSCAN.data.logic.ex1.ts2.verilog
+	+TESTFILE2=/users/Cours/ele8304/12/Labs/implement/lab2/implementation/atpg/syn/testresults/verilog/FULLSCAN_PARALLEL/VER.FULLSCAN.data.logic.ex1.ts3.verilog
+	+TESTFILE2=/users/Cours/ele8304/12/Labs/implement/lab2/implementation/atpg/syn/testresults/verilog/FULLSCAN_PARALLEL/VER.FULLSCAN.data.IDDq.ex1.ts4.verilog
+	+HEARTBEAT
+	+FAILSET
+
+xrun: *W,LEXTSF: Unknown suffix (.z) found in a libext option.  The suffixes will be mapped to Verilog.
+xrun: *W,LEXTSF: Unknown suffix (.Z) found in a libext option.  The suffixes will be mapped to Verilog.
+xrun: *W,LEXTSF: Unknown suffix (.gz) found in a libext option.  The suffixes will be mapped to Verilog.
+Loading snapshot worklib.syn_FULLSCAN:v .................... Done
+xcelium> source /CMC/tools/cadence/XCELIUMMAIN20.03.010_lnx86/tools/xcelium/files/xmsimrc
+xcelium> run
+
+INFO (TVE-200): Reading vector file: /users/Cours/ele8304/12/Labs/implement/lab2/implementation/atpg/syn/testresults/verilog/FULLSCAN_PARALLEL/VER.FULLSCAN.data.scan.ex1.ts1.verilog 
+
+INFO (TVE-202): Simulating pattern 1.1.1.1.1.1 at Time 0.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.1.1.2.1.1 at Time 80000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.1.1.2.1.2 at Time 240000000.00 ps. 
+
+INFO (TVE-201): Simulation complete on vector file: /users/Cours/ele8304/12/Labs/implement/lab2/implementation/atpg/syn/testresults/verilog/FULLSCAN_PARALLEL/VER.FULLSCAN.data.scan.ex1.ts1.verilog 
+
+INFO (TVE-206): The number of good comparing vectors for the file just completed is 1452 
+
+INFO (TVE-205): The number of miscomparing vectors for the file just completed is 0 
+
+
+INFO (TVE-200): Reading vector file: /users/Cours/ele8304/12/Labs/implement/lab2/implementation/atpg/syn/testresults/verilog/FULLSCAN_PARALLEL/VER.FULLSCAN.data.logic.ex1.ts2.verilog 
+
+INFO (TVE-202): Simulating pattern 1.2.1.1.1.1 at Time 480000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.2.1.1 at Time 560000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.2.1.2 at Time 720000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.2.1.3 at Time 720000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.2.1.4 at Time 800000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.3.1.1 at Time 800000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.3.1.2 at Time 960000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.3.1.3 at Time 960000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.3.1.4 at Time 960000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.3.1.5 at Time 1040000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.3.2.1 at Time 1040000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.3.2.2 at Time 1200000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.3.2.3 at Time 1200000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.3.2.4 at Time 1200000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.3.2.5 at Time 1280000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.3.3.1 at Time 1280000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.3.3.2 at Time 1440000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.3.3.3 at Time 1440000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.3.3.4 at Time 1440000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.3.3.5 at Time 1520000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.3.4.1 at Time 1520000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.3.4.2 at Time 1680000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.3.4.3 at Time 1680000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.3.4.4 at Time 1680000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.3.4.5 at Time 1760000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.3.5.1 at Time 1760000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.3.5.2 at Time 1920000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.3.5.3 at Time 1920000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.3.5.4 at Time 1920000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.3.5.5 at Time 2000000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.3.6.1 at Time 2000000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.3.6.2 at Time 2160000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.3.6.3 at Time 2160000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.3.6.4 at Time 2160000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.3.6.5 at Time 2240000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.3.7.1 at Time 2240000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.3.7.2 at Time 2400000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.3.7.3 at Time 2400000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.3.7.4 at Time 2400000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.3.7.5 at Time 2480000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.3.8.1 at Time 2480000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.3.8.2 at Time 2640000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.3.8.3 at Time 2640000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.3.8.4 at Time 2640000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.3.8.5 at Time 2720000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.3.9.1 at Time 2720000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.3.9.2 at Time 2880000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.3.9.3 at Time 2880000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.3.9.4 at Time 2880000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.3.9.5 at Time 2960000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.3.10.1 at Time 2960000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.3.10.2 at Time 3120000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.3.10.3 at Time 3120000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.3.10.4 at Time 3120000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.3.10.5 at Time 3200000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.3.11.1 at Time 3200000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.3.11.2 at Time 3360000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.3.11.3 at Time 3360000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.3.11.4 at Time 3360000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.3.11.5 at Time 3440000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.3.12.1 at Time 3440000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.3.12.2 at Time 3600000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.3.12.3 at Time 3600000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.3.12.4 at Time 3600000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.3.12.5 at Time 3680000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.3.13.1 at Time 3680000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.3.13.2 at Time 3840000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.3.13.3 at Time 3840000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.3.13.4 at Time 3840000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.3.13.5 at Time 3920000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.3.14.1 at Time 3920000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.3.14.2 at Time 4080000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.3.14.3 at Time 4080000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.3.14.4 at Time 4080000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.3.14.5 at Time 4160000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.3.15.1 at Time 4160000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.3.15.2 at Time 4320000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.3.15.3 at Time 4320000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.3.15.4 at Time 4320000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.3.15.5 at Time 4400000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.3.16.1 at Time 4400000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.3.16.2 at Time 4560000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.3.16.3 at Time 4560000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.3.16.4 at Time 4560000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.3.16.5 at Time 4640000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.4.1.1 at Time 4640000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.4.1.2 at Time 4800000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.4.1.3 at Time 4800000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.4.1.4 at Time 4800000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.4.1.5 at Time 4880000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.4.2.1 at Time 4880000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.4.2.2 at Time 5040000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.4.2.3 at Time 5040000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.4.2.4 at Time 5040000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.4.2.5 at Time 5120000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.4.3.1 at Time 5120000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.4.3.2 at Time 5280000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.4.3.3 at Time 5280000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.4.3.4 at Time 5280000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.4.3.5 at Time 5360000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.4.4.1 at Time 5360000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.4.4.2 at Time 5520000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.4.4.3 at Time 5520000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.4.4.4 at Time 5520000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.4.4.5 at Time 5600000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.4.5.1 at Time 5600000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.4.5.2 at Time 5760000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.4.5.3 at Time 5760000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.4.5.4 at Time 5760000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.4.5.5 at Time 5840000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.4.6.1 at Time 5840000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.4.6.2 at Time 6000000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.4.6.3 at Time 6000000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.4.6.4 at Time 6000000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.4.6.5 at Time 6080000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.4.7.1 at Time 6080000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.4.7.2 at Time 6240000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.4.7.3 at Time 6240000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.4.7.4 at Time 6240000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.4.7.5 at Time 6320000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.4.8.1 at Time 6320000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.4.8.2 at Time 6480000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.4.8.3 at Time 6480000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.4.8.4 at Time 6480000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.4.8.5 at Time 6560000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.4.9.1 at Time 6560000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.4.9.2 at Time 6720000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.4.9.3 at Time 6720000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.4.9.4 at Time 6720000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.4.9.5 at Time 6800000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.4.10.1 at Time 6800000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.4.10.2 at Time 6960000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.4.10.3 at Time 6960000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.4.10.4 at Time 6960000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.4.10.5 at Time 7040000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.4.11.1 at Time 7040000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.4.11.2 at Time 7200000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.4.11.3 at Time 7200000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.4.11.4 at Time 7200000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.4.11.5 at Time 7280000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.4.12.1 at Time 7280000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.4.12.2 at Time 7440000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.4.12.3 at Time 7440000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.4.12.4 at Time 7440000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.4.12.5 at Time 7520000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.4.13.1 at Time 7520000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.4.13.2 at Time 7680000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.4.13.3 at Time 7680000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.4.13.4 at Time 7680000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.4.13.5 at Time 7760000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.4.14.1 at Time 7760000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.4.14.2 at Time 7920000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.4.14.3 at Time 7920000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.4.14.4 at Time 7920000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.4.14.5 at Time 8000000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.4.15.1 at Time 8000000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.4.15.2 at Time 8160000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.4.15.3 at Time 8160000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.4.15.4 at Time 8160000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.4.15.5 at Time 8240000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.4.16.1 at Time 8240000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.4.16.2 at Time 8400000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.4.16.3 at Time 8400000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.4.16.4 at Time 8400000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.4.16.5 at Time 8480000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.5.1.1 at Time 8480000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.5.1.2 at Time 8640000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.5.1.3 at Time 8640000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.5.1.4 at Time 8640000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.5.1.5 at Time 8720000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.5.2.1 at Time 8720000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.5.2.2 at Time 8880000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.5.2.3 at Time 8880000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.5.2.4 at Time 8880000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.5.2.5 at Time 8960000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.5.3.1 at Time 8960000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.5.3.2 at Time 9120000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.5.3.3 at Time 9120000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.5.3.4 at Time 9120000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.5.3.5 at Time 9200000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.5.4.1 at Time 9200000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.5.4.2 at Time 9360000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.5.4.3 at Time 9360000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.5.4.4 at Time 9360000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.5.4.5 at Time 9440000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.5.5.1 at Time 9440000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.5.5.2 at Time 9600000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.5.5.3 at Time 9600000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.5.5.4 at Time 9600000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.5.5.5 at Time 9680000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.5.6.1 at Time 9680000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.5.6.2 at Time 9840000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.5.6.3 at Time 9840000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.5.6.4 at Time 9840000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.5.6.5 at Time 9920000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.5.7.1 at Time 9920000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.5.7.2 at Time 10080000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.5.7.3 at Time 10080000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.5.7.4 at Time 10080000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.5.7.5 at Time 10160000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.5.8.1 at Time 10160000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.5.8.2 at Time 10320000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.5.8.3 at Time 10320000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.5.8.4 at Time 10320000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.5.8.5 at Time 10400000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.5.9.1 at Time 10400000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.5.9.2 at Time 10560000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.5.9.3 at Time 10560000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.5.9.4 at Time 10560000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.5.9.5 at Time 10640000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.5.10.1 at Time 10640000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.5.10.2 at Time 10800000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.5.10.3 at Time 10800000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.5.10.4 at Time 10800000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.5.10.5 at Time 10880000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.5.11.1 at Time 10880000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.5.11.2 at Time 11040000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.5.11.3 at Time 11040000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.5.11.4 at Time 11040000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.5.11.5 at Time 11120000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.5.12.1 at Time 11120000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.5.12.2 at Time 11280000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.5.12.3 at Time 11280000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.5.12.4 at Time 11280000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.5.12.5 at Time 11360000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.5.13.1 at Time 11360000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.5.13.2 at Time 11520000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.5.13.3 at Time 11520000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.5.13.4 at Time 11520000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.5.13.5 at Time 11600000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.5.14.1 at Time 11600000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.5.14.2 at Time 11760000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.5.14.3 at Time 11760000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.5.14.4 at Time 11760000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.5.14.5 at Time 11840000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.5.15.1 at Time 11840000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.5.15.2 at Time 12000000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.5.15.3 at Time 12000000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.5.15.4 at Time 12000000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.5.15.5 at Time 12080000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.5.16.1 at Time 12080000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.5.16.2 at Time 12240000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.5.16.3 at Time 12240000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.5.16.4 at Time 12240000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.5.16.5 at Time 12320000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.6.1.1 at Time 12320000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.6.1.2 at Time 12480000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.6.1.3 at Time 12480000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.6.1.4 at Time 12480000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.6.1.5 at Time 12560000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.6.2.1 at Time 12560000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.6.2.2 at Time 12720000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.6.2.3 at Time 12720000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.6.2.4 at Time 12720000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.6.2.5 at Time 12800000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.6.3.1 at Time 12800000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.6.3.2 at Time 12960000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.6.3.3 at Time 12960000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.6.3.4 at Time 12960000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.6.3.5 at Time 13040000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.6.4.1 at Time 13040000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.6.4.2 at Time 13200000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.6.4.3 at Time 13200000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.6.4.4 at Time 13200000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.6.4.5 at Time 13280000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.6.5.1 at Time 13280000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.6.5.2 at Time 13440000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.6.5.3 at Time 13440000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.6.5.4 at Time 13440000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.6.5.5 at Time 13520000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.6.6.1 at Time 13520000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.6.6.2 at Time 13680000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.6.6.3 at Time 13680000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.6.6.4 at Time 13680000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.6.6.5 at Time 13760000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.6.7.1 at Time 13760000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.6.7.2 at Time 13920000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.6.7.3 at Time 13920000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.6.7.4 at Time 13920000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.6.7.5 at Time 14000000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.6.8.1 at Time 14000000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.6.8.2 at Time 14160000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.6.8.3 at Time 14160000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.6.8.4 at Time 14160000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.6.8.5 at Time 14240000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.6.9.1 at Time 14240000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.6.9.2 at Time 14400000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.6.9.3 at Time 14400000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.6.9.4 at Time 14400000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.6.9.5 at Time 14480000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.6.10.1 at Time 14480000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.6.10.2 at Time 14640000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.6.10.3 at Time 14640000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.6.10.4 at Time 14640000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.6.10.5 at Time 14720000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.6.11.1 at Time 14720000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.6.11.2 at Time 14880000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.6.11.3 at Time 14880000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.6.11.4 at Time 14880000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.6.11.5 at Time 14960000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.6.12.1 at Time 14960000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.6.12.2 at Time 15120000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.6.12.3 at Time 15120000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.6.12.4 at Time 15120000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.6.12.5 at Time 15200000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.6.13.1 at Time 15200000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.6.13.2 at Time 15360000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.6.13.3 at Time 15360000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.6.13.4 at Time 15360000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.6.13.5 at Time 15440000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.6.14.1 at Time 15440000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.6.14.2 at Time 15600000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.6.14.3 at Time 15600000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.6.14.4 at Time 15600000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.6.14.5 at Time 15680000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.6.15.1 at Time 15680000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.6.15.2 at Time 15840000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.6.15.3 at Time 15840000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.6.15.4 at Time 15840000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.6.15.5 at Time 15920000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.6.16.1 at Time 15920000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.6.16.2 at Time 16080000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.6.16.3 at Time 16080000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.6.16.4 at Time 16080000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.6.16.5 at Time 16160000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.7.1.1 at Time 16160000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.7.1.2 at Time 16320000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.7.1.3 at Time 16320000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.7.1.4 at Time 16320000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.7.1.5 at Time 16400000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.7.2.1 at Time 16400000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.7.2.2 at Time 16560000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.7.2.3 at Time 16560000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.7.2.4 at Time 16560000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.7.2.5 at Time 16640000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.7.3.1 at Time 16640000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.7.3.2 at Time 16800000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.7.3.3 at Time 16800000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.7.3.4 at Time 16800000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.7.3.5 at Time 16880000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.7.4.1 at Time 16880000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.7.4.2 at Time 17040000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.7.4.3 at Time 17040000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.7.4.4 at Time 17040000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.7.4.5 at Time 17120000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.7.5.1 at Time 17120000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.7.5.2 at Time 17280000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.7.5.3 at Time 17280000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.7.5.4 at Time 17280000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.7.5.5 at Time 17360000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.7.6.1 at Time 17360000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.7.6.2 at Time 17520000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.7.6.3 at Time 17520000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.7.6.4 at Time 17520000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.7.6.5 at Time 17600000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.7.7.1 at Time 17600000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.7.7.2 at Time 17760000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.7.7.3 at Time 17760000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.7.7.4 at Time 17760000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.7.7.5 at Time 17840000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.7.8.1 at Time 17840000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.7.8.2 at Time 18000000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.7.8.3 at Time 18000000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.7.8.4 at Time 18000000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.7.8.5 at Time 18080000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.7.9.1 at Time 18080000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.7.9.2 at Time 18240000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.7.9.3 at Time 18240000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.7.9.4 at Time 18240000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.7.9.5 at Time 18320000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.7.10.1 at Time 18320000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.7.10.2 at Time 18480000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.7.10.3 at Time 18480000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.7.10.4 at Time 18480000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.7.10.5 at Time 18560000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.7.11.1 at Time 18560000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.7.11.2 at Time 18720000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.7.11.3 at Time 18720000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.7.11.4 at Time 18720000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.7.11.5 at Time 18800000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.7.12.1 at Time 18800000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.7.12.2 at Time 18960000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.7.12.3 at Time 18960000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.7.12.4 at Time 18960000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.7.12.5 at Time 19040000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.7.13.1 at Time 19040000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.7.13.2 at Time 19200000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.7.13.3 at Time 19200000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.7.13.4 at Time 19200000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.7.13.5 at Time 19280000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.7.14.1 at Time 19280000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.7.14.2 at Time 19440000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.7.14.3 at Time 19440000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.7.14.4 at Time 19440000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.7.14.5 at Time 19520000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.7.15.1 at Time 19520000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.7.15.2 at Time 19680000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.7.15.3 at Time 19680000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.7.15.4 at Time 19680000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.7.15.5 at Time 19760000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.7.16.1 at Time 19760000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.7.16.2 at Time 19920000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.7.16.3 at Time 19920000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.7.16.4 at Time 19920000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.7.16.5 at Time 20000000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.8.1.1 at Time 20000000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.8.1.2 at Time 20160000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.8.1.3 at Time 20160000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.8.1.4 at Time 20160000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.8.1.5 at Time 20240000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.8.2.1 at Time 20240000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.8.2.2 at Time 20400000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.8.2.3 at Time 20400000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.8.2.4 at Time 20400000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.8.2.5 at Time 20480000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.8.3.1 at Time 20480000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.8.3.2 at Time 20640000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.8.3.3 at Time 20640000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.8.3.4 at Time 20640000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.8.3.5 at Time 20720000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.8.4.1 at Time 20720000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.8.4.2 at Time 20880000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.8.4.3 at Time 20880000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.8.4.4 at Time 20880000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.8.4.5 at Time 20960000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.8.5.1 at Time 20960000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.8.5.2 at Time 21120000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.8.5.3 at Time 21120000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.8.5.4 at Time 21120000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.8.5.5 at Time 21200000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.8.6.1 at Time 21200000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.8.6.2 at Time 21360000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.8.6.3 at Time 21360000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.8.6.4 at Time 21360000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.8.6.5 at Time 21440000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.8.7.1 at Time 21440000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.8.7.2 at Time 21600000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.8.7.3 at Time 21600000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.8.7.4 at Time 21600000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.8.7.5 at Time 21680000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.8.8.1 at Time 21680000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.8.8.2 at Time 21840000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.8.8.3 at Time 21840000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.8.8.4 at Time 21840000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.8.8.5 at Time 21920000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.8.9.1 at Time 21920000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.8.9.2 at Time 22080000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.8.9.3 at Time 22080000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.8.9.4 at Time 22080000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.8.9.5 at Time 22160000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.8.10.1 at Time 22160000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.8.10.2 at Time 22320000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.8.10.3 at Time 22320000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.8.10.4 at Time 22320000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.8.10.5 at Time 22400000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.8.11.1 at Time 22400000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.8.11.2 at Time 22560000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.8.11.3 at Time 22560000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.8.11.4 at Time 22560000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.8.11.5 at Time 22640000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.8.12.1 at Time 22640000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.8.12.2 at Time 22800000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.8.12.3 at Time 22800000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.8.12.4 at Time 22800000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.8.12.5 at Time 22880000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.8.13.1 at Time 22880000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.8.13.2 at Time 23040000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.8.13.3 at Time 23040000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.8.13.4 at Time 23040000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.8.13.5 at Time 23120000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.8.14.1 at Time 23120000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.8.14.2 at Time 23280000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.8.14.3 at Time 23280000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.8.14.4 at Time 23280000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.8.14.5 at Time 23360000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.8.15.1 at Time 23360000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.8.15.2 at Time 23520000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.8.15.3 at Time 23520000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.8.15.4 at Time 23520000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.8.15.5 at Time 23600000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.8.16.1 at Time 23600000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.8.16.2 at Time 23760000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.8.16.3 at Time 23760000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.8.16.4 at Time 23760000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.8.16.5 at Time 23840000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.9.1.1 at Time 23840000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.9.1.2 at Time 24000000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.9.1.3 at Time 24000000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.9.1.4 at Time 24000000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.9.1.5 at Time 24080000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.9.2.1 at Time 24080000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.9.2.2 at Time 24240000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.9.2.3 at Time 24240000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.9.2.4 at Time 24240000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.9.2.5 at Time 24320000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.9.3.1 at Time 24320000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.9.3.2 at Time 24480000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.9.3.3 at Time 24480000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.9.3.4 at Time 24480000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.9.3.5 at Time 24560000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.9.4.1 at Time 24560000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.9.4.2 at Time 24720000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.9.4.3 at Time 24720000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.9.4.4 at Time 24720000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.9.4.5 at Time 24800000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.9.5.1 at Time 24800000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.9.5.2 at Time 24960000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.9.5.3 at Time 24960000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.9.5.4 at Time 24960000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.9.5.5 at Time 25040000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.9.6.1 at Time 25040000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.9.6.2 at Time 25200000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.9.6.3 at Time 25200000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.9.6.4 at Time 25200000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.9.6.5 at Time 25280000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.9.7.1 at Time 25280000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.9.7.2 at Time 25440000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.9.7.3 at Time 25440000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.9.7.4 at Time 25440000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.9.7.5 at Time 25520000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.9.8.1 at Time 25520000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.9.8.2 at Time 25680000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.9.8.3 at Time 25680000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.9.8.4 at Time 25680000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.9.8.5 at Time 25760000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.9.9.1 at Time 25760000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.9.9.2 at Time 25920000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.9.9.3 at Time 25920000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.9.9.4 at Time 25920000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.9.9.5 at Time 26000000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.9.10.1 at Time 26000000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.9.10.2 at Time 26160000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.9.10.3 at Time 26160000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.9.10.4 at Time 26160000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.9.10.5 at Time 26240000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.9.11.1 at Time 26240000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.9.11.2 at Time 26400000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.9.11.3 at Time 26400000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.9.11.4 at Time 26400000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.9.11.5 at Time 26480000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.9.12.1 at Time 26480000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.9.12.2 at Time 26640000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.9.12.3 at Time 26640000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.9.12.4 at Time 26640000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.9.12.5 at Time 26720000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.9.13.1 at Time 26720000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.9.13.2 at Time 26880000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.9.13.3 at Time 26880000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.9.13.4 at Time 26880000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.9.13.5 at Time 26960000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.9.14.1 at Time 26960000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.9.14.2 at Time 27120000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.9.14.3 at Time 27120000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.9.14.4 at Time 27120000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.9.14.5 at Time 27200000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.9.15.1 at Time 27200000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.9.15.2 at Time 27360000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.9.15.3 at Time 27360000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.9.15.4 at Time 27360000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.9.15.5 at Time 27440000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.9.16.1 at Time 27440000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.9.16.2 at Time 27600000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.9.16.3 at Time 27600000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.9.16.4 at Time 27600000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.9.16.5 at Time 27680000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.10.1.1 at Time 27680000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.10.1.2 at Time 27840000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.10.1.3 at Time 27920000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.10.1.4 at Time 27920000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.10.1.5 at Time 28000000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.10.2.1 at Time 28000000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.10.2.2 at Time 28160000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.10.2.3 at Time 28240000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.10.2.4 at Time 28240000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.10.2.5 at Time 28320000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.10.3.1 at Time 28320000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.10.3.2 at Time 28480000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.10.3.3 at Time 28560000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.10.3.4 at Time 28560000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.10.3.5 at Time 28640000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.10.4.1 at Time 28640000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.10.4.2 at Time 28800000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.10.4.3 at Time 28880000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.10.4.4 at Time 28880000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.10.4.5 at Time 28960000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.11.1.1 at Time 28960000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.11.1.2 at Time 29120000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.11.1.3 at Time 29120000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.11.1.4 at Time 29120000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.11.1.5 at Time 29200000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.11.2.1 at Time 29200000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.11.2.2 at Time 29360000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.11.2.3 at Time 29360000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.11.2.4 at Time 29360000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.11.2.5 at Time 29440000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.11.3.1 at Time 29440000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.11.3.2 at Time 29600000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.11.3.3 at Time 29600000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.11.3.4 at Time 29600000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.11.3.5 at Time 29680000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.11.4.1 at Time 29680000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.11.4.2 at Time 29840000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.11.4.3 at Time 29840000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.11.4.4 at Time 29840000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.11.4.5 at Time 29920000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.11.5.1 at Time 29920000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.11.5.2 at Time 30080000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.11.5.3 at Time 30080000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.11.5.4 at Time 30080000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.11.5.5 at Time 30160000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.11.6.1 at Time 30160000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.11.6.2 at Time 30320000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.11.6.3 at Time 30320000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.11.6.4 at Time 30320000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.11.6.5 at Time 30400000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.11.7.1 at Time 30400000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.11.7.2 at Time 30560000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.11.7.3 at Time 30560000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.11.7.4 at Time 30560000000.00 ps. 
+
+INFO (TVE-202): Simulating pattern 1.2.1.11.7.5 at Time 30640000000.00 ps. 
+
+INFO (TVE-201): Simulation complete on vector file: /users/Cours/ele8304/12/Labs/implement/lab2/implementation/atpg/syn/testresults/verilog/FULLSCAN_PARALLEL/VER.FULLSCAN.data.logic.ex1.ts2.verilog 
+
+INFO (TVE-206): The number of good comparing vectors for the file just completed is 186906 
+
+INFO (TVE-205): The number of miscomparing vectors for the file just completed is 0 
+
+
+INFO (TVE-204): The total number of good comparing vectors is 188358 
+
+INFO (TVE-203): The total number of miscomparing vectors is 0 
+
+Simulation complete via $finish(1) at time 30880 US + 0
+../implementation/atpg/syn/testresults/verilog/FULLSCAN_PARALLEL/VER.FULLSCAN.mainsim.v:3253       $finish; 
+xcelium> exit
+xmsim: Memory Usage - Final: 58.3M, Peak: 58.3M, Peak virtual: 227.1M
+xmsim: CPU Usage - 0.0s system + 0.1s user = 0.1s total (2.8s, 4.8% cpu)
+TOOL:	xrun(64)	20.03-s010: Exiting on Dec 07, 2021 at 15:35:35 EST  (total: 00:00:03)
